@@ -1,0 +1,2 @@
+# allsearch
+full search
