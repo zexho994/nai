@@ -1,28 +1,16 @@
-package com.zyaml.nai.service.es;
+package com.zyaml.nai.util;
 
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zyaml.nai.entry.doc.PersonDoc;
-import lombok.Value;
 import org.apache.http.HttpHost;
-import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
-import org.elasticsearch.action.admin.indices.create.CreateIndexResponse;
-import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestClient;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.client.indices.GetIndexRequest;
-import org.elasticsearch.common.settings.Settings;
-import org.elasticsearch.common.xcontent.XContentType;
 import org.elasticsearch.search.SearchHit;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
-import org.springframework.boot.json.JsonParser;
 import org.springframework.stereotype.Component;
-
-import javax.annotation.PostConstruct;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,7 +19,7 @@ import java.util.List;
  * @Date: 2020-02-28 18:07
  */
 @Component
-public class EsUtil {
+public class ElasticSearchUtil {
 
     private static final String HOST = "127.0.0.1";
     static final int PORT = 9200;
@@ -43,7 +31,7 @@ public class EsUtil {
      * @param index index名
      * @return boolean
      */
-    public boolean indexExist(String index) throws Exception {
+    public static boolean indexExist(String index) throws Exception {
         GetIndexRequest request = new GetIndexRequest(index);
         request.local(false);
         request.humanReadable(true);

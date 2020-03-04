@@ -29,6 +29,12 @@
             <version>1.2.61</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.baidu.aip</groupId>
+            <artifactId>java-sdk</artifactId>
+            <version>4.11.3</version>
+        </dependency>
+
         <!--Spring-data-elasticsearch-->
         <dependency>
             <groupId>org.elasticsearch</groupId>

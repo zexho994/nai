@@ -33,4 +33,6 @@ public class PersonDocController {
         log.info("====> Elasticsearch search all person by name : " + name);
         return personDocService.getAllByName(name);
     }
+
+
 }
