@@ -1,6 +1,11 @@
 package com.zyaml.nai.service;
 
+import com.zyaml.nai.Exception.ErrorCode;
+import com.zyaml.nai.Exception.ErrorResponse;
+import com.zyaml.nai.Exception.Resp;
+import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.util.BaiduAiUtil;
+import com.zyaml.nai.util.JsonUtil;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONObject;
 import org.springframework.stereotype.Service;
@@ -27,6 +32,21 @@ public class BaiDuAiService {
     }
 
     /**
+     * 分词接口
+     * <fet>定制版</>
+     * @param msg
+     * @return
+     */
+    public JSONObject lexicalAnalysisCustom(String msg){
+        JSONObject res = BaiduAiUtil.lexicalAnalysisCustom(msg);
+        if(res == null){
+            return null;
+        }
+        return res;
+    }
+
+
+    /**
      * 词法分析接口
      * @return
      */
@@ -49,7 +69,6 @@ public class BaiDuAiService {
             return "";
         }
         return jsonObject.toString();
-
     }
 
     /**

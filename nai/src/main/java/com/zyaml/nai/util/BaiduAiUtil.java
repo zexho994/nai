@@ -22,12 +22,31 @@ public class BaiduAiUtil{
 
     private static AipNlp client = new AipNlp(APP_ID,API_KEY,SECRET_KEY);
 
+    static {
+        client.setConnectionTimeoutInMillis(CONNECT_TIMEOUT);
+        client.setSocketTimeoutInMillis(SOCKET_TIMEOUT);
+    }
+
     /**
      * 分词接口
      */
     public static JSONObject tokenizer(String msg) {
 
         JSONObject res = client.lexer(msg,null);
+
+        return res;
+    }
+
+    /**
+     * 定制版的词法分析
+     * @param msg
+     */
+    public static JSONObject lexicalAnalysisCustom(String msg) {
+        // 传入可选参数调用接口
+        HashMap<String, Object> options = new HashMap<>();
+
+        // 词法分析（定制版）
+        JSONObject res = client.lexerCustom(msg, options);
 
         return res;
     }

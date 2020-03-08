@@ -24,18 +24,12 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.61</version>
-        </dependency>
-
-        <dependency>
             <groupId>com.baidu.aip</groupId>
             <artifactId>java-sdk</artifactId>
             <version>4.11.3</version>
         </dependency>
 
-        <!--Spring-data-elasticsearch-->
+        <!--Start- Spring-data-elasticsearch -Start-->
         <dependency>
             <groupId>org.elasticsearch</groupId>
             <artifactId>elasticsearch</artifactId>
@@ -51,6 +45,7 @@
             <artifactId>elasticsearch-rest-client</artifactId>
             <version>7.5.2</version>
         </dependency>
+        <!--END- Spring-data-elasticsearch -END-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -74,12 +69,6 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.junit.vintage</groupId>
-                    <artifactId>junit-vintage-engine</artifactId>
-                </exclusion>
-            </exclusions>
         </dependency>
     </dependencies>
 
