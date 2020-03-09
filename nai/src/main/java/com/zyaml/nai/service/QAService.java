@@ -1,10 +1,8 @@
 package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.ErrorCode;
-import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.comom.ContionsDictionary;
-import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.service.es.MouldDocService;
 import com.zyaml.nai.util.JsonUtil;
 import com.zyaml.nai.util.Mould;
@@ -107,6 +105,4 @@ public class QAService {
         String nd = problemService.getDiffName(map.get("PID"));
         return nd;
     }
-
-
 }
