@@ -4,6 +4,7 @@ import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.repository.neo.ProblemCql;
+import com.zyaml.nai.util.Mould;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -66,7 +67,6 @@ public class ProblemService {
 
     /**
      * 根据pid获取难度名
-     * 查询语句格式一般为：PID +xxx+ "难度"
      * @param pid
      * @return
      */

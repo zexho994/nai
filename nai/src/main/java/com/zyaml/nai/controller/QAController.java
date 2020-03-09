@@ -4,6 +4,7 @@ import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.from.QAFrom;
 import com.zyaml.nai.service.QAService;
+import com.zyaml.nai.util.DtoUtil;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -26,15 +27,17 @@ public class QAController {
 
     @PostMapping
     public Resp question(@RequestBody QAFrom qaFrom){
-        String qustion = qaService.qustion(qaFrom.getMsg());
+        log.info("=====> Question : " + qaFrom.getMsg());
+        Object qustion = qaService.qustion(qaFrom.getMsg());
 
         //没有查询结果
         if(qustion==null|| "".equals(qustion)){
+            log.info("=====> quest 没有结果");
             return new Resp(ErrorCode.NULL,"输入的内容无法解析");
         }
 
         //存在查询结果
-        return new Resp(ErrorCode.SUCCESS,qustion);
+        return new Resp(ErrorCode.SUCCESS,qustion.toString());
     }
 
 }

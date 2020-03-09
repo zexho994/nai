@@ -31,8 +31,6 @@ public class ProblemController {
         return problemService.getPrombleByPid(pid);
     }
 
-
-
     /**
      * 获取和 题号pid 一样难度的所有题
      * @param pid

@@ -1,5 +1,7 @@
 package com.zyaml.nai.service.es;
 
+import com.zyaml.nai.Exception.ErrorCode;
+import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.entry.from.MouldFrom;
 import org.elasticsearch.rest.RestStatus;
 import org.elasticsearch.search.SearchHit;
@@ -35,9 +37,31 @@ public class MouldDocService {
         return status;
     }
 
+    /**
+     * 搜索mould索引的文档
+     * @param page 起始页
+     * @param size 页大小
+     * @return
+     * @throws IOException
+     */
     public Map search(int page,int size) throws IOException {
         Map moulds = elasticSearchService.searchAll("mould", page, size);
         return moulds;
+    }
+
+    /**
+     * 根据format获取num
+     * @param format
+     */
+    public int getNumByFormat(String format){
+        Map<String,Object> stringObjectMap;
+        try {
+            stringObjectMap = elasticSearchService.matchParse("mould", "format", format);
+        } catch (IOException e) {
+            throw new RestException(ErrorCode.ELASTIC_ERROR);
+        }
+        int num = (int) stringObjectMap.get("num");
+        return num;
     }
 
 }
