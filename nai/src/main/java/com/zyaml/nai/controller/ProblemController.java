@@ -29,7 +29,7 @@ public class ProblemController {
     @GetMapping("/{pid}")
     public Problem getByPid(@PathVariable String pid){
         log.info("=====> getByPid-api pid : " + pid);
-        return problemService.getPrombleByPid(pid);
+        return problemService.getProblemByPid(pid);
     }
 
     /**

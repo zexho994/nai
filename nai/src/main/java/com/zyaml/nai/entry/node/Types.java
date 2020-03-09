@@ -14,7 +14,7 @@ import java.util.Set;
  */
 @NodeEntity
 @Data
-public class Type{
+public class Types{
     /**
      * 每一个节点都会有一个隐藏的自增ID作为主键
      */
@@ -31,6 +31,8 @@ public class Type{
      * 英文标签
      */
     private int tagInt;
+
+    private String tagEN;
 
     /**
      * 该分类下的所有问题

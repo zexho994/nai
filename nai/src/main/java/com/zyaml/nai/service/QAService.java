@@ -3,6 +3,7 @@ package com.zyaml.nai.service;
 import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.comom.ContionsDictionary;
+import com.zyaml.nai.entry.dto.Words;
 import com.zyaml.nai.service.es.MouldDocService;
 import com.zyaml.nai.util.JsonUtil;
 import com.zyaml.nai.util.Mould;
@@ -36,46 +37,20 @@ public class QAService {
         //分词结果
         JSONObject jsonObject = baiDuAiService.lexicalAnalysisCustom(msg);
 
-        //解析
-        Map<String,String> itemAndNe = JsonUtil.getItemAndNe(jsonObject);
+        Words words = JsonUtil.getItemAndNe(jsonObject);
 
-        //获取解析的结果
-        String format = combinationString(itemAndNe);
-
-
-        Object o = requestDispenser(format, itemAndNe);
+        Object o = requestDispenser(words.getFormat(), words);
 
         return o;
     }
 
     /**
-     * 转化字符串
-     * @param map
-     * @return
-     */
-    private String combinationString(Map<String,String> map){
-        StringBuilder sb = new StringBuilder();
-
-        for(Map.Entry<String,String> entry:map.entrySet()){
-            if("CON".equals(entry.getKey())){
-                String match = ContionsDictionary.match(entry.getValue());
-                sb.append(match+"+");
-            }
-            else{
-                sb.append(entry.getKey()+"+");
-            }
-        }
-        log.debug("=====> combinationString ："+sb.toString());
-        return sb.toString();
-    }
-
-    /**
      * 找到模板对应的方法
      * @param format
-     * @param map
+     * @param words
      * @return
      */
-    private Object requestDispenser(String format,Map<String,String> map){
+    private Object requestDispenser(String format,Words words){
         try {
             //获取类名的包名地址
             Class<?> printClass = Class.forName("com.zyaml.nai.service.QAService");
@@ -88,8 +63,8 @@ public class QAService {
                     // 获取自定义注解对象
                     Mould methodAnno = declaredMethod.getAnnotation(Mould.class);
                     if(methodAnno.format().equals(format)){
-                        log.info("=====> RequestDispenser get format :"+methodAnno.format());
-                        Object invoke = declaredMethod.invoke(this,map);
+                        log.debug("=====> RequestDispenser get format :"+methodAnno.format());
+                        Object invoke = declaredMethod.invoke(this,words);
                         return invoke;
                     }
                 }
@@ -101,20 +76,18 @@ public class QAService {
     }
 
     @Mould(format = "PID+dif+")
-    String pidDif(Map<String,String> map){
-        String nd = problemService.getDiffName(map.get("PID"));
-        return nd;
+    String pidDif(Words words){
+        return problemService.getDiffName((String) words.get("PID"));
     }
 
     @Mould(format = "PID+name+")
-    String pidName(Map<String,String> map){
-        String title = problemService.getTitle(map.get("PID"));
-        return title;
+    String pidName(Words words){
+        return problemService.getTitle((String) words.get("PID"));
     }
 
     @Mould(format = "PID+source+")
-    String pidSource(Map<String,String> map){
-        return problemService.getType(map.get("PID"));
+    String pidSource(Words words){
+        return problemService.getType((String) words.get("PID"));
     }
 
 

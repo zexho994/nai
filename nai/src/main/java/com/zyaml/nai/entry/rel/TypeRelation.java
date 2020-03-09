@@ -1,7 +1,8 @@
 package com.zyaml.nai.entry.rel;
 
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.entry.node.Type;
+import com.zyaml.nai.entry.node.Types;
+import com.zyaml.nai.entry.node.Types;
 import lombok.Data;
 import org.neo4j.ogm.annotation.*;
 
@@ -20,7 +21,7 @@ public class TypeRelation {
      * 类型节点
      */
     @StartNode
-    private Type types;
+    private Types types;
 
     /**
      * 问题节点

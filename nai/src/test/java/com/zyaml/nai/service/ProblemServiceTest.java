@@ -45,4 +45,11 @@ class ProblemServiceTest {
         Assert.assertNotNull(res1);
     }
 
+    @Test
+    void getType(){
+        String pid1 = "P1024";
+        String type = problemService.getType(pid1);
+        Assert.assertNotNull(type);
+    }
+
 }

@@ -2,7 +2,7 @@ package com.zyaml.nai.repository;
 
 import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.entry.node.Type;
+import com.zyaml.nai.entry.node.Types;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
@@ -52,9 +52,6 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
      * @return
      */
     @Query("MATCH(n:Problem{pid:$pid}) -[r]- (t:Types) RETURN t")
-    Type getType(String pid);
-
-
-
+    Types getType(String pid);
 
 }

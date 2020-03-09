@@ -1,5 +1,8 @@
 package com.zyaml.nai.util;
 
+import com.zyaml.nai.comom.ContionsDictionary;
+import com.zyaml.nai.entry.dto.Words;
+import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -13,8 +16,8 @@ import java.util.Map;
  * @Author: 994
  * @Date: 2020-03-05 15:11
  */
+@Log4j2
 public final class JsonUtil {
-
     /**
      * 解析JsonObject
      * 专有词存储map中
@@ -22,19 +25,22 @@ public final class JsonUtil {
      * ne为key，item为value
      * @param jsonObject
      */
-    public final static Map getItemAndNe(JSONObject jsonObject){
+    public final static Words getItemAndNe(JSONObject jsonObject){
+        Words words = new Words();
         JSONArray items = (JSONArray) jsonObject.get("items");
         Iterator<Object> iterator = items.iterator();
 
+        StringBuilder sb = new StringBuilder();
 
         HashMap<String,String> map = new HashMap<>(8);
         JSONObject object;
         while(iterator.hasNext()){
             object = (JSONObject) iterator.next();
-            if(object.get("ne")!=null&&!object.get("ne").equals("")){
-                map.put((String)object.get("ne"),(String)object.get("item"));
-            }
+            words.add(object.get("ne"),object.get("item"));
         }
-        return map;
+        map.put("format",sb.toString());
+        log.info("=====> combinationString ："+sb.toString());
+
+        return words;
     }
 }
