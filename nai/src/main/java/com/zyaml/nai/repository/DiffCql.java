@@ -1,4 +1,4 @@
-package com.zyaml.nai.repository.neo;
+package com.zyaml.nai.repository;
 
 import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
@@ -11,6 +11,7 @@ import java.util.List;
  * @Author: 994
  * @Date: 2020-03-07 21:34
  */
+
 public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
 
     /**

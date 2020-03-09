@@ -5,9 +5,4 @@ package com.zyaml.nai.entry.dto;
  * @Date: 2020-03-06 14:27
  */
 public class PersonSameDiffcutlty {
-
-
-
-
-
 }

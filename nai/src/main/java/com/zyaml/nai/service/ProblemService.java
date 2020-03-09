@@ -2,14 +2,14 @@ package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.RestException;
+import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.repository.neo.ProblemCql;
-import com.zyaml.nai.util.Mould;
+import com.zyaml.nai.entry.node.Type;
+import com.zyaml.nai.repository.ProblemCql;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Pattern;
 
 /**
@@ -67,12 +67,38 @@ public class ProblemService {
      */
     public String getDiffName(String pid){
         String s = matchPid(pid);
-        return problemCql.getDifNameByPid(s);
+        Difficulty dif = problemCql.getDifByPid(s);
+        if(dif==null){
+            throw new RestException(ErrorCode.NULL,"节点不存在");
+        }
+        return dif.getDifficultyString();
     }
 
+    /**
+     * 获取题目的名称
+     * @param pid
+     * @return
+     */
     public String getTitle(String pid){
         String s = matchPid(pid);
         Problem title = problemCql.getTitle(s);
+        if(title==null){
+            throw new RestException(ErrorCode.NULL,"节点不存在");
+        }
         return title.getTitle();
+    }
+
+    /**
+     * 获取题库
+     * @param pid
+     * @return
+     */
+    public String getType(String pid){
+        String npid = matchPid(pid);
+        Type type = problemCql.getType(npid);
+        if(type==null){
+            throw new RestException(ErrorCode.NULL,"节点不存在");
+        }
+        return type.getTagString();
     }
 }

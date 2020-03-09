@@ -57,7 +57,7 @@ public class QAService {
         StringBuilder sb = new StringBuilder();
 
         for(Map.Entry<String,String> entry:map.entrySet()){
-            if(entry.getKey().equals("CON")){
+            if("CON".equals(entry.getKey())){
                 String match = ContionsDictionary.match(entry.getValue());
                 sb.append(match+"+");
             }
@@ -101,8 +101,21 @@ public class QAService {
     }
 
     @Mould(format = "PID+dif+")
-    String piddif(Map<String,String> map){
+    String pidDif(Map<String,String> map){
         String nd = problemService.getDiffName(map.get("PID"));
         return nd;
     }
+
+    @Mould(format = "PID+name+")
+    String pidName(Map<String,String> map){
+        String title = problemService.getTitle(map.get("PID"));
+        return title;
+    }
+
+    @Mould(format = "PID+source+")
+    String pidSource(Map<String,String> map){
+        return problemService.getType(map.get("PID"));
+    }
+
+
 }

@@ -1,7 +1,7 @@
 package com.zyaml.nai.service;
 
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.repository.neo.DiffCql;
+import com.zyaml.nai.repository.DiffCql;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,7 +1,7 @@
 package com.zyaml.nai.service;
 
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.repository.neo.DiffCql;
+import com.zyaml.nai.repository.DiffCql;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

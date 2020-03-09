@@ -1,6 +1,8 @@
-package com.zyaml.nai.repository.neo;
+package com.zyaml.nai.repository;
 
+import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Type;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
@@ -29,20 +31,12 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
     List<Problem> getProblemsByPidAndDiff(String pid);
 
     /**
-     * 获取题号pid的难度名称
+     * 根据题号pid的难度
      * @param pid
      * @return
      */
-    @Query("match (p:Problem{pid:$pid})-[]-(d:Difficulty) return d.difficultyString")
-    String getDifNameByPid(String pid);
-
-    /**
-     * 根据题号pid的难度id
-     * @param pid
-     * @return
-     */
-    @Query("match (p:Problem{pid:$pid})-[]-(d:Difficulty) return d.difficulty")
-    String getDifIdByPid(String pid);
+    @Query("match (p:Problem{pid:$pid})-[]-(d:Difficulty) return d")
+    Difficulty getDifByPid(String pid);
 
     /**
      * 获取pid的名称
@@ -51,4 +45,16 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
      */
     @Query("match (p:Problem{pid:$pid}) return p")
     Problem getTitle(String pid);
+
+    /**
+     * 获取题库
+     * @param pid
+     * @return
+     */
+    @Query("MATCH(n:Problem{pid:$pid}) -[r]- (t:Types) RETURN t")
+    Type getType(String pid);
+
+
+
+
 }
