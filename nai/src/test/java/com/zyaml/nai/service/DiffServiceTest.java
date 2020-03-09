@@ -20,11 +20,19 @@ class DiffServiceTest {
     DiffCql diffCql;
 
     @Test
-    void getProblemsByDiff() {
+    void getProblemsByDiffTest() {
         String dif1= "NOI/NOI+/CTSC";
 
         List<Problem> problemsByDiff = diffCql.getProblemsByDiff(dif1);
         Assert.assertNotNull(problemsByDiff);
+    }
 
+    @Test
+    void getCountTest(){
+        String difName = "入门";
+
+        //入门题的数量
+        int count = diffCql.getCount(difName);
+        Assert.assertNotNull(count);
     }
 }

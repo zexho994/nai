@@ -20,13 +20,23 @@ public class DiffService {
 
     /**
      * 根据难度名称获取所有题目
-     * 提问语句一般为：难度 + xxx
-     * @param diff
+     * @param diff 难度名
      * @return
      */
     public List<Problem> getProblemsByDiff(String diff){
         List<Problem> problemsByDiff = diffCql.getProblemsByDiff(diff);
         return problemsByDiff;
+    }
+
+    /**
+     * 获取diff难度的题目数量
+     * @param diff 难度名
+     * @return
+     */
+    public int getCount(String diff){
+        log.debug("[getCount] diff -> " + diff);
+        int count = diffCql.getCount(diff);
+        return count;
     }
 
 }

@@ -27,20 +27,13 @@ public final class JsonUtil {
      */
     public final static Words getItemAndNe(JSONObject jsonObject){
         Words words = new Words();
-        JSONArray items = (JSONArray) jsonObject.get("items");
+        JSONArray items = (JSONArray)jsonObject.get("items");
         Iterator<Object> iterator = items.iterator();
-
-        StringBuilder sb = new StringBuilder();
-
-        HashMap<String,String> map = new HashMap<>(8);
         JSONObject object;
         while(iterator.hasNext()){
             object = (JSONObject) iterator.next();
             words.add(object.get("ne"),object.get("item"));
         }
-        map.put("format",sb.toString());
-        log.info("=====> combinationString ："+sb.toString());
-
         return words;
     }
 }

@@ -4,6 +4,7 @@ import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.comom.ContionsDictionary;
 import com.zyaml.nai.entry.dto.Words;
+import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.service.es.MouldDocService;
 import com.zyaml.nai.util.JsonUtil;
 import com.zyaml.nai.util.Mould;
@@ -26,6 +27,8 @@ public class QAService {
     private BaiDuAiService baiDuAiService;
     @Autowired
     private ProblemService problemService;
+    @Autowired
+    private DiffService diffService;
 
     @Autowired
     MouldDocService mouldDocService;
@@ -39,18 +42,17 @@ public class QAService {
 
         Words words = JsonUtil.getItemAndNe(jsonObject);
 
-        Object o = requestDispenser(words.getFormat(), words);
+        Object o = requestDispenser(words);
 
         return o;
     }
 
     /**
      * 找到模板对应的方法
-     * @param format
      * @param words
      * @return
      */
-    private Object requestDispenser(String format,Words words){
+    private Object requestDispenser(Words words){
         try {
             //获取类名的包名地址
             Class<?> printClass = Class.forName("com.zyaml.nai.service.QAService");
@@ -62,8 +64,8 @@ public class QAService {
                 if(declaredMethod.isAnnotationPresent(Mould.class)){
                     // 获取自定义注解对象
                     Mould methodAnno = declaredMethod.getAnnotation(Mould.class);
-                    if(methodAnno.format().equals(format)){
-                        log.debug("=====> RequestDispenser get format :"+methodAnno.format());
+                    if(methodAnno.format().equals(words.getFormat())){
+                        log.debug("=====> RequestDispenser.format:"+methodAnno.format());
                         Object invoke = declaredMethod.invoke(this,words);
                         return invoke;
                     }
@@ -73,6 +75,11 @@ public class QAService {
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Mould(format = "PID+")
+    Problem pid(Words words){
+        return problemService.getProblemByPid((String) words.get("PID"));
     }
 
     @Mould(format = "PID+dif+")
@@ -90,5 +97,10 @@ public class QAService {
         return problemService.getType((String) words.get("PID"));
     }
 
+    @Mould(format = "DIF+num+")
+    int difCount(Words words){
+        int num = diffService.getCount((String) words.get("DIF"));
+        return num;
+    }
 
 }

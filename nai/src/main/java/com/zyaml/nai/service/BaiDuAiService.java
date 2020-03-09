@@ -38,6 +38,7 @@ public class BaiDuAiService {
      * @return
      */
     public JSONObject lexicalAnalysisCustom(String msg){
+        log.debug("=====> [词法分析 lexicalAnalysisCustom ] msg -> " + msg);
         JSONObject res = BaiduAiUtil.lexicalAnalysisCustom(msg);
         if(res == null){
             return null;

@@ -21,4 +21,14 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
      */
     @Query("match (d:Difficulty {difficultyString:$diff} )-[r:`难度`]->(p:Problem) return p limit 10")
     List<Problem> getProblemsByDiff(String diff);
+
+    /**
+     * 获取指定难度的题目数量
+     * @param diff
+     * @return
+     */
+    @Query("MATCH(:Difficulty{difficultyString:$diff})-[]-(n:Problem) RETURN count(n)")
+    int getCount(String diff);
+
+
 }

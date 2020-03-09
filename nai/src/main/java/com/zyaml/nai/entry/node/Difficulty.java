@@ -16,6 +16,7 @@ import java.util.Set;
 @NodeEntity
 @Data
 public class Difficulty {
+
     /**
      * 每一个节点都会有一个隐藏的自增ID作为主键
      */
@@ -32,7 +33,6 @@ public class Difficulty {
      * 难度中文
      */
     private String difficultyString;
-
 
     /**
      * 该难度下的所有问题
