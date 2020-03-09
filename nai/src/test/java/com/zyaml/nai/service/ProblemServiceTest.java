@@ -33,10 +33,16 @@ class ProblemServiceTest {
     @Test
     void getDiffNameTest(){
         String pid1 = "P1024";
-
         String diffName = problemService.getDiffName(pid1);
         Assert.assertEquals(DiffcultyComom.universal_normal.name,diffName);
+    }
 
+    @Test
+    void getNameByPid(){
+        String pid1 = "P1024";
+
+        String res1 = problemService.getTitle(pid1);
+        Assert.assertNotNull(res1);
     }
 
 }

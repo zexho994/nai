@@ -28,15 +28,12 @@ public class ProblemService {
      */
     public Problem getPrombleByPid(String pid){
         //验证pid格式
-        if(!matchPid(pid)){
-            throw new RestException(ErrorCode.PARAM_INVALID,"pid格式错误");
-        }
         //neo大小写严格，转换大小写
-        String npid = pid.replace("p", "P");
+        String npid = matchPid(pid);
 
         Problem problems = problemCql.getProblemByPid(npid);
 
-        if(npid == null){
+        if(problems == null){
             throw new RestException(ErrorCode.NULL,"节点不存在");
         }
 
@@ -48,14 +45,12 @@ public class ProblemService {
      * @param pid
      * @return
      */
-    private boolean matchPid(String pid){
+    private String matchPid(String pid){
         String pattern = "(p|P)\\d{4}";
         if(Pattern.matches(pattern, pid)){
-            return true;
+            return pid.replace("p","P");
         }
-        return false;
-
-
+        throw new RestException(ErrorCode.PARAM_INVALID,"pid 格式有误");
     }
 
     public List<Problem> getProblemsByPidAndDiff(String diff){
@@ -71,11 +66,13 @@ public class ProblemService {
      * @return
      */
     public String getDiffName(String pid){
-        if(matchPid(pid)){
-            return problemCql.getDifNameByPid(pid);
-        }else{
-            throw new RestException(ErrorCode.PARAM_INVALID,"pid格式错误");
-        }
+        String s = matchPid(pid);
+        return problemCql.getDifNameByPid(s);
     }
 
+    public String getTitle(String pid){
+        String s = matchPid(pid);
+        Problem title = problemCql.getTitle(s);
+        return title.getTitle();
+    }
 }

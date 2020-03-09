@@ -1,6 +1,7 @@
 package com.zyaml.nai.controller;
 
-import com.zyaml.nai.entry.from.ProblemFrom;
+import com.zyaml.nai.Exception.ErrorCode;
+import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.service.ProblemService;
 import lombok.extern.slf4j.Slf4j;
@@ -21,7 +22,7 @@ public class ProblemController {
     ProblemService problemService;
 
     /**
-     * 根据题号pid获取对应题信息
+     * 根据题号 pid 获取对应题信息
      * @param pid 题号
      * @return
      */
@@ -40,5 +41,20 @@ public class ProblemController {
     public List<Problem> getByPidAndDiff(@PathVariable String pid){
         log.info("=====> getByPidAndDiff-api pid : " + pid);
         return problemService.getProblemsByPidAndDiff(pid);
+    }
+
+    /**
+     * 获取 pid 的题名
+     * @param pid
+     * @return
+     */
+    @GetMapping("/name/{pid}")
+    public Resp getTitleByPid(@PathVariable String pid){
+        log.info("=====> getNameByPid-api pid : " + pid);
+        String nameByPid = problemService.getTitle(pid);
+        if(nameByPid==null){
+            return new Resp(ErrorCode.NULL,"节点不存在");
+        }
+        return new Resp(nameByPid);
     }
 }
