@@ -19,7 +19,10 @@ public enum ErrorCode {
     SYSTEM_FAIL(HttpStatus.INTERNAL_SERVER_ERROR, 1000, "It's a unidentified error or a internal server fails. Please notice the administrator."),
 
     /**elastic**/
-    ELASTIC_ERROR(HttpStatus.INTERNAL_SERVER_ERROR,5001,"Elasticsearch 发生错误")
+    ELASTIC_ERROR(HttpStatus.INTERNAL_SERVER_ERROR,5001,"Elasticsearch 发生错误"),
+
+    /** IO Exception **/
+    FILE_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR,6001,"IO 文件为未找到")
     ;
 
     @Getter

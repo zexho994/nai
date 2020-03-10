@@ -13,6 +13,9 @@ import java.util.HashMap;
  */
 @Component
 public class BaiduAiUtil{
+    /**
+     * 百度ai账号信息
+     */
     private static final String APP_ID = "18669561";
     private static final String API_KEY = "mGSP9oYipCnany8dGYOAd6ck";
     private static final String SECRET_KEY = "6wVpBgN3N3uRfFhbyXAIowZxLCg7Bxf6";

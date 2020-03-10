@@ -54,4 +54,6 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
     @Query("MATCH(n:Problem{pid:$pid}) -[r]- (t:Types) RETURN t")
     Types getType(String pid);
 
+    @Query("match (p:Problem) return p.title")
+    List<String> getAll();
 }

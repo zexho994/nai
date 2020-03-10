@@ -16,7 +16,7 @@ public class MouldFrom {
      * 格式为 Integer：xxxx
      */
     @Min(value = 1001)
-    @Max(value = 9999)
+    @Max(value = 4999)
     private Integer num;
 
     /**
