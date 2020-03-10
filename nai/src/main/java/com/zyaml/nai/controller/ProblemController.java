@@ -3,7 +3,7 @@ package com.zyaml.nai.controller;
 import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.service.ProblemService;
+import com.zyaml.nai.service.neo.ProblemService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

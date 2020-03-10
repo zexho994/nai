@@ -1,10 +1,9 @@
 package com.zyaml.nai.util;
 
-import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.repository.AlgorithmCql;
 import com.zyaml.nai.repository.ProblemCql;
-import com.zyaml.nai.service.AlgorithmService;
+import com.zyaml.nai.service.neo.AlgorithmService;
 import lombok.extern.log4j.Log4j2;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
@@ -13,10 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Author: 994

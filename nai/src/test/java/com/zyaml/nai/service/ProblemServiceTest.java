@@ -3,6 +3,7 @@ package com.zyaml.nai.service;
 
 import com.zyaml.nai.comom.DiffcultyComom;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.service.neo.ProblemService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

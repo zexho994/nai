@@ -2,7 +2,7 @@ package com.zyaml.nai.controller;
 
 import com.zyaml.nai.entry.from.ProblemFrom;
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.service.DiffService;
+import com.zyaml.nai.service.neo.DiffService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.zyaml.nai.service;
+package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.RestException;

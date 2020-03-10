@@ -25,12 +25,12 @@ public class toDictionaryIO<V> {
     /**
      * 算法名文件目录
      */
-    String algorithm_Path = "/algorithm.txt";
+    String algorithm_Path = "algorithm.txt";
 
     /**
      * 题目名文件目录
      */
-    String problemName_Path = "/problem.txt";
+    String problemName_Path = "problem.txt";
 
 
     /**

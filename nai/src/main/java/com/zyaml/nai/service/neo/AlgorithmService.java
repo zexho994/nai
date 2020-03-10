@@ -1,4 +1,4 @@
-package com.zyaml.nai.service;
+package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.vo.ProblemVO;
