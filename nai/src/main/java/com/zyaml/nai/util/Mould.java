@@ -11,6 +11,11 @@ import java.lang.annotation.*;
 @Documented
 public @interface Mould {
 
-    String format() default "";
+    /**
+     * 存储模板的格式信息
+     * 例如 "PID+num+"
+     * @return
+     */
+    String format();
 
 }

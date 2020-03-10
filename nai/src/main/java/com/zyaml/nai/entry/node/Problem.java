@@ -1,5 +1,6 @@
 package com.zyaml.nai.entry.node;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 import org.neo4j.ogm.annotation.GeneratedValue;
 import org.neo4j.ogm.annotation.Id;

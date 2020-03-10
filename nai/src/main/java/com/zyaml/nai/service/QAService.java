@@ -5,6 +5,7 @@ import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.comom.ContionsDictionary;
 import com.zyaml.nai.entry.dto.Words;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.service.es.MouldDocService;
 import com.zyaml.nai.util.JsonUtil;
 import com.zyaml.nai.util.Mould;
@@ -13,6 +14,7 @@ import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.lang.reflect.Method;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,6 +35,11 @@ public class QAService {
     @Autowired
     MouldDocService mouldDocService;
 
+    /**
+     * 问答系统的方法集合处
+     * @param msg
+     * @return
+     */
     public Object qustion(String msg){
         if(msg == null || msg.length() < 1){
             throw new RestException(ErrorCode.PARAM_INVALID,"提问语句不符合要求");
@@ -40,7 +47,7 @@ public class QAService {
         //分词结果
         JSONObject jsonObject = baiDuAiService.lexicalAnalysisCustom(msg);
 
-        Words words = JsonUtil.getItemAndNe(jsonObject);
+        Words<String,String> words = JsonUtil.getItemAndNe(jsonObject);
 
         Object o = requestDispenser(words);
 
@@ -49,6 +56,12 @@ public class QAService {
 
     /**
      * 找到模板对应的方法
+     *
+     * <步骤>
+     * 1. 匹配每个方法上的 mould 注解的 formal信息
+     * 2. 找到对应的方法后调用接口
+     * </步骤>
+     *
      * @param words
      * @return
      */
@@ -78,18 +91,18 @@ public class QAService {
     }
 
     @Mould(format = "PID+")
-    Problem pid(Words words){
-        return problemService.getProblemByPid((String) words.get("PID"));
+    Problem pid(Words<String,String> words){
+        return problemService.getProblemByPid(words.get("PID"));
     }
 
     @Mould(format = "PID+dif+")
-    String pidDif(Words words){
-        return problemService.getDiffName((String) words.get("PID"));
+    String pidDif(Words<String,String> words){
+        return problemService.getDiffName(words.get("PID"));
     }
 
     @Mould(format = "PID+name+")
-    String pidName(Words words){
-        return problemService.getTitle((String) words.get("PID"));
+    String pidName(Words<String,String> words){
+        return problemService.getTitle(words.get("PID"));
     }
 
     @Mould(format = "PID+source+")
@@ -98,9 +111,20 @@ public class QAService {
     }
 
     @Mould(format = "DIF+num+")
-    int difCount(Words words){
-        int num = diffService.getCount((String) words.get("DIF"));
+    int difCount(Words<String,String> words){
+        int num = diffService.getCount(words.get("DIF"));
         return num;
     }
+
+    @Mould(format = "DIF+ORI+")
+    List<ProblemVO> difSource1(Words<String,String> words){
+        return diffService.getDifAndSource(words.get("DIF"),words.get("source"));
+    }
+
+    @Mould(format = "DIF+dif+ORI+")
+    List<ProblemVO> difSource2(Words<String,String> words){
+        return diffService.getDifAndSource(words.get("DIF"),words.get("source"));
+    }
+
 
 }

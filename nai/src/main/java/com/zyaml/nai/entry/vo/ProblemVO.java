@@ -1,5 +1,6 @@
 package com.zyaml.nai.entry.vo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 
 /**
@@ -9,6 +10,10 @@ import lombok.Data;
 @Data
 public class ProblemVO {
 
+    @JsonProperty("pid")
+    private String pid;
 
+    @JsonProperty("title")
+    private String title;
 
 }
