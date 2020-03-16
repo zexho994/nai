@@ -66,7 +66,6 @@ public class BaiduAiUtil{
         // 词法分析
         JSONObject res = client.lexer(msg, options);
         return res;
-
     }
 
     /**
@@ -82,7 +81,6 @@ public class BaiduAiUtil{
 
         // 依存句法分析
         return client.depParser(msg, options);
-
     }
 
     /**

@@ -1,5 +1,6 @@
 package com.zyaml.nai.controller;
 
+import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.from.ProblemFrom;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.service.neo.DiffService;
@@ -30,8 +31,9 @@ public class DiffController {
      * @return
      */
     @PostMapping("/name")
-    public List<Problem> getByDiff(@RequestBody ProblemFrom from){
+    public Resp getByDiff(@RequestBody ProblemFrom from){
         log.info("=====> getByDiff-api");
+
         return diffService.getProblemsByDiff(from.getDiff());
     }
 

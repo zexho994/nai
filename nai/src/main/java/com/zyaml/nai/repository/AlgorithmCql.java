@@ -23,7 +23,13 @@ public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
     @Query("MATCH(t:Tags{name:$alg})-[]-(p:Problem) RETURN p LIMIT 10")
     List<Problem> getByAlg(String alg);
 
+    /**
+     * 获取所有算法标签
+     * @return
+     */
     @Query("match (t:Tags{type:'Algorithm'}) return t")
     List<Tags> getAll();
+
+
 
 }

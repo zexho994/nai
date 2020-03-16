@@ -2,6 +2,7 @@ package com.zyaml.nai.repository;
 
 import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.entry.node.Types;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
@@ -56,4 +57,19 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
 
     @Query("match (p:Problem) return p.title")
     List<String> getAll();
+
+    /**
+     * 根据 pid 获取题目算法标签
+     * @param pid
+     * @return
+     */
+    @Query("match (p:Problem{pid:$pid})-[]-(t:Tags{type:\"Algorithm\"}) return t ")
+    List<Tags> getAlgByPid(String pid);
+
+    @Query("MATCH (p:Problem{pid:$pid})-[]-(t:Tags{type:\"Region\"}) RETURN t")
+    Tags getRegin(String pid);
+
+    @Query("MATCH (p:Problem{pid:$pid})-[]-(t:Tags{type:\"Time\"}) RETURN t")
+    Tags getTime(String pid);
+
 }

@@ -17,12 +17,17 @@ public enum ErrorCode {
     NULL(HttpStatus.BAD_REQUEST,1001,"not result"),
     PARAM_INVALID(HttpStatus.BAD_REQUEST, 1002, "This param is error."),
     SYSTEM_FAIL(HttpStatus.INTERNAL_SERVER_ERROR, 1000, "It's a unidentified error or a internal server fails. Please notice the administrator."),
+    FILE_NOT_FOUND(HttpStatus.OK,1003,"IO 文件为未找到"),
 
-    /**elastic**/
-    ELASTIC_ERROR(HttpStatus.INTERNAL_SERVER_ERROR,5001,"Elasticsearch 发生错误"),
+    /**elastic 11-x-x **/
+    ELASTIC_ERROR(HttpStatus.INTERNAL_SERVER_ERROR,1101,"Elasticsearch 发生错误"),
 
-    /** IO Exception **/
-    FILE_NOT_FOUND(HttpStatus.INTERNAL_SERVER_ERROR,6001,"IO 文件为未找到")
+
+    /** Neo4j 12-x-x **/
+    NOT_FOUND(HttpStatus.OK,1200,"未找到数据"),
+
+
+
     ;
 
     @Getter

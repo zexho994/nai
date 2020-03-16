@@ -11,21 +11,35 @@ import org.springframework.http.HttpStatus;
 @Data
 public class Resp {
 
+    /**
+     * 状态码
+     */
     @JsonProperty(value = "code")
     private int code;
 
+    /**
+     * 信息说明
+     */
     @JsonProperty(value = "message")
     private String message;
 
+    /**
+     * 数据体
+     */
     @JsonProperty(value = "data")
     private Object data;
 
+    /**
+     * http状态
+     */
     @JsonProperty(value = "status")
     private HttpStatus httpStatus;
 
     public Resp(int code,String message){
         this.code = code;
-        this. message = message;
+        this.message = message;
+        this.data = null;
+        this.httpStatus = ErrorCode.SUCCESS.getHttpStatus();
     }
 
     public Resp(ErrorCode errorCode, Object data){
@@ -43,6 +57,13 @@ public class Resp {
         this.code = ErrorCode.SUCCESS.getReasonCode();
         this.message = ErrorCode.SUCCESS.getReasonPhrase();
         this.httpStatus = ErrorCode.SUCCESS.getHttpStatus();
+        this.data = data;
+    }
+
+    public Resp(String message,Object data){
+        this.code = ErrorCode.SUCCESS.getReasonCode();
+        this.httpStatus = ErrorCode.SUCCESS.getHttpStatus();
+        this.message = message;
         this.data = data;
     }
 

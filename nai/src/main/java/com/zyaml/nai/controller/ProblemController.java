@@ -27,7 +27,7 @@ public class ProblemController {
      * @return
      */
     @GetMapping("/{pid}")
-    public Problem getByPid(@PathVariable String pid){
+    public Resp getByPid(@PathVariable String pid){
         log.info("=====> getByPid-api pid : " + pid);
         return problemService.getProblemByPid(pid);
     }
@@ -38,7 +38,7 @@ public class ProblemController {
      * @return
      */
     @GetMapping("/diffs/{pid}")
-    public List<Problem> getByPidAndDiff(@PathVariable String pid){
+    public Resp getByPidAndDiff(@PathVariable String pid){
         log.info("=====> getByPidAndDiff-api pid : " + pid);
         return problemService.getProblemsByPidAndDiff(pid);
     }
@@ -50,11 +50,9 @@ public class ProblemController {
      */
     @GetMapping("/name/{pid}")
     public Resp getTitleByPid(@PathVariable String pid){
+
         log.info("=====> getNameByPid-api pid : " + pid);
-        String nameByPid = problemService.getTitle(pid);
-        if(nameByPid==null){
-            return new Resp(ErrorCode.NULL,"节点不存在");
-        }
-        return new Resp(nameByPid);
+
+        return problemService.getTitle(pid);
     }
 }

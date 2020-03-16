@@ -1,5 +1,6 @@
 package com.zyaml.nai.service.neo;
 
+import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.repository.DiffCql;
@@ -17,7 +18,7 @@ import java.util.List;
  */
 @Service
 @Log4j2
-public class DiffService {
+public class DiffService implements BaseNeo4jService{
     @Autowired
     DiffCql diffCql;
 
@@ -26,9 +27,10 @@ public class DiffService {
      * @param diff 难度名
      * @return
      */
-    public List<Problem> getProblemsByDiff(String diff){
+    public Resp getProblemsByDiff(String diff){
         List<Problem> problemsByDiff = diffCql.getProblemsByDiff(diff);
-        return problemsByDiff;
+
+        return new Resp(problemsByDiff);
     }
 
     /**
@@ -36,10 +38,12 @@ public class DiffService {
      * @param diff 难度名
      * @return
      */
-    public int getCount(String diff){
+    public Resp getCount(String diff){
         log.debug("[getCount] diff -> " + diff);
+
         int count = diffCql.getCount(diff);
-        return count;
+
+        return new Resp(count);
     }
 
     /**
@@ -48,11 +52,14 @@ public class DiffService {
      * @param source 题库名称
      * @return 题目列表
      */
-    public List<ProblemVO> getDifAndSource(String dif,String source){
+    public Resp getDifAndSource(String dif,String source){
         log.debug("=====> [getDifAndSource] run");
+
         List<Problem> problems = diffCql.getByDifAndSource(dif, source);
+
         List<ProblemVO> problemVOS = DtoUtil.mapList(problems, ProblemVO.class);
-        return problemVOS;
+
+        return new Resp(problemVOS);
     }
 
 }

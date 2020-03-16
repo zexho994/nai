@@ -7,7 +7,9 @@ import org.springframework.data.neo4j.repository.config.EnableNeo4jRepositories;
 @SpringBootApplication
 @EnableNeo4jRepositories("com.zyaml.nai.repository")
 public class NaiApplication {
+
     public static void main(String[] args) {
         SpringApplication.run(NaiApplication.class, args);
     }
+
 }

@@ -1,5 +1,6 @@
 package com.zyaml.nai.service;
 
+import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.repository.DiffCql;
@@ -43,12 +44,11 @@ class DiffServiceTest {
 
     @Test
     void getDifAndSourceTest(){
-
         String dif1 = "普及/提高-";
         String source1 = "洛谷原创";
-        List<ProblemVO> byDifAndSource = diffService.getDifAndSource(dif1, source1);
-        Assert.assertNotNull(byDifAndSource);
 
+        Resp difAndSource = diffService.getDifAndSource(dif1, source1);
 
+        Assert.assertNotNull(difAndSource.getData());
     }
 }

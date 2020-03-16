@@ -8,6 +8,7 @@ import java.util.HashMap;
  * @Date: 2020-03-06 22:17
  */
 public final class ContionsDictionary {
+
     /**
      * 比较类型
      */
@@ -55,6 +56,13 @@ public final class ContionsDictionary {
     private static final String source1 =  "题库";
     private static final String source2 =  "来源";
 
+    /**
+     * 获取地区标签
+     */
+    private static final String region1 = "地区";
+    private static final String region2 = "地方";
+    private static final String region3 = "哪里";
+
 
     /**
      * 更具字符串匹配对于的条件类型
@@ -71,13 +79,16 @@ public final class ContionsDictionary {
             case diff:   return "dif";
             case name1:  return "name";
             case name2:  return "name";
-            case alg:    return "time";
+            case alg:    return "alg";
             case time1:  return "time";
             case time2:  return "time";
             case source1:return "source";
             case source2:return "source";
             case num1:   return "num";
             case num2:   return "num";
+            case region1:   return "region";
+            case region2:   return "region";
+            case region3:   return "region";
             default:     return "";
         }
     }

@@ -1,6 +1,7 @@
 package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.ErrorCode;
+import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.Exception.RestException;
 import com.zyaml.nai.comom.ContionsDictionary;
 import com.zyaml.nai.entry.dto.Words;
@@ -28,7 +29,6 @@ public class QAService {
     @Autowired
     private BaiDuAiService baiDuAiService;
 
-
     @Autowired
     MethodCall methodCall;
 
@@ -37,7 +37,7 @@ public class QAService {
      * @param msg
      * @return
      */
-    public Object qustion(String msg){
+    public Resp qustion(String msg){
         //分词结果
         JSONObject jsonObject = baiDuAiService.lexicalAnalysisCustom(msg);
 
@@ -45,7 +45,7 @@ public class QAService {
         Words<String,String> words = JsonUtil.getItemAndNe(jsonObject);
 
         //找到适配方法
-        Object call = methodCall.methodCall(words);
+        Resp call = methodCall.methodCall(words);
 
         return call;
     }

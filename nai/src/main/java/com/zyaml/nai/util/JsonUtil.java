@@ -1,15 +1,10 @@
 package com.zyaml.nai.util;
 
-import com.zyaml.nai.comom.ContionsDictionary;
 import com.zyaml.nai.entry.dto.Words;
 import lombok.extern.log4j.Log4j2;
 import org.json.JSONArray;
 import org.json.JSONObject;
-
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 /**
  * 解析json工具
