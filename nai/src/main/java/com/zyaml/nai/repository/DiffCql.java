@@ -20,7 +20,7 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
      * @return
      */
     @Query("match (d:Difficulty {difficultyString:$diff} )-[r:`难度`]->(p:Problem) return p limit 10")
-    List<Problem> getProblemsByDiff(String diff);
+    List<Problem> getProByDiff(String diff);
 
     /**
      * 获取指定难度的题目数量
@@ -39,7 +39,22 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
     @Query("match(dif:Difficulty{difficultyString:$dif})-[]-(p:Problem) return p limit 10\n" +
             "union\n" +
             "match(t:Types{tagString:$source})-[]-(p:Problem) return p limit 10")
-    List<Problem> getByDifAndSource(String dif,String source);
+    List<Problem> getProByDifAndSource(String dif,String source);
+
+    /**
+     * 查找和dif,alg都有关系的题目
+     * @param dif 难度名
+     * @param alg 算法名
+     * @param page 起始页
+     * @param size 页数量
+     * @return
+     */
+    @Query("" +
+            "match (d:Difficulty{difficultyString:$dif})-[]-(p:Problem) with p\n" +
+            "match (t:Tags{name:$alg})-[]-(p:Problem) \n" +
+            "return p skip $page limit $size" +
+            "")
+    List<Problem> getProByDifAndAlg(String dif,String alg,int page,int size);
 
 
 }

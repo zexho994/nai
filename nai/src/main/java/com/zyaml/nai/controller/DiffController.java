@@ -34,4 +34,13 @@ public class DiffController {
         return diffService.getProblemsByDiff(from.getDiff());
     }
 
+    /**
+     * 根据难度和算法获取题目
+     * @param from
+     * @return
+     */
+    @PostMapping("/alg")
+    public Resp getByDifAndAlg(@RequestBody DifFrom from){
+        return diffService.getProByDifAndAlg(from);
+    }
 }
