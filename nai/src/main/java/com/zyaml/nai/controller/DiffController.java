@@ -1,15 +1,13 @@
 package com.zyaml.nai.controller;
 
 import com.zyaml.nai.Exception.Resp;
+import com.zyaml.nai.entry.from.DifFrom;
 import com.zyaml.nai.entry.from.ProblemFrom;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.service.neo.DiffService;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +17,7 @@ import java.util.List;
  */
 @Log4j2
 @RestController
-@RequestMapping("api/diff")
+@RequestMapping("api/dif")
 public class DiffController {
 
     @Autowired
@@ -30,10 +28,9 @@ public class DiffController {
      * @param from
      * @return
      */
-    @PostMapping("/name")
+    @PostMapping
     public Resp getByDiff(@RequestBody ProblemFrom from){
-        log.info("=====> getByDiff-api");
-
+        log.info("=====> 根据难度名称获取所有题目");
         return diffService.getProblemsByDiff(from.getDiff());
     }
 
