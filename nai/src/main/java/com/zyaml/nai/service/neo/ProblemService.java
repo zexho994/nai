@@ -53,6 +53,10 @@ public class ProblemService implements BaseNeo4jService{
     private String matchPid(String pid){
         String pattern = "(p|P)\\d{4}";
 
+        if(Pattern.matches(pattern, pid)){
+            return pid.replace("p","P");
+        }
+
         throw new RestException(ErrorCode.PARAM_INVALID,"pid 格式有误");
     }
 
@@ -75,13 +79,9 @@ public class ProblemService implements BaseNeo4jService{
      */
     public Resp getDiffName(String pid){
         log.debug("=====>[知识问答 getDiffName]根据pid:"+pid+",获取题目难度");
-
         String s = matchPid(pid);
-
         Difficulty dif = problemCql.getDifByPid(s);
-
-
-        return new Resp(dif);
+        return new Resp(dif.getDifficultyString());
     }
 
     /**
@@ -116,7 +116,7 @@ public class ProblemService implements BaseNeo4jService{
             return new Resp(ErrorCode.NOT_FOUND,null);
         }
 
-        return new Resp(type);
+        return new Resp(type.getTagString());
     }
 
     /**
@@ -175,6 +175,22 @@ public class ProblemService implements BaseNeo4jService{
         }
 
         return new Resp(time.getName());
+    }
+
+    /**
+     * 根据pid,找到题目的来源
+     * @param pid
+     * @return
+     */
+    public Resp getOri(String pid){
+        String p = matchPid(pid);
+        Tags ori = problemCql.getOri(p);
+
+        if (ori == null || ori.getName() == null){
+            return new Resp("未找到数据",null);
+        }
+
+        return new Resp(ori.getName());
 
     }
 }

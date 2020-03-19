@@ -14,8 +14,10 @@ public @interface Mould {
     /**
      * 存储模板的格式信息
      * 例如 "PID+num+"
+     *
+     * 如果有多个符合的格式,格式为 @Mould(format={"format1","format2"})
      * @return
      */
-    String format();
+    String[] format();
 
 }

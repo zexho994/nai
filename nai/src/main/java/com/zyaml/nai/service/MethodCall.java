@@ -46,10 +46,13 @@ public class MethodCall{
                 if(declaredMethod.isAnnotationPresent(Mould.class)){
                     // 获取自定义注解对象
                     Mould methodAnno = declaredMethod.getAnnotation(Mould.class);
-                    if(methodAnno.format().equals(words.getFormat())){
-                        log.info("=====> methodCall.format:"+methodAnno.format());
-                        Resp invoke = (Resp) declaredMethod.invoke(this,words);
-                        return invoke;
+                    //遍历匹配 format[] 数组
+                    for(String format : methodAnno.format()){
+                        if(format.equals(words.getFormat())){
+                            log.info("=====> methodCall.format:"+methodAnno.format());
+                            Resp invoke = (Resp) declaredMethod.invoke(this,words);
+                            return invoke;
+                        }
                     }
                 }
             }
@@ -77,8 +80,8 @@ public class MethodCall{
     }
 
     @Mould(format = "PID+source+")
-    private Resp pidSource(Words words){
-        return problemService.getType((String) words.get("PID"));
+    private Resp pidSource(Words<String,String> words){
+        return problemService.getType(words.get("PID"));
     }
 
     @Mould(format = "PID+alg+")
@@ -96,68 +99,52 @@ public class MethodCall{
         return problemService.getRegion(words.get("PID"));
     }
 
-    
+    @Mould(format = "PID+ori+")
+    private Resp pidOri(Words<String,String> words){
+        return problemService.getOri(words.get("PID"));
+    }
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
 
-    @Mould(format = "DIF+")
+    @Mould(format = {"DIF+","DIF+dif+"})
     private Resp dif(Words<String,String> words){
         return diffService.getProblemsByDiff(words.get("DIF"));
     }
 
-    @Mould(format = "DIF+num+")
+    @Mould(format = {"DIF+num+","DIF+dif+num+"})
     private Resp difCount(Words<String,String> words){
         return diffService.getCount(words.get("DIF"));
     }
 
-    @Mould(format = "DIF+ORI+")
-    private Resp difSource1(Words<String,String> words){
+    @Mould(format = {"DIF+ORI+","DIF+dif+ORI+"})
+    private Resp difSource(Words<String,String> words){
         return diffService.getDifAndSource(words.get("DIF"),words.get("source"));
     }
 
-    @Mould(format = "DIF+dif+ORI+")
-    private Resp difSource2(Words<String,String> words){
-        return diffService.getDifAndSource(words.get("DIF"),words.get("source"));
-    }
-
-    @Mould(format = "DIF+ALG+")
-    private Resp difAlg1(Words<String,String> words){
-        return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
-    }
-    @Mould(format = "DIF+dif+ALG+")
-    private Resp difAlg2(Words<String,String> words){
+    @Mould(format = {"DIF+ALG+","DIF+dif+ALG+","ALG+DIF+","ALG+DIF+dif+"})
+    private Resp difAlg(Words<String,String> words){
         return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
     }
 
-    @Mould(format = "DIF+LOC+")
-    private Resp difReg1(Words<String,String> words){
+    @Mould(format = {"DIF+LOC+","DIF+dif+LOC+"})
+    private Resp difReg(Words<String,String> words){
         return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
     }
 
-    @Mould(format = "DIF+dif+LOC+")
-    private Resp difReg2(Words<String,String> words){
-        return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
-    }
-
-    @Mould(format = "DIF+TIME+")
-    private Resp difTime1(Words<String,String> words){
+    @Mould(format = {"DIF+TIME+","DIF+dif+TIME+"})
+    private Resp difTime(Words<String,String> words){
         return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
     }
 
-    @Mould(format = "DIF+dif+TIME+")
-    private Resp difTime2(Words<String,String> words){
-        return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
-    }
-
-    @Mould(format = "DIF+ORI+")
-    private Resp difOri1(Words<String,String> words){
+    @Mould(format = {"DIF+ORI+","DIF+dif+ORI+"})
+    private Resp difOri(Words<String,String> words){
         return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
     }
 
-    @Mould(format = "DIF+dif+ORI+")
-    private Resp difOri2(Words<String,String> words){
-        return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
-    }
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ALG Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
+
+
+
 
 
 }

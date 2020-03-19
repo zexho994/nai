@@ -1,7 +1,5 @@
 package com.zyaml.nai.comom;
 
-import java.util.HashMap;
-
 /**
  * 存储条件标签类型的词典
  * @Author: 994
@@ -53,8 +51,12 @@ public final class ContionsDictionary {
     /**
      * 获取题库标签
      */
-    private static final String source1 =  "题库";
-    private static final String source2 =  "来源";
+    private static final String source =  "题库";
+
+    /**
+     * 获取来源
+     */
+    private static final String ori =  "来源";
 
     /**
      * 获取地区标签
@@ -71,25 +73,25 @@ public final class ContionsDictionary {
      */
     public static String match(String name){
         switch (name){
-            case great:  return "great";
-            case less:   return "less";
-            case eq:     return "eq";
-            case same1:  return "same";
-            case same2:  return "same";
-            case diff:   return "dif";
-            case name1:  return "name";
-            case name2:  return "name";
-            case alg:    return "alg";
-            case time1:  return "time";
-            case time2:  return "time";
-            case source1:return "source";
-            case source2:return "source";
-            case num1:   return "num";
-            case num2:   return "num";
-            case region1:   return "region";
-            case region2:   return "region";
-            case region3:   return "region";
-            default:     return "";
+            case great   :   return "great";
+            case less    :   return "less";
+            case eq      :   return "eq";
+            case same1   :   return "same";
+            case same2   :   return "same";
+            case diff    :   return "dif";
+            case name1   :   return "name";
+            case name2   :   return "name";
+            case alg     :   return "alg";
+            case time1   :   return "time";
+            case time2   :   return "time";
+            case source  :   return "source";
+            case ori     :   return "ori";
+            case num1    :   return "num";
+            case num2    :   return "num";
+            case region1 :   return "region";
+            case region2 :   return "region";
+            case region3 :   return "region";
+            default      :   return "false";
         }
     }
 }

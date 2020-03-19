@@ -88,4 +88,13 @@ class ProblemServiceTest {
         Assert.assertNotNull(time.getData());
     }
 
+    @Test
+    void getOriTest(){
+        String pid = "P1023";
+        Resp ori = problemService.getOri(pid);
+        Assert.assertNotNull(ori);
+    }
+
+
+
 }

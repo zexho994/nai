@@ -30,6 +30,20 @@ public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
     @Query("match (t:Tags{type:'Algorithm'}) return t")
     List<Tags> getAll();
 
+    /**
+     * 匹配和算法和时间都有关系的节点
+     * @param alg  算法名称
+     * @param time 时间
+     * @param page 起始页
+     * @param size 页大小
+     * @return
+     */
+    @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:\"分治\"}) with p \n" +
+            "match (p:Problem) - [] - (t:Tags{type:\"Time\",name:\"2014\"}) " +
+            "return p skip $page*$size limit $size")
+    List<Problem> getProByAlgAndTime(String alg,String time,int page,int size);
+
+
 
 
 }

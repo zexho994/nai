@@ -1,9 +1,8 @@
 package com.zyaml.nai.service.neo;
 
+import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.repository.AlgorithmCql;
-import com.zyaml.nai.util.DtoUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,15 +20,33 @@ public class AlgorithmService implements BaseNeo4jService{
 
     /**
      * 根据算法获取题目列表
-     * @param alg
+     * @param alg 算法名称
      * @return
      */
-    public List<ProblemVO> getByAlg(String alg){
+    public Resp getByAlg(String alg){
         List<Problem> byAlg = algorithmCql.getByAlg(alg);
-        List<ProblemVO> problemVOS = DtoUtil.mapList(byAlg, ProblemVO.class);
-        return problemVOS;
+
+        if(byAlg == null || byAlg.size() < 1){
+            return new Resp(alg+"下暂时没有题目",null);
+        }
+
+        return new Resp(byAlg);
     }
 
+    /**
+     * 根据算法和时间获取题目
+     * @param alg 算法名称:"字符串"
+     * @param time 时间年份:"2010"
+     * @return
+     */
+    public Resp getProByAlgAndTime(String alg,String time){
 
+        List<Problem> problems = algorithmCql.getProByAlgAndTime(alg, time, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp(time+"年暂时没有"+alg+"类型的题");
+        }
+        return new Resp(problems);
+    }
 
 }

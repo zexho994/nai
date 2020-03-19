@@ -66,10 +66,28 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
     @Query("match (p:Problem{pid:$pid})-[]-(t:Tags{type:\"Algorithm\"}) return t ")
     List<Tags> getAlgByPid(String pid);
 
+    /**
+     * 匹配pid节点的省份节点
+     * @param pid
+     * @return
+     */
     @Query("MATCH (p:Problem{pid:$pid})-[]-(t:Tags{type:\"Region\"}) RETURN t")
     Tags getRegin(String pid);
 
+    /**
+     * 匹配pid节点的时间节点
+     * @param pid
+     * @return
+     */
     @Query("MATCH (p:Problem{pid:$pid})-[]-(t:Tags{type:\"Time\"}) RETURN t")
     Tags getTime(String pid);
+
+    /**
+     * 匹配pid节点的来源节点
+     * @param pid
+     * @return
+     */
+    @Query("MATCH (p:Problem{pid:$pid})-[]-(o:Tags{type:\"Origin\"}) RETURN o")
+    Tags getOri(String pid);
 
 }
