@@ -30,6 +30,10 @@ public class DiffService implements BaseNeo4jService{
     public Resp getProblemsByDiff(String diff){
         List<Problem> problemsByDiff = diffCql.getProByDiff(diff);
 
+        if(problemsByDiff == null || problemsByDiff.size() < 1){
+            return new Resp(diff+"下暂时没有题目",null);
+        }
+
         return new Resp(problemsByDiff);
     }
 
@@ -68,7 +72,6 @@ public class DiffService implements BaseNeo4jService{
      * @return
      */
     public Resp getProByDifAndAlg(DifFrom from){
-
         String dif = from.getDif();
         String alg = from.getAlg();
         int limit;
@@ -83,7 +86,7 @@ public class DiffService implements BaseNeo4jService{
         if(from.getPage() == null){
             page = 0;
         }else{
-            page = limit * from.getPage();
+            page = from.getPage();
         }
 
         List<Problem> proByDifAndAlg = diffCql.getProByDifAndAlg(dif, alg,page,limit);
@@ -95,6 +98,67 @@ public class DiffService implements BaseNeo4jService{
         return new Resp(proByDifAndAlg);
     }
 
+    /**
+     * 获取满足<难度>dif</难度>和<算法>alg</算法>的题目
+     * @param dif 难度名
+     * @param alg 算法名
+     * @return
+     */
+    public Resp getProByDifAndAlg(String dif,String alg){
+        List<Problem> proByDifAndAlg = diffCql.getProByDifAndAlg(dif, alg,0,15);
 
+        if(proByDifAndAlg == null || proByDifAndAlg.size() < 1){
+            return new Resp("没有同时满足"+dif+"和"+alg+"的题目",null);
+        }
+
+        return new Resp(proByDifAndAlg);
+    }
+
+    /**
+     * 根据难度和省份获取题目
+     *
+     * @param dif 难度名称
+     * @param reg 省份名称
+     * @return
+     *
+     * 默认返回前10个结果
+     */
+    public Resp getProByDifAndReg(String dif,String reg){
+
+        List<Problem> problems = diffCql.getProByDifAndReg(dif, reg, 0, 10);
+
+        if(problems == null || problems.size()<1 ){
+            return new Resp(reg+"目前没有"+dif+"的题",null);
+        }
+
+        return new Resp(problems);
+    }
+
+    /**
+     * 根据难度和出题时间获取题目
+     * @param dif
+     * @param time
+     * @return
+     */
+    public Resp getProByDifAndTime(String dif,String time){
+        List<Problem> problems = diffCql.getProByDifAndTime(dif, time, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp(time+"目前没有"+dif+"的题",null);
+        }
+
+        return new Resp(problems);
+    }
+
+
+    public Resp getProByDifAndOri(String dif,String ori){
+        List<Problem> problems = diffCql.getProByDifAndOri(dif,ori,0,10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp(ori+"目前没有"+dif+"的题",null);
+        }
+
+        return new Resp(problems);
+    }
 
 }

@@ -42,19 +42,56 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
     List<Problem> getProByDifAndSource(String dif,String source);
 
     /**
-     * 查找和dif,alg都有关系的题目
+     * 匹配和dif,alg都有关系的题目节点
      * @param dif 难度名
      * @param alg 算法名
      * @param page 起始页
      * @param size 页数量
      * @return
      */
-    @Query("" +
-            "match (d:Difficulty{difficultyString:$dif})-[]-(p:Problem) with p\n" +
+    @Query("match (d:Difficulty{difficultyString:$dif})-[]-(p:Problem) with p\n" +
             "match (t:Tags{name:$alg})-[]-(p:Problem) \n" +
-            "return p skip $page limit $size" +
-            "")
+            "return p skip $page*$size limit $size")
     List<Problem> getProByDifAndAlg(String dif,String alg,int page,int size);
 
+
+    /**
+     * 匹配和dif,reg有关系的题目节点
+     * @param dif 难度名
+     * @param reg 省份
+     * @param page 起始页
+     * @param size 页大小
+     * @return
+     */
+    @Query("match (d:Difficulty{difficultyString:$dif}) - [r] - (p:Problem) with p\n" +
+            "match (t:Tags{name:$reg})-[]-(p:Problem)\n" +
+            "return p skip $page*$size limit $size")
+    List<Problem> getProByDifAndReg(String dif,String reg,int page,int size);
+
+    /**
+     * 匹配和dif,time有关系的题目节点
+     * @param dif 难度名称
+     * @param time 出题时间
+     * @param page 起始页
+     * @param size 页大小
+     * @return
+     */
+    @Query("match (p:Problem) -[]-(d:Difficulty{difficultyString:$dif}) with p \n" +
+            "match (p:Problem) -[] -(t:Tags{type:'Time',name:$time})" +
+            "return p skip $size*$page limit $size")
+    List<Problem> getProByDifAndTime(String dif,String time,int page,int size);
+
+    /**
+     * 匹配和dif,ori有关系的题目节点
+     * @param dif 难度名称
+     * @param ori 来源名称
+     * @param page 起始页
+     * @param size 页大小
+     * @return
+     */
+    @Query("match (o:Tags{type:\"Origin\",name:$ori})-[]-(p:Problem) with p \n" +
+            "match (p:Problem) - [] -(d:Difficulty{difficultyString:$dif}) \n" +
+            "return  p skip $page*$size limit $size")
+    List<Problem> getProByDifAndOri(String dif,String ori,int page,int size);
 
 }

@@ -36,12 +36,6 @@ public class QAController {
 
         Resp res = qaService.qustion(qaFrom.getMsg());
 
-        //没有查询结果
-        if(res==null){
-            log.info("=====> QA 没有结果");
-            throw new RestException(ErrorCode.SYSTEM_FAIL,"没有数据");
-        }
-
         log.debug("=====> QA Success");
         //存在查询结果
         return res;

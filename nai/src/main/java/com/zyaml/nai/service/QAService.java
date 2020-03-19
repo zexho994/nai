@@ -47,6 +47,12 @@ public class QAService {
         //找到适配方法
         Resp call = methodCall.methodCall(words);
 
+        //没有查询结果
+        if(call==null){
+            log.info("=====> QA 没有结果");
+            return new Resp("我不太理解 (ಥ_ಥ)",null);
+        }
+
         return call;
     }
 

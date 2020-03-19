@@ -2,17 +2,13 @@ package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.dto.Words;
-import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.service.neo.DiffService;
 import com.zyaml.nai.service.neo.ProblemService;
 import com.zyaml.nai.util.Mould;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.lang.reflect.Method;
-import java.util.List;
 
 /**
  * @Author: 994
@@ -33,7 +29,7 @@ public class MethodCall{
      * <步骤>
      * 1. 匹配每个方法上的 mould 注解的 formal信息
      * 2. 找到对应的方法后调用接口
-     * </步骤>
+     *
      *
      * @param words
      * @return
@@ -62,6 +58,8 @@ public class MethodCall{
         }
         return null;
     }
+
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> PID Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
 
     @Mould(format = "PID+")
     private Resp pid(Words<String,String> words){
@@ -98,6 +96,15 @@ public class MethodCall{
         return problemService.getRegion(words.get("PID"));
     }
 
+    
+
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
+
+    @Mould(format = "DIF+")
+    private Resp dif(Words<String,String> words){
+        return diffService.getProblemsByDiff(words.get("DIF"));
+    }
+
     @Mould(format = "DIF+num+")
     private Resp difCount(Words<String,String> words){
         return diffService.getCount(words.get("DIF"));
@@ -111,6 +118,45 @@ public class MethodCall{
     @Mould(format = "DIF+dif+ORI+")
     private Resp difSource2(Words<String,String> words){
         return diffService.getDifAndSource(words.get("DIF"),words.get("source"));
+    }
+
+    @Mould(format = "DIF+ALG+")
+    private Resp difAlg1(Words<String,String> words){
+        return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
+    }
+    @Mould(format = "DIF+dif+ALG+")
+    private Resp difAlg2(Words<String,String> words){
+        return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
+    }
+
+    @Mould(format = "DIF+LOC+")
+    private Resp difReg1(Words<String,String> words){
+        return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
+    }
+
+    @Mould(format = "DIF+dif+LOC+")
+    private Resp difReg2(Words<String,String> words){
+        return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
+    }
+
+    @Mould(format = "DIF+TIME+")
+    private Resp difTime1(Words<String,String> words){
+        return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
+    }
+
+    @Mould(format = "DIF+dif+TIME+")
+    private Resp difTime2(Words<String,String> words){
+        return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
+    }
+
+    @Mould(format = "DIF+ORI+")
+    private Resp difOri1(Words<String,String> words){
+        return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
+    }
+
+    @Mould(format = "DIF+dif+ORI+")
+    private Resp difOri2(Words<String,String> words){
+        return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
     }
 
 
