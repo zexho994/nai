@@ -38,10 +38,16 @@ public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
      * @param size 页大小
      * @return
      */
-    @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:\"分治\"}) with p \n" +
-            "match (p:Problem) - [] - (t:Tags{type:\"Time\",name:\"2014\"}) " +
-            "return p skip $page*$size limit $size")
+    @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:$alg}) with p \n" +
+            "match (p:Problem) - [] - (t:Tags{type:\"Time\",name:$time}) " +
+            "return p skip $page*$size limit $size ")
     List<Problem> getProByAlgAndTime(String alg,String time,int page,int size);
+
+
+    @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:$alg}) with p \n" +
+            "match (p:Problem) - [] - (t:Tags{type:\"Origin\",name:$ori}) " +
+            "return p skip $page*$size limit $size")
+    List<Problem> getProByAlgAndOri(String alg,String ori,int page,int size);
 
 
 

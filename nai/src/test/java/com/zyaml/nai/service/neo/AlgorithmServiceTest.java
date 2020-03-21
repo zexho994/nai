@@ -20,6 +20,9 @@ class AlgorithmServiceTest {
 
     String alg1 = "排序";
     String time1 = "2014";
+    String ori = "COCI";
+    String alg2 = "计算几何";
+    String ori2 = "福建省历届夏令营";
 
     @Test
     void getByAlgTest() {
@@ -31,5 +34,11 @@ class AlgorithmServiceTest {
     void getProByAlgAndTimeTest() {
         Resp resp = algorithmService.getProByAlgAndTime(alg1, time1);
         Assert.assertNotNull(resp.getData());
+    }
+
+    @Test
+    void getProByAlgAndOriTest(){
+        Resp res = algorithmService.getProByAlgAndOri(alg2, ori2);
+        Assert.assertNotNull(res.getData());
     }
 }
