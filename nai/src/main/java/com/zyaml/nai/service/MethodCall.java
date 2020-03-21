@@ -2,10 +2,7 @@ package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.dto.Words;
-import com.zyaml.nai.service.neo.AlgorithmService;
-import com.zyaml.nai.service.neo.DiffService;
-import com.zyaml.nai.service.neo.ProblemService;
-import com.zyaml.nai.service.neo.TypeService;
+import com.zyaml.nai.service.neo.*;
 import com.zyaml.nai.util.Mould;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +27,9 @@ public class MethodCall{
 
     @Autowired
     private TypeService typeService;
+
+    @Autowired
+    private RegionService regionService;
 
     /**
      * 找到模板对应的方法
@@ -70,7 +70,7 @@ public class MethodCall{
         return null;
     }
 
-//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> PID Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<//
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> PID Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     @Mould(format = "PID+")
     private Resp pid(Words<String,String> words){
@@ -112,7 +112,7 @@ public class MethodCall{
         return problemService.getOri(words.get("PID"));
     }
 
-//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     @Mould(format = {
             "DIF+",
@@ -176,7 +176,7 @@ public class MethodCall{
         return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
     }
 
-//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ALG Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ALG Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     @Mould(format = "ALG+")
     private Resp alg(Words<String,String> words){
@@ -214,7 +214,7 @@ public class MethodCall{
         return algorithmService.getProByAlgAndSource(words.get("ALG"),words.get("TK"));
     }
 
-    //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Types Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Types Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     @Mould(format = {"TK+","TK+tk+"})
     private Resp type(Words<String,String> words){
@@ -234,6 +234,18 @@ public class MethodCall{
     @Mould(format = {"TK+TIME+","TK+tk+TIME+","TIME+TK+","TIME+TK+tk+"})
     private Resp typeTime(Words<String,String> words){
         return typeService.getByTypeAndTime(words.get("TK"),words.get("TIME"));
+    }
+
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Region Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Mould(format = "LOC+")
+    private Resp reg(Words<String,String> words){
+        return regionService.getByOri(words.get("LOC"));
+    }
+
+    @Mould(format = {"LOC+TIME+","TIME+LOC+"})
+    private Resp regTime(Words<String,String> words){
+        return regionService.getByOriAndTime(words.get("LOC"),words.get("TIME"));
     }
 
 }
