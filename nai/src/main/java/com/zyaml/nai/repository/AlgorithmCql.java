@@ -56,11 +56,27 @@ public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
             "return p skip $page*$size limit $size")
     List<Problem> getProByAlgAndOri(String alg,String ori,int page,int size);
 
+    /**
+     * 匹配与算法和省份有关系的题目节点
+     * @param alg
+     * @param reg
+     * @param page
+     * @param size
+     * @return
+     */
     @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:$alg}) with p \n" +
             "match (p:Problem) - [] - (t:Tags{type:\"Region\",name:$reg}) " +
             "return p skip $page*$size limit $size")
     List<Problem> getProByAlgAndReg(String alg,String reg,int page,int size);
 
+    /**
+     * 匹配与算法和题库有关联的题目节点
+     * @param alg
+     * @param sou
+     * @param page
+     * @param size
+     * @return
+     */
     @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:$alg}) with p \n" +
             "match (p:Problem) - [] - (t:Types{tagString:$sou}) " +
             "return p skip $page*$size limit $size")

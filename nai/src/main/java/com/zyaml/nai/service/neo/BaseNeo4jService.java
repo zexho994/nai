@@ -5,4 +5,5 @@ package com.zyaml.nai.service.neo;
  * @Date: 2020-03-15 13:56
  */
 public interface BaseNeo4jService {
+
 }

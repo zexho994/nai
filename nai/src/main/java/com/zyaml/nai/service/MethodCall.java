@@ -5,6 +5,7 @@ import com.zyaml.nai.entry.dto.Words;
 import com.zyaml.nai.service.neo.AlgorithmService;
 import com.zyaml.nai.service.neo.DiffService;
 import com.zyaml.nai.service.neo.ProblemService;
+import com.zyaml.nai.service.neo.TypeService;
 import com.zyaml.nai.util.Mould;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class MethodCall{
 
     @Autowired
     private AlgorithmService algorithmService;
+
+    @Autowired
+    private TypeService typeService;
 
     /**
      * 找到模板对应的方法
@@ -112,21 +116,28 @@ public class MethodCall{
 
     @Mould(format = {
             "DIF+",
-            "DIF+dif+" })
+            "DIF+dif+"
+    })
     private Resp dif(Words<String,String> words){
         return diffService.getProblemsByDiff(words.get("DIF"));
     }
 
     @Mould(format = {
             "DIF+num+",
-            "DIF+dif+num+" })
+            "DIF+dif+num+"
+    })
     private Resp difCount(Words<String,String> words){
         return diffService.getCount(words.get("DIF"));
     }
 
     @Mould(format = {
             "DIF+TK+",
-            "DIF+dif+TK+" })
+            "DIF+dif+TK+",
+            "TK+DIF+",
+            "TK+DIF+dif+",
+            "TK+tk+DIF+",
+            "TK+tk+DIF+dif+"
+    })
     private Resp difSource(Words<String,String> words){
         return diffService.getDifAndSource(words.get("DIF"),words.get("TK"));
     }
@@ -135,28 +146,32 @@ public class MethodCall{
             "DIF+ALG+",
             "DIF+dif+ALG+",
             "ALG+DIF+",
-            "ALG+DIF+dif+" })
+            "ALG+DIF+dif+"
+    })
     private Resp difAlg(Words<String,String> words){
         return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
     }
 
     @Mould(format = {
             "DIF+LOC+",
-            "DIF+dif+LOC+" })
+            "DIF+dif+LOC+"
+    })
     private Resp difReg(Words<String,String> words){
         return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
     }
 
     @Mould(format = {
             "DIF+TIME+",
-            "DIF+dif+TIME+" })
+            "DIF+dif+TIME+"
+    })
     private Resp difTime(Words<String,String> words){
         return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
     }
 
     @Mould(format = {
             "DIF+ORI+",
-            "DIF+dif+ORI+" })
+            "DIF+dif+ORI+"
+    })
     private Resp difOri(Words<String,String> words){
         return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
     }
@@ -177,23 +192,48 @@ public class MethodCall{
 
     @Mould(format = {
             "ALG+ORI+",
-            "ORI+ALG+"})
+            "ORI+ALG+"
+    })
     private Resp algOri(Words<String,String> words){
         return algorithmService.getProByAlgAndOri(words.get("ALG"),words.get("ORI"));
     }
 
     @Mould(format = {
             "ALG+LOC+",
-            "LOC+ALG+" })
+            "LOC+ALG+"
+    })
     private Resp algReg(Words<String,String> words){
         return algorithmService.getProByAlgAndReg(words.get("ALG"),words.get("LOC"));
     }
 
     @Mould(format = {
             "ALG+TK+",
-            "TK+ALG+" })
+            "TK+ALG+"
+    })
     private Resp algSource(Words<String,String> words){
         return algorithmService.getProByAlgAndSource(words.get("ALG"),words.get("TK"));
+    }
+
+    //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Types Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
+
+    @Mould(format = {"TK+","TK+tk+"})
+    private Resp type(Words<String,String> words){
+        return typeService.getByType(words.get("TK"));
+    }
+
+    @Mould(format = {"TK+ORI+","TK+tk+ORI+","ORI+TK+tk","ORI+TK+"})
+    private Resp typeOri(Words<String,String> words){
+        return typeService.getByTypeAndOri(words.get("TK"),words.get("ORI"));
+    }
+
+    @Mould(format = {"TK+LOC+","TK+tk+LOC+","LOC+TK+tk+","LOC+TK+"})
+    private Resp typeLoc(Words<String,String> words){
+        return typeService.getByTypeAndLoc(words.get("TK"),words.get("LOC"));
+    }
+
+    @Mould(format = {"TK+TIME+","TK+tk+TIME+","TIME+TK+","TIME+TK+tk+"})
+    private Resp typeTime(Words<String,String> words){
+        return typeService.getByTypeAndTime(words.get("TK"),words.get("TIME"));
     }
 
 }
