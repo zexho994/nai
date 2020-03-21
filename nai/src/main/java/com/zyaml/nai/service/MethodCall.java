@@ -2,6 +2,7 @@ package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.dto.Words;
+import com.zyaml.nai.service.neo.AlgorithmService;
 import com.zyaml.nai.service.neo.DiffService;
 import com.zyaml.nai.service.neo.ProblemService;
 import com.zyaml.nai.util.Mould;
@@ -22,6 +23,9 @@ public class MethodCall{
 
     @Autowired
     private DiffService diffService;
+
+    @Autowired
+    private AlgorithmService algorithmService;
 
     /**
      * 找到模板对应的方法
@@ -142,7 +146,10 @@ public class MethodCall{
     }
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ALG Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< //
-
+    @Mould(format = "ALG+")
+    private Resp alg(Words<String,String> words){
+        return algorithmService.getByAlg(words.get("ALG"));
+    }
 
 
 

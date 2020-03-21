@@ -1,0 +1,2500 @@
+超级玛丽游戏
+A+B Problem
+过河卒
+铺地毯
+方格取数
+矩阵取数游戏
+传纸条
+独木桥
+三连击
+阶乘之和
+幂次方
+车站
+拼数
+进制位
+Cantor表
+回文数
+旅行家的预算
+进制转换
+乘积最大
+单词接龙
+导弹拦截
+邮票面值设计
+计算器的改良  
+税收与补贴问题
+一元三次方程求解
+数的划分
+统计单词个数
+Car的旅行路线
+数的计算
+最大公约数和最小公倍数问题
+求先序排列
+均分纸牌
+字串变换
+自由落体
+矩形覆盖
+级数求和
+选数
+产生数
+神经网络
+侦探推理
+加分二叉树
+传染病控制
+乒乓球
+数字游戏
+栈
+麦森数
+陶陶摘苹果
+校门外的树
+采药
+装箱问题
+循环
+谁拿了最多奖学金
+过河
+篝火晚会
+等价表达式
+ISBN号码
+排座椅
+传球游戏
+立体图
+明明的随机数
+开心的金明
+Jam的计数法
+数列
+能量项链
+金明的预算方案
+作业调度方案
+2^k进制数
+多项式输出
+分数线划定
+细胞分裂
+道路游戏
+潜伏者
+Hankson 的趣味题
+最优贸易
+靶形数独 
+质因数分解
+寻宝
+摆花
+文化之旅
+Vigenère 密码
+国王游戏
+开车旅行
+同余方程
+借教室
+疫情控制
+不高兴的津津
+花生采摘
+FBI树
+火星人
+津津的储蓄计划
+合并果子 / [USACO06NOV]Fence Repair G
+合唱队形
+虫食算
+奖学金
+纪念品分组
+守望者的逃离
+Hanoi 双塔问题
+统计数字
+字符串的展开
+树网的核
+高低位交换
+单词方阵
+A-B 数对
+书本整理
+生日
+平台
+删数问题
+[BJWC2008]雷涛的小猫
+低价购买
+学生分组
+[ZJOI2007]报表统计
+修复公路
+波浪数
+杂务
+“非常男女”计划
+最大子段和
+车厢重组
+[NOI2016]优秀的拆分 
+[USACO06FEB]Backward Digit Sums G/S
+灾后重建
+小木棍 ［数据加强版］
+环状最大两段子段和
+最大子树和
+取数游戏
+文件压缩
+笨小猴
+机器人搬重物
+词链
+[HNOI2001]求正整数
+[ZJOI2007]矩阵游戏
+红牌
+[ZJOI2007]时态同步
+数字生成游戏
+教主的花园
+[USACO3.2]阶乘问题
+奇怪的电梯
+迎接仪式
+旅行计划
+第k小整数
+单向双轨道
+相似基因
+01迷宫
+轰炸
+进制转换
+最短路计数
+约瑟夫
+硬币翻转
+连续自然数和
+拱猪计分
+火柴棒等式
+Peter的烟
+子数整数
+欢乐的跳
+点和线
+奶牛分厩
+双栈排序
+垃圾陷阱
+组合的输出
+导弹拦截
+排行榜
+队列安排
+开灯
+填涂颜色
+银行贷款
+小A点菜
+日志分析
+打保龄球
+刷题
+中位数
+[ZJOI2007]棋盘制作
+兔八哥与猎人
+售货员的难题
+安全逃离
+[NOI2016]网格
+打砖块
+表达式的转换
+路径计数2
+【模板】快速排序
+到天宫做客
+数字统计
+驾车旅游
+数列分段Section I
+数列分段 Section II
+多边形的面积
+高手之在一起
+绘制二叉树
+玛丽卡
+3D模型
+PASTE
+`SEARCH`
+接水问题
+矩形
+台阶问题
+洛谷团队训练VS传统团队训练
+买礼物
+口袋的天空
+[NOI2002]银河英雄传说
+[JSOI2008]星球大战
+[JSOI2008]最大数
+三国游戏
+[USACO1.1]你的飞碟在这儿Your Ride Is Here
+[USACO1.1]贪婪的送礼者Greedy Gift Givers
+[USACO1.1]黑色星期五Friday the Thirteenth
+[USACO1.1]坏掉的项链Broken Necklace
+[USACO1.2]挤牛奶Milking Cows
+[USACO1.2]方块转换 Transformations
+[USACO1.2]回文平方数 Palindromic Squares
+[USACO1.2]双重回文数 Dual Palindromes
+[USACO1.3]混合牛奶 Mixing Milk
+[USACO1.3]修理牛棚 Barn Repair
+[USACO1.3]最长的回文 Calf Flac
+[USACO1.3]牛式 Prime Cryptarithm 
+[USACO1.4]铺放矩形块 Packing Rectangles
+[USACO1.4][IOI1994]时钟 The Clocks
+[USACO1.4]等差数列 Arithmetic Progressions
+[USACO1.4]母亲的牛奶 Mother's Milk
+[USACO1.5][IOI1994]数字三角形 Number Triangles
+[USACO1.5]回文质数 Prime Palindromes
+[USACO1.5]特殊的质数肋骨 Superprime Rib
+[USACO1.5]八皇后 Checker Challenge
+关路灯 
+最多因子数
+三角形
+排队接水
+[NOI2013]向量内积
+黑白棋游戏
+【模板】快速幂||取余运算
+[JSOI2008]完美的对称
+地毯填补问题
+遍历问题
+智力大冲浪
+教辅的组成
+[NOI2013]树的计数
+木棍加工
+小A的口头禅
+血缘关系
+算24点
+冗余依赖
+走迷宫
+计数器
+诸侯安置
+括号序列
+新汉诺塔
+排序集合
+[NOI2000]青蛙过河
+电话号码
+编码
+取火柴游戏
+加工生产调度
+最大乘积
+种树
+餐巾计划问题
+马拉松接力赛
+线性存储问题
+扇区填数
+数楼梯
+显示图像
+平面上的最接近点对
+小车问题
+黑白棋子的移动
+工程规划
+服务器储存信息问题
+间谍网络
+宫廷守卫
+K-联赛
+公路修建
+速度限制
+排序二叉树
+树的重量
+信号放大器
+“访问”美术馆
+【深基9.例1】选举学生会
+重建道路
+有线电视网
+魔术数字游戏
+魔板
+校门外的树（增强版）
+拼字游戏
+单词游戏
+字串距离
+尼克的任务
+书的复制
+多米诺骨牌
+平板涂色
+三角形牧场
+队员分组
+两数之和
+盒子与球
+取数游戏II
+磁盘碎片整理
+欧几里德的游戏
+[SHOI2002]百事世界杯之旅
+倒酒
+班级聚会
+高手去散步
+[TJOI2011]书架
+奶牛的耳语
+[国家集训队]单选错位
+最接近的分数
+切孔机
+城市街道交通费系统
+魔鬼之城
+可见矩形
+A*B Problem
+哥德巴赫猜想
+新二叉树
+斐波那契公约数
+数字反转
+统计单词数
+瑞士轮
+表达式的值
+选择客栈
+Mayan游戏
+计算系数
+聪明的质监员
+观光公交
+丢瓶盖（重题 P1824）
+低洼地
+积水面积
+压缩技术
+压缩技术（续集版）
+单词覆盖还原
+logo语言
+删数问题
+矩形分割
+雷达安装
+足球
+数列排序
+生活大爆炸版石头剪刀布
+数列【征集 SPJ】
+封锁阳光大学
+海战
+血色先锋队
+瑞瑞的木棍
+瑞瑞的木板
+[NOI2013]小Q的修炼
+最佳课题选择
+[JSOI2004]平衡点 / 吊打XXX
+末日的传说 
+[USACO09OCT]Heat Wave G
+兽径管理
+无序字母对
+请柬
+地震逃生
+[USACO4.4]追查坏牛奶Pollutant Control
+[USACO5.4]奶牛的电信Telecowmunication
+电车
+排序
+Couple number
+广义斐波那契数列
+车的放置
+联合权值
+没有上司的舞会
+[USACO08JAN]Running S
+房间最短路问题
+神秘大三角
+数列的整除性
+花园
+扑克牌
+租用游艇
+[USACO07MAR]Gold Balanced Lineup G
+小M的作物
+兔子数
+幻象迷宫
+医院设置
+WJMZBMR打osu! / Easy
+【初赛】洛谷初赛模拟赛II 普及组pas【题目已隐藏】
+蚂蚁
+工艺 /【模板】最小表示法
+矩形
+Charlie的云笔记序列
+NOI元丹
+又是毕业季I
+小a和uim之大逃离
+进攻幽暗城
+小猫
+机器工厂
+[TJOI2011]树的序
+油滴扩展
+八数码难题
+T型骨牌
+单词背诵
+楼房
+高级打字机
+幸运数与排列
+密令
+座位安排
+最大正方形
+算式
+一个关于序列的游戏
+公约数的和
+方阵安排
+取数
+动态逆序对(与P3157重题)
+山上的国度
+会议
+营救
+[NOI2013]矩阵游戏
+[NOI2013]书法家
+[NOI2013]快餐店
+塔【错题已隐藏】
+城市
+酒店之王
+[AHOI2005]约数研究
+平均数
+苦恼的小明
+方格填数
+[国家集训队]稳定婚姻
+互质数列sequence
+骰子
+子序列
+树
+经营与开发
+坚果保龄球
+又是毕业季II
+拆分数列
+攻击火星
+烹调方案
+[TJOI2011]构造矩阵
+寻找段落
+最长连号
+小玉买文具
+小玉家的电费
+小玉在游泳
+小鱼的航程(改进版)
+小鱼的游泳时间
+小鱼会有危险吗
+小鱼的数字游戏
+小鱼比可爱
+平面最近点对（加强版）
+序列取数
+找出伪币
+倒水问题
+吃奶酪
+[SHOI2002]滑雪
+回文字串
+棋盘分割
+[HNOI2004]敲砖块
+无聊的数列
+【模板】最长公共子序列
+求m区间内的最小值
+砝码称重
+铁球落地
+马的遍历
+[USACO1.3]虫洞 wormhole
+[Violet]樱花
+[HNOI2008]Cards
+[NOI2010]能量采集
+【初赛】洛谷初赛模拟赛II 提高组pas【题目已隐藏】
+后缀表达式
+[HAOI2008]硬币购物
+求细胞数量
+[USACO03FALL]Beauty Contest G /【模板】旋转卡壳
+城市环路
+圣诞夜的极光
+搭配购买
+Monkey King
+[USACO2.1]城堡 The Castle
+[USACO2.1]顺序的分数 Ordered Fractions
+[USACO2.1]三值的排序 Sorting a Three-Valued Sequence
+[USACO2.1]健康的荷斯坦奶牛 Healthy Holsteins 
+[USACO2.1]海明码 Hamming Codes
+通往奥格瑞玛的道路
+[POI2002][HAOI2007]反素数
+Function
+[USACO2.2]序言页码 Preface Numbering
+[USACO2.2]集合 Subset Sums
+[USACO2.2]循环数 Runaround Numbers
+[USACO2.2]派对灯 Party Lamps
+找筷子
+[USACO2.3]最长前缀 Longest Prefix
+方差
+[USACO2.3]奶牛家谱 Cow Pedigrees
+[USACO2.3]零的数列 Zero Sum
+[USACO2.3]Money System / [USACO07OCT]Cow Cash G
+[USACO2.3]控制公司 Controlling Companies
+休息中的小呆
+[NOI2008]假面舞会
+陶陶摘苹果（升级版）
+宿舍里的故事之五子棋
+A/B Problem
+魔族密码
+Cantor表（升级版）
+序列变换
+种树
+火枪打怪
+[NOI2004]郁闷的出纳员
+失落的成绩单
+肥猫的游戏
+猫狗大战
+买蛋糕
+集合位置 
+猩猩散步
+分梨子 
+[国家集训队]小Z的袜子
+【模板】中国剩余定理(CRT)/曹冲养猪
+火烧赤壁
+木牛流马
+南蛮图腾
+[CTSC2000]公路巡逻
+丘比特的烦恼
+[国家集训队]Tree II
+窗口的星星
+鬼子进村
+积木城堡
+[国家集训队]旅游
+拯救oibh总部
+NASA的食物计划
+Likecloud-吃、吃、吃
+找啊找啊找GF
+精卫填海
+超长数字串
+伊甸园日历游戏　
+绕钉子的长绳子
+引水入城
+旅行
+青蛙的约会
+高精求小数幂
+[USACO2.4]两只塔姆沃斯牛 The Tamworth Two
+[USACO2.4]穿越栅栏 Overfencing
+因式分解
+求逆序对
+[USACO2.4]牛的旅行 Cow Tours
+旅行商简化版
+十字绣
+关押罪犯
+[NOI2003]智破连环阵
+[国家集训队]矩阵乘法
+切蛋糕
+[USACO2.4]回家 Bessie Come Home
+[USACO2.4]分数化小数 Fractions to Decimals
+I Hate It
+卡布列克圆舞曲　
+可怜的狗狗
+不高兴的津津（升级版）
+[USACO08MAR]Cow Travelling S
+村村通
+弹珠
+迎春舞会之数字舞蹈
+[TJOI2011]01矩阵
+机器翻译
+乌龟棋
+包裹快递
+【初赛】提高组2012【题目已隐藏】
+【初赛】普及组2012【题目已隐藏】
+【初赛】提高组2011【题目已隐藏】
+[USACO3.1]最短网络 Agri-Net
+[USACO05MAR]Out of Hay S
+棋盘问题
+棋盘问题（2）
+[USACO08OCT]Watering Hole G
+亲戚
+[APIO2012]派遣
+数字反转（升级版）
+梦中的统计
+尴尬的数字
+幸福的路
+Kruscal的加法
+色板游戏
+运动员最佳匹配问题
+[USACO5.2]蜗牛的旅行Snail Trails
+[USACO12JAN]Mountain Climbing S
+还是N皇后
+玩具谜题
+膜拜
+牛宫
+加等式
+统计天数
+赛跑
+Generic Cow Protests
+KC喝咖啡
+眼红的Medusa
+计算分数
+栈的操作
+超级数
+正误问题
+最小花费
+切绳子
+奶牛浴场
+哥德巴赫猜想（升级版）
+yyy loves Easter_Egg I
+A+B Problem（升级版）
+倒水
+魔法照片
+魔杖
+魔法阵
+四方定理
+[NOI2016]循环之美
+[USACO07OPEN]Catch That Cow S
+泥泞路
+失踪的7
+阶乘数码
+互质
+因子和
+护卫队
+信封问题
+[USACO10OCT]Lake Counting S
+语句解析
+垂直柱状图
+结算日
+天天爱跑步
+A+B Problem（高精）
+Sramoc问题
+斯诺登的密码
+B进制星球
+迷宫
+[USACO07FEB]Lilypad Pond G
+[USACO09FEB]Fair Shuttle G
+路径统计
+最小回文数
+鸿山洞的灯
+循环的数字
+【初赛】洛谷初赛模拟赛I【题目已隐藏】
+跑路
+爱与愁的心痛
+西游记公司
+疯狂的采药
+爱与愁的一千个伤心的理由
+三连击（升级版）
+解一元二次方程的烦恼
+漂亮字串
+集合
+释放囚犯
+[CEOI2007]树的匹配Treasury
+单词缩写
+求和
+象棋比赛
+[CQOI2009]中位数
+合并序列
+邮递员送信
+求和
+序列合并
+点的移动
+二进制
+禽兽的传染病
+跳跃
+Einstein学画画
+三元上升子序列
+逛画展
+【初赛】普及组2011【题目已隐藏】
+[SCOI2010]连续攻击游戏
+[SCOI2010]生成字符串
+规划
+完美数
+跳马问题
+序列
+[国家集训队]happiness
+锁
+看守
+[USACO07OCT]Obstacle Course S
+田忌赛马
+塔
+圆
+猴子 
+OSU!
+小朋友的球
+炸铁路
+选书
+购物
+[国家集训队]拉拉队排练
+数位平方和
+扩散
+数7
+山
+每日打卡心情好
+正方形计数
+前缀单词
+数列
+【初赛】普及组2010【题目已隐藏】
+【初赛】提高组2010【题目已隐藏】
+【初赛】普及组2009【题目已隐藏】
+【初赛】提高组2009【题目已隐藏】
+【初赛】普及组2008【题目已隐藏】
+【初赛】提高组2008【题目已隐藏】
+【初赛】普及组2007【题目已隐藏】
+【初赛】提高组2007【题目已隐藏】
+【初赛】普及组2006【题目已隐藏】
+【初赛】提高组2006【题目已隐藏】
+烦恼的高考志愿
+神奇的四次方数
+奇怪的分组
+最大正方形II
+过家家
+入门
+考验
+游览
+挑战
+机器人小Q
+新单词接龙问题
+方程求解
+贪婪的Copy
+有重复元素的排列问题
+部落卫队
+【初赛】普及组2005【题目已隐藏】
+【初赛】提高组2005【题目已隐藏】
+【初赛】普及组2004【题目已隐藏】
+【初赛】提高组2004【题目已隐藏】
+【初赛】普及组2003（pascal）【题目已隐藏】
+【初赛】提高组2003（pascal）【题目已隐藏】
+【初赛】普及组2002（pascal）【题目已隐藏】
+【初赛】提高组2002（pascal）【题目已隐藏】
+【初赛】提高组2001（pascal）【题目已隐藏】
+突击考试
+那个什么密码2
+寻找最优美做题曲线
+爱与愁过火
+全排列问题
+刷题比赛
+天然气井
+[USACO5.5]隐藏口令Hidden Password
+地铁涨价
+【初赛】2013信息学竞赛初赛模拟试题(一)（pascal）【题目已隐藏】
+[NOI2016]区间
+麦当劳叔叔的难题
+切蛋糕
+[USACO16DEC]Lots of Triangles P
+双调序列
+钓鱼
+图形复原
+最大加权矩形
+月落乌啼算钱
+[NOI2016]国王饮水记
+矩阵 II
+高手过愚人节
+东风谷早苗
+琪露诺
+上白泽慧音
+计算π
+[PA2014]Parking
+计算e
+最小密度路径
+[NOI1999]生日蛋糕
+[TJOI2011]序列
+DVD服务请求
+最大约数和
+字母迷宫
+创意吃鱼法
+[NOI2016]旷野大计算
+洛谷的文件夹
+表达式括号匹配
+Diamond A&B(1)
+Diamond A&B(2)
+最小圆覆盖
+矩阵 III
+采购特价商品
+礼品配对包装
+离开中山路
+好奇怪的游戏
+H数
+【初赛】2013noip初赛模拟试题(二)(提高组pascal)【题目已隐藏】
+出栈序列
+贪吃虫
+点菜
+【初赛】2013noip初赛模拟试题(二)(普及组pascal)【题目已隐藏】
+球迷购票问题
+斐波那契的拆分
+[NOI2009]描边
+通天之分组背包
+[NOI2009]管道取珠
+通天之潜水
+通天之汉诺塔
+正方形
+偶数
+蓄水池
+翻转游戏 (加强版)
+手机
+液体滴落
+家族
+天路
+淘汰赛制
+万能的OIH搜索
+方程的解
+[ZJOI2006]物流运输
+符文之语
+最接近神的人
+【重题待添加】
+宝物筛选
+帮助
+万圣节后的早晨
+魔鬼杀手
+染色的立方体
+宇宙总统
+旅行商的背包
+海滩防御
+数独
+漂亮的绝杀
+帮贡排序
+【初赛】普及组2013【题目已隐藏】
+【初赛】提高组2013【题目已隐藏】
+【Mc生存】插火把
+矩形分割
+[国家集训队]人员雇佣
+[国家集训队]种树
+跑步
+装备运输
+无穷的序列
+汤姆斯的天堂梦
+克鲁斯的加减法
+小明搬家
+数列
+software
+黑匣子
+5倍经验日
+凌乱的yyy / 线段覆盖
+【保留题目】
+关灯
+跑步
+最长路
+单词分类
+过河问题
+集合分组
+最短路
+区间运算
+拯救小tim
+数的序号
+蠕虫游戏
+忠诚
+棋盘染色
+电影投票
+公共子序列
+寻找AP数【重题已隐藏】
+[USACO07FEB]Silver Cow Party S
+魔法指纹
+[COI2007] Patrik 音乐会的等待
+进击的奶牛
+[USACO11OPEN]Corn Maze S
+猴子选大王数据再加强版
+[USACO3.4]美国血统 American Heritage
+[USACO3.2]香甜的黄油 Sweet Butter
+[国家集训队]Crash的数字表格 / JZPTAB
+轰炸III
+杠杆数
+A+B Problem（再升级）
+樱花
+速算游戏
+素数密度
+数页码
+单人纸牌
+三子棋I
+Play with Power
+Color the Axis
+[JSOI2007]重要的城市
+[USACO05NOV]奶牛玩杂技
+奶牛晒衣服
+阅览室
+影像之结构化特征
+游戏
+轰炸II
+[USACO12OPEN]Bookshelf G
+[USACO12MAR]Tractor S
+换教室
+好朋友
+跳跳棋
+投资的最大效益
+花店橱窗布置
+榨取kkksc03
+[USACO5.5]矩形周长Picture
+质数取石子
+多人背包
+不听话的机器人
+新魔法药水
+星之器
+输油管道问题
+独眼兔
+[NOI2009]二叉查找树
+A % B Problem
+编号
+【Mc生存】经验值
+饥饿的奶牛
+愚蠢的组合数
+公交车
+对撞机
+回文串计数
+砍树
+快速求和
+佳佳的魔法药水
+开灯
+[HAOI2012]音量调节
+舞蹈课
+[USACO06NOV]Corn Fields G
+[NOI1995]石子合并
+绳子对折
+接力赛跑
+函数
+[USACO12FEB]Overplanting S
+Moo
+滑动窗口 /【模板】单调队列
+乘积最大3
+三角函数
+士兵站队
+gcd区间
+疯狂LCM
+[BOI2003]团伙
+山峰暸望
+[USACO4.2]完美的牛栏The Perfect Stall
+数字序列
+[SCOI2005]互不侵犯
+电梯里的爱情	
+缘分计算
+魔法物品
+自我数
+发射站
+刺杀大使
+[国家集训队]数颜色 / 维护队列
+天际线
+堆放货物
+凯撒密码
+设计道路
+逆序对
+买铅笔
+L国的战斗之间谍
+L 国的战斗之排兵布阵
+[NOI2009]诗人小G
+L国的战斗之伞兵
+小书童——密码
+[NOI2010]成长快乐
+小书童——蚂蚁大战
+三子棋II
+保龄球
+【模板】A*B Problem升级版（FFT快速傅里叶）
+成功密码
+赌博游戏
+女仆咖啡厅桌游吧
+【深基9.例4】求第 k 小的数
+万花丛中番外之HR家的海豹（误）篇【数据损坏】
+最大划分乘积
+小书童——刷题大军
+防护伞
+外星密码
+迷之阶梯
+[USACO3.3]亚瑟王的宫殿
+套利
+A+B  A-B  A*B  A/B A%B Problem
+[NOI2010]旅行路线
+封印
+[国家集训队]圈地计划
+水晶灯火灵
+[USACO10MAR]Barn Allocation G
+[USACO09NOV]Job Hunt S
+【模板】矩阵加速（数列）
+Reversible Number
+飞扬的小鸟 
+词编码
+LocalMaxima
+最长括号匹配
+无边的网格
+Olympic
+【重题待添加】
+[USACO08JAN]Telephone Lines S
+[NOI2001]聪明的打字员
+长方形
+收费站【重题已隐藏，请做 P1462】
+火星上的加法运算
+易语言
+[NOI2010]航空管制
+[NOI2015]程序自动分析
+Sum
+口算练习题
+上学路线
+遗址
+郁闷的记者
+最轻的天平
+斐波那契数列
+[NOI2009]变换序列
+【mc生存】卖东西
+转圈游戏
+火柴排队
+货车运输
+美元汇率
+积木大赛
+花匠
+[NOI2011]兔兔与蛋蛋游戏
+[SDOI2009]HH的项链
+[NOI2011]NOI 嘉年华
+基因聚合
+[国家集训队]排队
+鸡蛋饼
+出租车拼车
+集合
+华容道 
+计数问题
+表达式求值 
+小朋友的数字
+车站分级 
+[SDOI2008]烧水问题
+[USACO07OPEN]翻转棋
+元旦晚会
+摇钱树
+火炬
+无向图三元环计数
+覆盖墙壁
+无线通讯网
+不想兜圈的老爷爷
+小K的农场
+有机物燃烧
+[NOI2011]智能车比赛
+约瑟夫问题
+faebdc的烦恼
+盒子与珠子【错题已隐藏】
+高维正方体
+拯救世界
+硬币的面值
+消息扩散
+平板
+领地选择
+A/B Problem II
+赵神牛的游戏
+魔方
+大朋友的数字
+跑步
+回文日期
+计算电压
+拯救世界2
+无线电测向
+[CTSC1997]选课
+二叉苹果树
+战略游戏
+[USACO09DEC]Dizzy Cows G
+消息传递
+脑力达人之拓扑序列路径总数
+[NOI2011]兔农
+faebdc玩扑克
+有趣的数
+[AHOI2009]维护序列
+[NOI2001]食物链
+【题目待添加】
+求一次函数解析式
+bf
+龙兄摘苹果
+跳舞
+遥控车
+脑力达人之分割字串
+扫描
+Chessboard Dance
+选择数字
+[USACO08JAN]iCow B
+Perket
+电话号码
+无线网络发射器选址
+[AHOI2009]跳棋
+打开所有的灯
+分裂游戏
+[NOI2005]维护数列
+质因子分解
+[NOI2012]随机数生成器
+方格取数加强版
+[NOI2010]海拔
+[NOI2007]社交网络
+[NOI2010]超级钢琴
+魔术棋子
+[NOI2012]美食节
+[AHOI2009]中国象棋
+[NOI2011]道路修建 
+[SCOI2007]修车
+[AHOI2005]洗牌
+[ZJOI2009]假期的宿舍
+[ZJOI2007]捉迷藏 
+[SHOI2007]善意的投票 / [JLOI2010]冠军调查
+海港
+[JLOI2013]卡牌游戏
+[HNOI2006]马步距离
+[USACO07OPEN]City Horizon S
+分队问题
+座位安排【数据有误】
+奇妙的汽车
+[TJOI2011]卡片
+机器分配
+Cytus-Holyknight
+统计和
+松鼠吃果子
+刷墙
+座位安排
+宗教问题
+送花
+危险区域
+gty的人类基因组计划
+聚会
+红绿灯
+朋友
+烛光晚餐
+增进感情
+[NOI2012]迷失游乐园
+区间覆盖(加强版)
+找人
+进制转换
+最小函数值
+[NOI2012]魔幻棋盘
+GTY的人类基因组计划2
+果汁店的难题
+烤鸡
+数字对
+排序
+数字游戏
+[国家集训队]JZPFAR
+运输
+营养膳食
+最佳旅游线路
+资料分发1
+[USACO16DEC]Team Building P
+[NOI2007]调兵遣将
+凌乱的地下室
+命运石之门的选择
+地砖铺设
+道路值守
+二进制
+K皇后
+Sam数
+小Z的AK计划
+学英语
+[NOI2007]生成树计数
+欢总喊楼记
+考场奇遇
+鸿雁传书
+看球泡妹子
+[NOI2014]起床困难综合症
+[USACO14MAR]Sabotage G
+城墙
+小Z的矩阵
+比例简化
+魔法阵
+[ZJOI2007]仓库建设
+拆地毯
+还教室
+皇后游戏
+奶牛美容
+图书馆书架上的书
+Mzc家中的男家丁
+序列排序
+赤壁之战
+L国的战斗续之多路出击
+狂奔的Wzf
+彩球树
+小Z的队伍排列
+天作之合
+百日旅行
+方块消除
+拉近距离
+Gty的妹子树
+小Z的关系距离
+小Z的掷骰游戏
+小Z的电力管制
+珠心算测验
+高精度减法
+[JSOI2010]巨额奖金
+[FJOI2007]轮状病毒
+[JSOI2007]祖码
+[NOI2015]软件包管理器
+[SDOI2008]洞穴勘测
+[SDOI2009]E&D
+[SDOI2009]Elaxia的路线
+[NOI2015]寿司晚宴
+[SDOI2009]HH去散步
+[SDOI2009]SuperGCD
+[SDOI2009]晨跑
+[SDOI2009]虔诚的墓主人
+[SDOI2008]沙拉公主的困惑
+[SDOI2009]细胞探索
+[SDOI2009]学校食堂
+[SDOI2008]仪仗队
+[SHOI2009]舞会
+[SHOI2007]书柜的尺寸
+[SHOI2009]会场预约
+[SHOI2007]宝石纪念币
+[SHOI2007]园丁的烦恼
+[SHOI2007]交通网络
+[AHOI2009]飞行棋
+Gty的超级妹子树
+[SDOI2009]Bill的挑战
+[NOI2015]荷马史诗
+正则表达式
+选学霸
+Hz吐泡泡
+[国家集训队]部落战争
+[ZJOI2012]网络
+小Z的神奇数列
+小Z的游戏分队
+[USACO11DEC]RoadBlock S / [USACO14FEB]Roadblock G/S
+内存杀手
+[NOI2015]品酒大会
+[NOI2012]骑行川藏
+摆石子
+对角线
+翻硬币
+[国家集训队]礼物
+贪婪大陆
+公路通行税
+小Z的栈函数
+小Z的笔记
+小Z的 k 紧凑数
+小Z的传感器
+小Z的车厢
+小Z的情书
+HXY玩卡片
+HXY和序列
+HXY烧情侣
+HXY造公园
+挖地雷
+【模板】nim游戏
+杀蚂蚁
+最后的迷宫
+炉石collection
+数列编辑器
+[USACO13JAN]Square Overlap S
+Blink
+【初赛】提高组2014【题目已隐藏】
+[USACO13JAN]Painting the Fence S
+奶牛芭蕾
+Photo
+[USACO13OPEN]What's Up With Gravity S
+[USACO13OPEN]Fuel Economy S
+Haywire
+【初赛】普及组2014【题目已隐藏】
+[USACO14MAR]Watering the Fields S
+[USACO14MAR]The Lazy Cow S
+[USACO14MAR]Mooo Moo S
+[HAOI2007]上升序列
+[HAOI2007]理想的正方形
+[HAOI2007]分割矩阵
+[HAOI2007]覆盖问题
+[HAOI2007]修筑绿化带
+[HAOI2012]容易题
+[HAOI2012]高速公路
+[HNOI2001]矩阵乘积
+[HNOI2001]软件开发
+[HNOI2001]产品加工
+[HNOI2001]棋盘变换
+[HNOI2001]遥控赛车比赛
+[HNOI2001]洗牌机
+[HNOI2001]洋洋吃蛋糕
+[HNOI2002]沙漠寻宝
+[HNOI2002]Tinux系统
+[HNOI2002]跳蚤
+[HNOI2002]填数游戏
+[HNOI2002]公交车路线
+[HNOI2002]营业额统计
+[HNOI2002]Kathy函数
+[HNOI2002]彩票
+[USACO14FEB]Auto-complete S
+逛庙会
+螺旋矩阵
+【深基12.例1】部分背包问题
+统计方形（数据加强版）
+公路维修问题
+电路维修【重题 P4667】
+选举预测
+星际导航
+SAC#1 - Hello World（升级版）
+SAC#1 - ACOJ云评测计划
+分段
+【深基13.例1】查找
+二面体群
+质量检测
+取石子游戏
+好一个一中腰鼓！
+[NOI2005]瑰丽华尔兹
+[USACO14JAN]Recording the Moolympics S
+一中校运会之百米跑
+YY的GCD
+子矩阵
+Charmer--viv
+[清华集训2012]模积和
+[CQOI2007]余数求和
+[HNOI2004]FTP服务器
+命运的彼方
+情书
+路边的水沟
+爱的供养
+琪琪的项链
+[HNOI2002]DNA分子的最佳比对
+[HNOI2002]高质量的数据传输
+[HNOI2002]奶牛的运算
+[ZJOI2007]最大半连通子图
+[HNOI2002]交换
+[HNOI2002]树的排序
+[HNOI2002]灌溉问题
+[HNOI2002]农场的果树
+[HNOI2003]24点游戏
+[HNOI2003]操作系统
+[HNOI2003]消防局的设立
+[HNOI2003]激光炸弹
+[HNOI2003]多项式的加法和乘法
+[HNOI2003]历史年份
+[HNOI2003]多边形
+[HNOI2003]密室之门
+[HNOI2004]打鼹鼠
+[HNOI2004]宠物收养场
+[HNOI2004]最佳包裹
+[HNOI2005]纸片覆盖
+[HNOI2004]邮递员
+[HNOI2004]树的计数
+[PA2011]Prime prime power 质数的质数次方
+[HNOI2004]L语言
+[HNOI2004]高精度开根
+[HNOI2005]狡猾的商人
+MICE
+寻找道路
+【重题待添加】
+Mzc和男家丁的游戏
+Mzc和体委的争夺战
+合并神犇
+就是干！
+loidc,跑起来
+[SDOI2012]Longge的问题
+[NOI2015]小园丁与老司机
+[NOI2014]购票 
+被yyh虐的mzc
+迷宫
+添加括号
+loidc,卖卖萌
+loidc,看看海
+loidc,想想看
+解方程
+[HNOI2005]汤姆的游戏
+[HNOI2005]木梳
+[HNOI2005]数三角形
+[HNOI2005]分形
+[HNOI2005]星际贸易
+[HNOI2005]虚拟内存
+[HNOI2006]超级英雄
+[HNOI2006]鬼谷子的钱袋
+[HNOI2006]潘多拉的宝盒
+[HNOI2006]最短母串问题
+[HNOI2006]公路修建问题
+[SCOI2005]骑士精神
+[SCOI2005]王室联邦
+AKN’s PPAP
+[SCOI2005]扫雷
+[SCOI2005]超级格雷码
+[SCOI2005]栅栏
+[SCOI2005]繁忙的都市
+[SCOI2005]最大子矩阵
+[SCOI2006]数字立方体
+[SCOI2006]一孔之见
+[SCOI2006]城堡
+[SDOI2005]位图
+[SCOI2012]喵星球上的点名
+[SCOI2012]喵星人的入侵
+[USACO14JAN]Bessie Slows Down S
+[USACO04OPEN]Turning in Homework G
+[USACO03FALL]Cow Exhibition G
+[USACO03FALL][HAOI2006]受欢迎的牛 G
+[USACO04OPEN]Cube Stacking G
+宝石管理系统
+[USACO11FEB]Generic Cow Protests G
+[USACO04OPEN]MooFest G
+四子连棋
+砝码称重
+三国杀I（洗牌&发牌）
+金字塔
+[HAOI2012]外星人
+[SDOI2012]吊灯
+队爷的新书
+背单词
+[NOI2014]随机数生成器
+团体操队形
+弹珠游戏
+守墓人
+蚂蚁搬家
+三素数数
+地下城主
+yyy棋
+围栏木桩
+马农
+胖男孩
+任务安排
+yyy2015c01的IDE之Watches
+语文成绩
+EXCEEDED WARNING B
+EXCEEDED WARNING A
+yyy2015c01 的 U 盘
+[国家集训队]墨墨的等式
+yyy2015c01挑战算周长
+yyy2015c01的IDE之Call Stack
+搬运工
+[NOI2014]动物园
+[USACO09OCT]Allowance G
+三角形图
+因式分解II
+整式的计算
+狗哥采矿
+圆圆舞蹈
+化学分子式
+狗哥玩木棒
+最短路
+[USACO07FEB]Bronze Lilypad Pond B
+放苹果
+[NOI2014]魔法森林
+阶乘之乘
+电脑班的裁员
+地标访问
+白雪皑皑
+kkksc03考前临时抱佛脚
+yyy loves Maths II
+yyy loves Chemistry I
+BBCode转换Markdown
+yyy loves Maths VII
+yyy loves Maths VI (mode)
+GCD SUM
+non hates math
+秘密文件
+不等数列
+奶牛隐藏
+[SDOI2010]所驼门王的宝藏
+自然数的拆分问题
+non天平
+最小和
+[SDOI2009]地图复原
+不同子串个数
+Y的积木
+[SDOI2009]最优图像
+[USACO07FEB]Silver Lilypad Pond S
+查单词
+yyy loves physics IV
+[NOI2011]阿狸的打字机
+集合求和
+泡芙
+课程
+yyy loves OI IV
+[USACO08JAN]Cow Contest S
+让我们异或吧
+[NOI2002]荒岛野人
+良好的感觉
+[HEOI2012]朋友圈
+约数和
+小红帽的回文数
+删数
+Wave
+债务清单
+制杖题
+严酷的训练
+正妹吃月饼
+zxbsmk爱查错
+【深基1-2】小学数学 N 合一
+[SDOI2005]区间
+染色
+钦定
+蜜蜂路线
+[SDOI2005]解环
+[SDOI2005]阶梯教室设备利用
+木材加工
+角色属性树
+分数统计
+[SDOI2005]高速公路
+[POI2000]病毒
+[SDOI2005]动物园
+[SDOI2010]大陆争霸
+[SDOI2010]外星千足虫
+无尽的生命
+[SDOI2005]矩形
+[SDOI2005]投递的艺术
+[SDOI2005]遗传代码
+[SDOI2005]屠龙传说-屠龙枪卷
+[SDOI2006]最短距离
+[SDOI2006]数字串位置
+[SDOI2006]线性方程组
+[SDOI2006]二进制方程
+[SDOI2006]仓库管理员的烦恼
+[SDOI2006]保安站岗
+[SDOI2007]立体分割
+[SDOI2007]科比的比赛
+[SDOI2008]递归数列
+[SDOI2007]游戏
+[SDOI2008]Sandy的卡片
+[SDOI2008]郁闷的小J
+[SDOI2008]山贼集团
+[SDOI2008]Sue的小球
+[SDOI2010]地精部落
+[SDOI2010]粟粟的书架
+[SDOI2010]星际竞速
+[SCOI2007]压缩
+[SCOI2007]降雨量
+[SCOI2007]蜥蜴
+[SCOI2008]奖励关
+[SCOI2008]天平
+[SCOI2008]斜堆
+[SCOI2008]着色方案
+[SCOI2008]套圈
+[SDOI2010]城市规划
+[SDOI2010]捉迷藏
+[SDOI2010]古代猪文
+[SDOI2010]代码拍卖会
+[SDOI2010]猪国杀
+【模板】k短路 / [SDOI2010]魔法猪学院
+[SDOI2011]打地鼠
+[SDOI2011]计算器
+[SDOI2011]染色
+[SDOI2011]拦截导弹
+[SDOI2011]工作安排
+[SDOI2011]迷宫探险
+[SDOI2011]黑白棋
+[SDOI2011]消防
+[SDOI2011]火星移民
+[SDOI2011]贪食蛇
+[SDOI2011]保密
+[SDOI2011]消耗战
+[SDOI2012]体育课
+[SDOI2012]基站建设
+[SDOI2012]拯救小云公主
+[SDOI2012]象棋
+[SDOI2012]集合
+[HAOI2006]数字序列
+[HAOI2006]旅行
+[HAOI2006]均分数据
+[HAOI2006]聪明的猴子
+[HAOI2012]道路
+[SCOI2008]劣质编码
+[SCOI2008]配对
+[HAOI2008]圆上的整点
+[SCOI2008]警告
+[HAOI2008]下落的圆盘
+[HAOI2008]木棍分割
+[HAOI2008]糖果传递
+[HAOI2009]逆序对数列
+[HAOI2010]工厂选址
+[HAOI2010]软件安装
+[HAOI2010]最长公共子序列
+[HAOI2010]订货
+[HAOI2010]计数
+[HAOI2011]problem a
+[HAOI2011]向量
+[HAOI2011]防线修建
+[HAOI2011]Problem b
+[HAOI2011]Problem c
+Uim的情人节礼物·其之弐
+Uim的情人节礼物·其之壱
+[SHOI2001]小狗散步
+[SHOI2001]Panda的烦恼
+[SHOI2001]排序工作量之新任务
+[SHOI2001]击鼓传花
+[SHOI2001]化工厂装箱员
+[SHOI2001]三国围棋对抗赛
+[AHOI2012]树屋阶梯
+[AHOI2012]信号塔
+[AHOI2012]铁盘整理
+[AHOI2012]收集资源
+[AHOI2005]病毒检测
+[AHOI2005]穿越磁场
+[SCOI2008]城堡
+[AHOI2005]矿藏编码
+斗地主增强版
+[USACO16DEC]Robotic Cow Herd P
+[AHOI2005]航线规划
+[AHOI2004]奇怪的字符串
+[AHOI2004]数字迷阵
+[AHOI2004]实验基地
+[POI2008]SZK - Mirror trap
+[AHOI2004]DNA变异
+[AHOI2004]智能探险车
+计算器写作文
+[AHOI2001]彩票摇奖
+[AHOI2001]华夏60战斗机
+[AHOI2001]团体操队形
+[AHOI2001]多项式乘法
+[AHOI2001]有限自动机的测试
+[AHOI2002]数的朗读
+[AHOI2002]黑白图像压缩
+[AHOI2002]芝麻开门
+[AHOI2002]网络传输
+[AHOI2002]哈利·波特与魔法石
+[AHOI2002]Kitty猫基因突变
+[AHOI2002]黑白瓷砖
+[AHOI2002]Kitty猫基因编码
+[AHOI2001]质数和分解
+[SCOI2009]生日礼物
+[SCOI2009]骰子的学问
+[SCOI2009]围豆豆
+[SCOI2010]幸运数字
+GCD
+[SCOI2010]股票交易
+[ZJOI2010]贪吃的老鼠
+[SCOI2010]传送带
+[SCOI2010]序列操作
+[SCOI2012]滑雪
+XOR的艺术
+高手过招
+[ZJOI2005]梦幻折纸
+[ZJOI2005]午餐
+[ZJOI2005]九数码游戏
+[ZJOI2005]沼泽鳄鱼
+于是他错误的点名开始了
+[ZJOI2005]Genotype
+函数
+地铁间谍
+[ZJOI2006]GameZ游戏排名系统
+[ZJOI2006]三色二叉树
+[ZJOI2008]杀蚂蚁
+[ZJOI2008]泡泡堂
+[ZJOI2008]Risk
+[ZJOI2006]碗的叠放
+[ZJOI2008]树的统计
+[ZJOI2009]函数
+[ZJOI2008]生日聚会
+[ZJOI2006]超级麻将
+[ZJOI2009]染色游戏
+[ZJOI2009]多米诺骨牌
+[ZJOI2006]书架
+[ZJOI2012]灾难
+[ZJOI2009]狼和羊的故事
+[ZJOI2009]取石子游戏
+[ZJOI2008]瞭望塔
+[ZJOI2009]对称的正方形
+[ZJOI2010]数字计数
+[ZJOI2008]无序运动
+[ZJOI2010]网络扩容
+[ZJOI2010]基站选址
+[ZJOI2010]排列计数
+[ZJOI2008]骑士
+[ZJOI2010]任务安排
+[ZJOI2012]数列
+[ZJOI2012]旅游
+[ZJOI2012]小蓝的好友
+[ZJOI2012]波浪
+【模板】有理数取余
+计算器弹琴
+神奇的幻方
+[USACO10JAN]Buying Feed, II S
+Dynamic Rankings
+数字工程
+[国家集训队2]Tree I
+虫洞
+【初赛】提高组2015【题目已隐藏】
+关灯问题II
+物品选取
+[HNOI2008]明明的烦恼
+豪华游轮
+斐波那契数列（升级版）
+[USACO11OPEN]Mowing the Lawn G
+冒险岛
+好消息，坏消息
+图像变换
+Barcodes
+Explorer
+Count on a tree
+[国家集训队]聪聪可可
+带通配符的字符串匹配
+密码破解者
+第一次，第二次，成交！
+安全系统
+[USACO09OCT]Bessie's Weight Problem G
+神秘磁石
+【初赛】普及组2015【题目已隐藏】
+双子序列最大和
+机房中出了一只大触！
+白金莲花池
+斯诺克
+数数zzy
+最大收益
+赚钱
+游戏预言
+弹幕考察
+添加括号III
+同花顺
+乘积
+原核生物培养
+2038年问题
+采蘑菇
+[SCOI2009]windy数
+汽车拉力比赛
+美丽的序列
+zzc 种田
+信息传递
+牛场围栏
+越越的组队
+树上游戏
+[USACO08FEB]Game of Lines S
+[USACO07OCT]Bessie's Secret Pasture S
+[TJOI2012]防御
+斗地主
+金币
+扫雷游戏
+求和
+推销员
+《瞿葩的数字游戏》T1-数字王国的门神
+《瞿葩的数字游戏》T2-多边形数
+《瞿葩的数字游戏》T3-三角圣地
+[USACO07DEC]Bookshelf B
+[USACO07DEC]Bookshelf 2 B
+跳石头
+子串
+运输计划
+众数
+土豆田
+小岛
+搞清洁
+[TJOI2012]桥
+老虎的题目
+[USACO4.3]逢低吸纳Buy Low, Buy Lower 
+大海战
+东南西北
+[USACO04NOV]Apple Catching G
+逃离
+覆盖
+[USACO1.3]号码锁 Combination Lock
+接金币
+骑士的工作
+慈善的约瑟夫
+宝石串
+[USACO12MAR]Flowerpot S
+【数学1】小浩的幂次运算
+逐个击破
+[USACO5.3]巨大的牛棚Big Barn
+[NOI2003]木棒游戏
+[NOI2006]千年虫
+[NOI2001]炮兵阵地
+小球
+巧克力
+Facer帮父亲
+硬币翻转
+小B的询问
+数列
+小行星
+摄像头
+罗马游戏
+四元组统计 
+ccj与zrz之在回家的路上
+和谐的雪花
+寒假作业
+简单的表达式
+搞笑世界杯
+小A的礼物
+小Q的赚钱计划
+[USACO3.1]总分 Score Inflation
+[USACO3.1]丑数 Humble Numbers
+[USACO3.1]联系 Contact
+[USACO3.1]邮票 Stamps
+[SHOI2005]树的双中心
+[USACO3.2]01串 Stringsobits
+[USACO3.2]纺车的轮子 Spinning Wheels
+[USACO3.2]饲料调配 Feed Ratios
+[USACO3.2]魔板 Magic Squares
+[USACO3.3]骑马修栅栏 Riding the Fences
+[USACO3.3]商店购物 Shopping Offers
+[USACO3.3]家的范围 Home on the Range
+[USACO3.3]游戏 A Game
+[USACO3.4]网 Electric Fences
+[USACO3.4]“破锣摇滚”乐队 Raucous Rockers
+[USACO4.1]麦香牛块Beef McNuggets
+[USACO4.1]篱笆回路Fence Loops
+[USACO4.4]棋盘游戏Shuttle Puzzle
+[USACO4.2]草地排水Drainage Ditches
+[USACO4.4]重叠的图像Frame Up
+[USACO5.1]圈奶牛Fencing the Cows /【模板】二维凸包
+[USACO5.1]乐曲主题Musical Themes
+[USACO5.3]量取牛奶Milk Measuring
+[USACO5.3]窗体面积Window Area
+[USACO5.3]校园网Network of Schools
+[USACO5.4]周游加拿大Canada Tour
+[USACO16OPEN]Landscaping P
+[USACO5.1]夜空繁星Starry Night
+[USACO5.5]贰五语言Two Five
+[USACO4.2]工序安排Job Processing
+[USACO4.3]街道赛跑Street Race
+[USACO4.3]字母游戏Letter Game
+[CTSC1999]家园 / 星际转移问题
+洗牌问题
+飞行员配对方案问题
+[国家集训队]等差子序列
+编辑距离
+奇怪的函数
+科技庄园
+软件补丁问题
+太空飞行计划问题
+试题库问题
+最小路径覆盖问题
+魔术球问题
+最长不下降子序列问题
+树的数量
+珍珠项链
+猴子上树
+航空路线问题
+[USACO16JAN]Build Gates S
+寻找平面上的极大点
+漂亮字串
+方格取数问题
+机器人路径规划问题
+[SDOI2007]小组队列
+[AHOI2016初中组]自行车比赛
+[AHOI2016初中组]迷宫
+[AHOI2016初中组]黑白序列
+[AHOI2016初中组]游戏
+传教
+友好城市
+有机化学之神偶尔会做作弊
+化学1（chem1）- 化学合成
+物理1（phsic1）- 磁通量
+英语1（eng1）- 英语作文
+语文1（chin1）- 理理思维
+数学1（math1）- 加减算式
+直线交点数
+ccj与zrz之积木问题
+幼儿园篮球题
+[JSOI2008]小店购物
+Facer的工厂
+Facer和教官
+Facer爱游泳
+Facer的程序
+Facer的魔法
+爆弹虐场 
+国王的魔镜
+又上锁妖塔
+教主的魔法
+回家
+学校选址 II
+神秘数字
+[NOI2009]植物大战僵尸
+三角形计数
+小笼包
+hzwer爱折纸
+Catch the theives
+Protect the school
+校园网络【[USACO]Network of Schools加强版】
+母舰
+家谱
+IPv6地址压缩
+宋荣子搭积木
+宋荣子的城堡
+天使的起誓
+图的m着色问题
+局域网
+变幻数
+组合数问题
+时间表
+[HEOI2016/TJOI2016]排序
+[HEOI2016/TJOI2016]游戏
+LJJ的数学课
+蚯蚓
+LJJ打赌
+大逃离
+写程序
+愤怒的小鸟
+行路难
+等式
+能力测验
+刻录光盘
+加油问题
+[USACO08FEB]Dining Cows B
+瓶子国的故事
+[国家集训队]middle
+LJJ的计划
+A*B Problem
+LJJ算数
+暗杀
+LJJ翻硬币
+[USACO15DEC]Switching on the Lights S
+[USACO08NOV]Light Switching G
+[USACO16DEC]Moocast G
+[USACO16DEC]Cow Checklist G
+[USACO14DEC]Marathon S
+[USACO06DEC]Wormholes G
+[USACO06DEC]The Fewest Coins G
+[USACO06DEC]Milk Patterns G
+[USACO06DEC]Cow Picnic S
+[USACO06DEC]Cow Roller Coaster S
+[USACO06DEC]River Hopscotch S
+[USACO06FEB]Cellphones G
+[USACO06FEB]Steady Cow Assignment G
+[USACO06FEB]Treats for the Cows G/S
+[USACO06FEB]Stall Reservations S
+[USACO06JAN]Redundant Paths G
+[USACO06JAN]Roping the Field G
+[USACO06JAN]Corral the Cows G
+[USACO06JAN]The Cow Prom S
+[USACO06JAN]The Grove S
+[USACO06NOV]Roadblocks G
+[USACO06NOV]Bad Hair Day S
+[USACO06NOV]Big Square S
+[USACO07DEC]Sightseeing Cows G
+[USACO07DEC]Gourmet Grazers G
+[USACO07DEC]Best Cow Line G
+[USACO07DEC]Charm Bracelet S
+[USACO07DEC]Building Roads S
+[USACO07DEC]Mud Puddles S
+[USACO07FEB]Building A New Barn G
+[USACO07FEB]The Cow Lexicon S
+[USACO07JAN]Problem Solving G
+[USACO07JAN]Cow School G
+[USACO07JAN]Protecting the Flowers S
+[USACO07JAN]Tallest Cow S
+[USACO07JAN]Balanced Lineup G
+[USACO07MAR]Ranking the Cows G
+[USACO07MAR]Face The Right Way G
+[USACO07MAR]Cow Traffic S
+[USACO07MAR]Monthly Expense S
+[USACO07NOV]Telephone Wire G
+[USACO07NOV]Cow Relays G
+[USACO07NOV]Sunscreen G
+[USACO07NOV]Cow Hurdles S
+[USACO07NOV]Milking Time S
+[USACO07OPEN]Cheapest Palindrome G
+[USACO07OPEN]Dining G
+[NOI2007]追捕盗贼
+[USACO08FEB]Making the Grade G
+[USACO08FEB]Hotel G
+[USACO08FEB]Meteor Shower S
+[USACO08FEB]Eating Together S
+[USACO08JAN]Artificial Lake G
+[USACO08JAN]Haybale Guessing G
+[USACO08JAN]Cell Phone Network G
+[USACO08MAR]Land Acquisition G
+[USACO08MAR]Cow Jogging G
+[USACO08MAR]Pearl Pairing G
+[USACO08MAR]The Loathesome Hay Baler S
+[USACO08MAR]River Crossing S
+[USACO08OPEN]Crisis on the Farm G
+[USACO08OPEN]Cow Neighborhoods G
+[USACO08OPEN]Roads Around The Farm S
+[USACO08OPEN]Word Power S
+[USACO08OPEN]Cow Cars S
+[USACO08OPEN]Clear And Present Danger S
+[USACO08OCT]Bovine Bones G
+[USACO08OCT]Pasture Walking G
+[USACO08OCT]Wheel Rotation G
+[USACO08OCT]Power Failure G
+[USACO08NOV]Mixed Up Cows G
+[USACO08NOV]Cheering up the Cow G
+[USACO08NOV]Toys G
+[USACO08NOV]Buying Hay S
+[USACO08NOV]Guarding the Farm S
+[USACO08NOV]Time Management S
+[USACO08DEC]Trick or Treat on the Farm G
+[USACO08DEC]Secret Message G
+[USACO08DEC]Winning Checkers G
+[USACO08DEC]Largest Fence G
+[USACO08DEC]Hay For Sale S
+[USACO08DEC]Patting Heads S
+[USACO08DEC]Jigsaw Puzzles S
+[USACO09HOL]Cattle Bruisers G
+[USACO09HOL]Transmission Delay G
+[USACO09HOL]Holiday Painting G
+[USACO09HOL]Pearl Bracelet G
+[USACO09JAN]Earthquake Damage G
+[USACO09JAN]The Baric Bovine G
+[USACO09JAN]Safe Travel G
+[USACO09JAN]Best Spot S
+[USACO09JAN]Total Flow S
+[USACO09JAN]Laserphones S
+[USACO09FEB]Stock Market G
+[USACO09FEB]Revamping Trails G
+[USACO09FEB]The Leprechaun S
+[USACO09FEB]Surround the Islands S
+[USACO09MAR]Moon Mooing G
+[USACO09MAR]Cleaning Up G
+[USACO09MAR]Earthquake Damage 2 G
+[USACO09MAR]Sand Castle S
+[USACO09MAR]Cow Frisbee Team S
+[USACO09MAR]Look Up S
+[USACO09OPEN]Ski Lessons G
+[USACO09OPEN]Work Scheduling G
+[USACO09OPEN]Bovine Embroidery G
+[USACO09OPEN]Hide and Seek S
+[USACO09OPEN]Cow Line S
+[USACO09OPEN]Cow Digit Game S
+[USACO09OPEN]Grazing2 S
+[USACO09OCT]Even? Odd? G
+[USACO09OCT]The Robot Plow G
+[USACO09OCT]Barn Echoes G
+[USACO09OCT]Papaya Jungle G
+[USACO09OCT]The Leisurely Stroll G
+[USACO09OCT]Invasion of the Milkweed G
+[USACO09NOV]Who Brings the Cookies? G
+[USACO09NOV]Lights G
+[USACO09NOV]Cow Rescue G
+[USACO09NOV]A Coin Game S
+[USACO09NOV]The Grand Farm-off S
+[USACO09DEC]Cow Toll Paths G
+[USACO09DEC]Video Game Troubles G
+[USACO09DEC]Bobsledding S
+[USACO09DEC]Music Notes S
+[USACO09DEC]Selfish Grazing S
+[USACO10HOL]Cow Politics G
+[USACO10HOL]Rocks and Trees G
+[USACO10HOL]Driving Out the Piggies G
+[USACO10HOL]Cow War G
+[USACO10JAN]Taking Turns G
+[USACO10JAN]Shipping Around an Island G
+[USACO10JAN]Cow Telephones G
+[USACO10JAN]Tea Time S
+[USACO10JAN]Cheese Towers S
+[USACO10FEB]Covering the Corral G
+[USACO10FEB]Cows on Ice G
+[USACO10FEB]Slowing down G
+[USACO10FEB]Chocolate Buying S
+[USACO10FEB]Chocolate Giving S
+[USACO10FEB]Chocolate Eating S
+[USACO10MAR]Great Cow Gathering G
+[USACO10MAR]StarCowraft G
+[USACO10MAR]Test Taking S
+[USACO10MAR]Need For Speed S
+[USACO10OPEN]Cow Hopscotch G
+[USACO10OPEN]Water Slides G
+[USACO10OPEN]Triangle Counting G
+[FJOI2014]最短路径树问题
+[USACO10OCT]Dinner Time S
+[USACO10NOV]Cow Photographs G
+[USACO10NOV]Visiting Cows G
+[USACO10NOV]Banner S
+[USACO10NOV]Candy S
+[USACO10NOV]Chocolate Milk S
+[USACO10DEC]Cow Calisthenics G
+[USACO10DEC]Big Macs Around the World G
+[USACO10DEC]Threatening Letter G
+[USACO10DEC]Apple Delivery S
+[USACO10DEC]Treasure Chest S
+[USACO10DEC]The Trough Game S
+[USACO11JAN]Bottleneck G
+[USACO11JAN]The Continental Cowngress G
+[USACO11JAN]Roads and Planes G
+[USACO11JAN]Profits S
+[USACO11JAN]Dividing the Gold S
+[USACO11JAN]Traffic Lights S
+[USACO11FEB]Cowlphabet G
+[USACO11FEB]The Lost Cows G
+[USACO11FEB]Cow Line S
+[USACO11FEB]Best Parenthesis S
+[USACO11FEB]The Triangle S
+[USACO11MAR]Brownie Slicing G
+[USACO11MAR]Tree Decoration G
+[USACO11MAR]Meeting Place S
+[USACO11MAR]Package Delivery S
+[USACO11MAR]Bovine Bridge Battle S
+[USACO11OPEN]Odd degrees G
+[USACO11OPEN]Soldering G
+[USACO11OPEN]Cow Checkers S
+[USACO11OPEN]Forgotten Password S
+[USACO11OPEN]Learning Languages S
+[USACO10OCT]Making Money G
+[USACO10OCT]Soda Machine G
+[USACO11NOV]Cow Lineup S
+[USACO11NOV]Tile Exchanging S
+[USACO11NOV]Above the Median G
+[USACO11NOV]Binary Sudoku G
+[USACO11NOV]Cow Steeplechase G
+[USACO11DEC]Cow Photography G/S
+[USACO11DEC]Umbrellas for Cows S
+[USACO16DEC]Lasers and Mirrors G
+[USACO11DEC]Simplifying the Farm G
+[USACO11DEC]Grass Planting G
+[USACO12JAN]Delivery Route S
+[USACO12JAN]Bale Share S
+[USACO12JAN]Video Game G
+[USACO12JAN]Cow Run G
+[USACO12JAN]Bovine Alliance G
+[USACO12FEB]Relocation S
+[USACO12FEB]Cow Coupons G
+[USACO12FEB]Symmetry G
+[USACO12FEB]Nearby Cows G
+[USACO12FEB]Cow IDs S
+[USACO12MAR]Landscaping S
+[USACO12MAR]Large Banner G
+[USACO12MAR]Haybale Restacking G
+[USACO12MAR]Cows in a Skyscraper G
+[USACO12OPEN]Unlocking Blocks S
+[USACO12OPEN]Running Laps S
+[USACO12OPEN]Tied Down G
+[USACO12NOV]Clumsy Cows S
+[USACO12NOV]Distant Pastures S
+[USACO12NOV]Balanced Cow Breeds G/S
+[USACO12NOV]Concurrently Balanced Strings G
+[USACO12NOV]Balanced Trees G
+[USACO12DEC]Crazy Fences S
+[USACO12DEC]Wifi Setup S
+[USACO12DEC]Milk Routing S
+[USACO12DEC]Gangs of Istanbull/Cowstantinople G
+[USACO12DEC]First! G
+[USACO12DEC]Running Away From the Barn G
+[USACO12OPEN]Balanced Cow Subsets G
+[USACO13JAN]Party Invitations S
+[USACO13JAN]Cow Lineup G
+[USACO13JAN]Island Travels G
+[USACO13JAN]Seating G
+[USACO13FEB]Perimeter S
+[USACO13FEB]Tractor S
+[USACO13FEB]Milk Scheduling S
+[USACO13FEB]Partitioning the Farm G
+[USACO13FEB]Taxi G
+[USACO13FEB]Route Design G
+[USACO13MAR]Poker Hands S
+[USACO13MAR]Farm Painting S
+[USACO13MAR]The Cow Run G/S
+[USACO13MAR]Hill Walk G
+[USACO13MAR]Necklace G
+[USACO13OPEN]Luxury River Cruise S
+[USACO13OPEN]Photo G
+[USACO13OPEN]Yin and Yang G
+[USACO13OPEN]Figure Eight G
+[USACO13NOV]Farmer John has no Large Brown Cow S
+[USACO13NOV]Crowded Cows S
+[USACO13NOV]Pogo-Cow S
+[USACO13NOV]Empty Stalls G
+[USACO13NOV]Line of Sight G
+[USACO13NOV]No Change G
+[USACO13DEC]Milk Scheduling S
+[USACO13DEC]Vacation Planning S
+[USACO13DEC]The Bessie Shuffle S
+[USACO13DEC]Vacation Planning G
+[USACO13DEC]Optimal Milking G
+[USACO13DEC]The Bessie Shuffle G
+[USACO14JAN]Cow Curling G
+[USACO14JAN]Building a Ski Course G
+[USACO14JAN]Ski Course Rating G
+[USACO14FEB]Secret Code S
+[USACO14FEB]Airplane Boarding G
+[USACO14MAR]Counting Friends G
+[USACO14OPEN]Fair Photography S
+[USACO14OPEN]Dueling GPSs S
+[USACO14OPEN]Odometer S
+[USACO14OPEN]Cow Optics G
+[USACO14OPEN]Code Breaking G
+[USACO14DEC]Piggy Back S
+[USACO14DEC]Cow Jog S
+[USACO14DEC]Guard Mark G
+[USACO14DEC]Marathon G
+[USACO15JAN]Stampede S
+[USACO15JAN]Cow Routing S
+[USACO15JAN]Meeting Time S
+[USACO15JAN]Cow Rectangles G
+[USACO15JAN]Moovie Mooving G
+[USACO15JAN]Grass Cownoisseur G
+[USACO15FEB]Cow Hopscotch G
+[USACO15FEB]Censoring G
+[USACO15FEB]Fencing the Herd G
+[USACO15OPEN]Bessie Goes Moo S
+[USACO15OPEN]Trapped in the Haybales S
+[USACO15OPEN]Bessie's Birthday Buffet S
+[USACO15OPEN]Palindromic Paths G
+[USACO15OPEN]Trapped in the Haybales G
+[USACO15DEC]Max Flow P
+[USACO15DEC]High Card Low Card P
+[USACO15DEC]haybalesCounting Haybale P
+[USACO16JAN]Subsequences Summing to Sevens S
+[USACO16JAN]Angry Cows G
+[USACO16JAN]Radio Contact G
+[USACO16JAN]Lights Out G
+[USACO16JAN]Fort Moo P
+[USACO16JAN]Mowing the Field P
+[USACO16FEB]Circular Barn S
+[USACO16FEB]Load Balancing S
+[USACO16FEB]Milk Pails S
+[USACO16FEB]Circular Barn Revisited G
+[USACO16FEB]Fenced In P
+[USACO16OPEN]Field Reduction S
+[USACO16OPEN]Diamond Collector S
+[USACO16OPEN]Closing the Farm S
+[USACO16OPEN]Splitting the Field G
+[USACO16OPEN]248 G
+[USACO16OPEN]262144 P
+[USACO16OPEN]Bull in a China Shop P
+排序
+pb的游戏（1）
+病毒扩散(数据有误)
+正整数序列
+[CQOI2009]跳舞
+[CQOI2009]循环赛
+[CQOI2009]叶子的染色
+【深基15.例1】询问学号
+[CQOI2011]动态逆序对
+[CQOI2011]放棋子
+[CQOI2012]交换棋子
+[CQOI2012]局部极小值
+[CQOI2012]模拟工厂
+[CQOI2012]组装
+[CQOI2014]危桥
+[CQOI2014]和谐矩阵
+[CQOI2014]排序机械臂
+[CQOI2014]数三角形
+[CQOI2014]通配符匹配
+[CQOI2015]任务查询系统
+[CQOI2015]多项式 
+[CQOI2015]标识设计
+[CQOI2015]网络吞吐量
+[CQOI2015]选数
+[HAOI2009]巧克力
+[HAOI2009]毛毛虫
+[HAOI2015]按位或
+[HAOI2015]数字串拆分
+[HAOI2015]树上染色
+[HAOI2015]树上操作
+[HAOI2015]数组游戏
+[HAOI2016]地图
+[HAOI2016]找相同字符
+[HAOI2016]放棋子
+[HAOI2016]食物链
+[USACO16DEC]Counting Haybales S
+[HNOI2007]分裂游戏
+[HNOI2007]所罗门的咒语
+[HNOI2007]最小矩形覆盖
+[HNOI2007]梦幻岛宝珠
+[HNOI2007]海盗分宝
+[HNOI2007]神奇游乐园
+[HNOI2007]紧急疏散EVACUATE
+[HNOI2007]胜负一子
+[HNOI2008]GT考试
+[HNOI2008]水平可见直线
+[HNOI2008]玩具装箱
+[HNOI2008]神奇的国度
+[HNOI2008]越狱
+[HNOI2008]遥远的行星
+[HNOI2009]最小圈
+[HNOI2009]有趣的数列
+[HNOI2009]梦幻布丁
+[HNOI2009]通往城堡之路
+[HNOI2010]弹飞绵羊
+[HNOI2010]公交线路
+[HNOI2010]合唱队
+[HNOI2010]城市建设
+[HNOI2010]物品调度
+[HNOI2010]矩阵
+[HNOI2010]平面图判定
+[HNOI2010]取石头游戏
+[HNOI2011]XOR和路径
+[HNOI2011]任务调度
+[HNOI2011]勾股定理
+[HNOI2011]卡农
+[HNOI2011]括号修复 /  [JSOI2011]括号序列
+[HNOI2011]数学作业
+[HNOI2011]数矩形
+[HNOI2011]赛车游戏
+[HNOI2012]三角形覆盖问题
+[HNOI2012]与非
+[HNOI2012]双十字
+[HNOI2012]射箭
+[HNOI2012]排队
+[HNOI2012]永无乡
+[HNOI2012]矿场搭建
+[HNOI2012]集合选数
+[HNOI2013]切糕
+[HNOI2013]数列
+[HNOI2013]旅行
+[HNOI2013]比赛
+[HNOI2013]消毒
+[HNOI2013]游走
+[HNOI2014]世界树
+[HNOI2014]抄卡组
+[HNOI2014]江南乐
+[HNOI2014]画框
+[HNOI2014]米特运输
+[HNOI2014]道路堵塞
+[HNOI2015]亚瑟王
+[HNOI2015]实验比较
+[HNOI2015]开店
+[HNOI2015]接水果
+[HNOI2015]菜肴制作
+[HNOI2015]落忆枫音
+[HNOI2016]大数
+[HNOI2016]序列
+[HNOI2016]最小公倍数
+[HNOI2016]树
+[HNOI2016]矿区
+[HNOI2016]网络
+[JLOI2012]时间流逝
+[JLOI2012]树
+[JLOI2013]删除物品
+圆桌问题
+[JLOI2013]地形生成
+[JLOI2013]赛车
+[JLOI2014]天天酷跑
+[JLOI2014]松鼠的新家
+[JLOI2014]路径规划
+[JLOI2014]镜面通道
+[JLOI2015]城池攻占
+[JLOI2015]战争调度
+[JLOI2015]有意义的字符串
+[JLOI2015]管道连接
+[JLOI2015]装备购买
+[JLOI2015]骗我呢
+[JLOI2016/SHOI2016]侦察守卫
+[JLOI2016]圆的异或并
+[JLOI2016]字符串覆盖
+[JLOI2016]成绩比较
+[JLOI2016]方
+[SCOI2011]地板
+[SCOI2011]棘手的操作
+[SCOI2011]植物大战僵尸
+[SCOI2011]糖果
+[SCOI2011]镜像拆分
+[SCOI2011]飞镖
+[SCOI2013]多项式的运算 
+[SCOI2013]密码 
+[SCOI2013]摩托车交易 
+[SCOI2013]数数 
+[SCOI2013]泡泡鱼 
+[SCOI2013]火柴棍数字 
+[SCOI2014]方伯伯打扑克
+[SCOI2014]方伯伯的OJ
+[SCOI2014]方伯伯的商场之旅
+[SCOI2014]方伯伯的玉米田
+[SCOI2014]方伯伯运椰子
+[SCOI2014]舌尖上的方伯伯
+[SCOI2016]围棋
+[SCOI2016]妖怪
+[SCOI2016]幸运数字
+[SCOI2016]美味
+[SCOI2016]背单词
+[SCOI2016]萌萌哒
+[SDOI2013]刺客信条
+[SDOI2013]逃考
+[SDOI2013]泉
+[SDOI2013]保护出题人
+[SDOI2013]城市规划
+[SDOI2013]方程
+[SDOI2013]森林
+[SDOI2013]淘金
+[SDOI2013]直径
+[SDOI2013]费用流
+[SDOI2013]随机数生成器
+[SDOI2013]项链
+[SDOI2014]LIS
+[SDOI2014]向量集
+[SDOI2014]括号序列计数
+[SDOI2014]数数
+[SDOI2014]数表
+[SDOI2014]旅行
+[SDOI2014]电路板
+[SDOI2014]酗酒者
+[SDOI2014]里面还是外面
+[SDOI2014]重建
+[SDOI2015]双旋转字符串
+[SDOI2015]嫁接树
+[SDOI2015]寻宝游戏
+[SDOI2015]序列统计
+[SDOI2015]排序
+[SDOI2015]旅行计划
+[SDOI2015]星际战争
+[SDOI2015]模拟电路
+[SDOI2015]立体图
+[SDOI2015]约数个数和
+[SDOI2015]音质检测
+[ZJOI2011]最小割
+[ZJOI2011]看电影
+[ZJOI2011]礼物
+[ZJOI2013]K大数查询
+[ZJOI2013]丽洁体
+[ZJOI2013]抛硬币
+[ZJOI2013]蚂蚁寻路
+[ZJOI2013]话旧
+[ZJOI2013]防守战线
+[ZJOI2014]力
+[ZJOI2014]取石子游戏
+[ZJOI2014]星系调查
+[ZJOI2014]消棋子
+[ZJOI2014]璀灿光华
+[ZJOI2015]地震后的幻想乡
+[ZJOI2015]幻想乡 Wi-Fi 搭建计划
+[ZJOI2015]幻想乡战略游戏
+[ZJOI2015]诸神眷顾的幻想乡
+[ZJOI2015]醉熏熏的幻想乡
+[ZJOI2016]大森林
+[ZJOI2016]小星星
+[ZJOI2016]旅行者
+[ZJOI2016]电阻网络
+[ZJOI2016]线段树
+在你窗外闪耀的星星
+[IOI2005]Riv 河流
+骑士共存问题
+火星探险问题 
+最长k可重线段集问题
+最长k可重区间集问题
+改造异或树
+偷天换日
+Cool loves maids
+Cool loves shaxian
+Cool loves jiaoyi
+Cool loves touli
+改造二叉树
+【模板】最小生成树
+【模板】并查集
+【模板】树状数组 2
+【模板】普通平衡树
+【模板】字符串哈希
+【模板】单源最短路径（弱化版）
+【模板】线段树 1
+【模板】线段树 2
+【模板】树状数组 1
+【模板】KMP字符串匹配
+【模板】网络最大流
+【模板】左偏树（可并堆）
+【模板】堆
+【模板】最近公共祖先（LCA）
+【模板】二逼平衡树（树套树）
+【模板】最小费用最大流
+【模板】三分法
+【模板】线性筛素数
+【模板】轻重链剖分
+【模板】负环
+【模板】二分图匹配
+【模板】缩点
+【模板】割点（割顶）
+【模板】高斯消元法
+【模板】矩阵快速幂
+【模板】文艺平衡树
+涂国旗
+逃离僵尸岛
+机器人的领域
+路障
+哈希冲突
+地毯
+仓鼠找sugar
+丝绸之路
+仓鼠窝
+洛谷树
+可持久化并查集
+跳楼机
+斐波那契【数据有错】
+[USACO16DEC]Cities and States S
+海底高铁
+散步
+恋爱
+值日班长值周班长
+拍照
+序列变换
+仓鼠找sugar II
+SAC#1 - 萌数
+SAC#1 - 组合数
+祭坛
+[USACO16DEC]Moocast S
+[POI2005]BANK-Cash Dispenser
+[POI2005]PUN-Points
+[POI2005]SAM-Toy Cars
+[POI2005]SKA-Piggy Banks
+[POI2005]SKO-Knights
+[POI2005]LOT-A Journey to Mars
+[POI2005]BAN-Bank Notes
+[POI2005]SUM-Fibonacci Sums
+[POI2005]KOS-Dicing
+[POI2005]SZA-Template
+[POI2005]DZI-Hollows
+[POI2005]AKC-Special Forces Manoeuvres
+[POI2005]DWA-Two Parties
+[POI2005]DWU-Double-row
+[POI2005]AUT-The Bus
+[POI2005]LUS-Mirror Trap
+[POI2005]PRA-Dextrogyrate Camel
+[POI2006]KRA-The Disks
+[POI2006]OKR-Periods of Words
+[POI2006]PRO-Professor Szu
+[POI2006]TET-Tetris 3D
+[POI2006]ZAB-Frogs
+[POI2006]MAG-Warehouse
+[POI2006]SZK-Schools
+[POI2006]MET-Subway
+[POI2006]NAJ-The Invasion
+[POI2006]LIS-The Postman
+[POI2006]ORK-Ploughing
+[POI2006]TAN-Dancing in Circles
+[POI2006]EST-Aesthetic Text
+[POI2006]KRY-Crystals
+[POI2006]MIS-Teddies
+[POI2006]PAL-Palindromes
+[POI2006]ZOS-Sophie
+[POI2007]ATR-Tourist Attractions
+[POI2007]BIU-Offices
+[POI2007]DRZ-Trees
+[POI2007]OSI-Axes of Symmetry
+[POI2007]ZAP-Queries
+[POI2007]GRZ-Ridges and Valleys
+[POI2007]POW-The Flood
+[POI2007]SKA-Rock Garden
+[POI2007]MEG-Megalopolis
+[POI2007]TET-Tetris Attack
+[POI2007]KOL-Railway
+[POI2007]ODW-Weights
+[POI2007]EGZ-Driving Exam
+[POI2007]WAG-Quaternary Balance
+[POI2008]CLO-Toll
+[POI2008]KLO-Building blocks
+[POI2008]PLA-Postering
+[POI2008]ROB-Robinson
+[POI2008]BLO-Blockade
+[POI2008]BBB-BBB
+[POI2008]POC-Trains
+[POI2008]MAF-Mafia
+[POI2008]UCI-The Great Escape
+[POI2008]KUP-Plot purchase
+[POI2008]POD-Subdivision of Kingdom
+[POI2008]TRO-Triangles
+[POI2008]PER-Permutation
+[POI2008]STA-Station
+[POI2009]GAS-Fire Extinguishers
+[POI2009]KAM-Pebbles
+[POI2009]PRZ-Algorithm Speedup
+[POI2009]SLO-Elephants
+[POI2009]STR-Fire Brigade
+[POI2009]WYS-Isles in a Triangular Grid
+[POI2009]BAJ-The Walk of Bytie-boy
+[POI2009]KON-Ticket Inspector
+[POI2009]ARC-Architects
+[POI2009]LYZ-Ice Skates
+[POI2009]WIE-Hexer
+[POI2009]FIB-Words 2
+[POI2009]SLW-Words
+[POI2009]TAB-Arrays
+[POI2009]WSP-Island
+[POI2009]KOD-The Code
+[POI2009]POS-The Search
+[POI2010]GIL-Guilds
+[POI2010]KOL-Railway
+[POI2010]KOR-Beads
+[POI2010]NAJ-Divine Divisor
+[POI2010]TES-Intelligence Test
+[POI2010]ANT-Antisymmetry
