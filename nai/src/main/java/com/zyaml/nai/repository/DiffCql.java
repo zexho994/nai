@@ -36,10 +36,10 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
      * @param source
      * @return
      */
-    @Query("match(dif:Difficulty{difficultyString:$dif})-[]-(p:Problem) return p limit 10\n" +
-            "union\n" +
-            "match(t:Types{tagString:$source})-[]-(p:Problem) return p limit 10")
-    List<Problem> getProByDifAndSource(String dif,String source);
+    @Query("match (p:Problem)-[]-(d:Difficulty{difficultyString:$dif}) with p\n" +
+            "match (p:Problem) -[]-(t:Types{tagString:$source})\n" +
+            "return p skip $page*$size limit $size")
+    List<Problem> getProByDifAndSource(String dif,String source,int page,int size);
 
     /**
      * 匹配和dif,alg都有关系的题目节点

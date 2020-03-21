@@ -60,12 +60,42 @@ public class AlgorithmService implements BaseNeo4jService{
         List<Problem> problems = algorithmCql.getProByAlgAndOri(alg, ori, 0, 10);
 
         if(problems == null || problems.size() < 1){
-            return new Resp(ori+"时没有"+alg+"类型的题");
+            return new Resp(ori+"暂时没有"+alg+"类型的题");
         }
 
         return new Resp(problems);
     }
 
+    /**
+     * 根据算法和地区获取题目
+     * @param alg 算法名称: "字符串"
+     * @param reg 题库来源: "IOI"
+     * @return
+     */
+    public Resp getProByAlgAndReg(String alg,String reg){
 
+        List<Problem> problems = algorithmCql.getProByAlgAndReg(alg, reg, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp(reg+"暂时没有"+alg+"类型的题");
+        }
+
+        return new Resp(problems);
+    }
+
+    /**
+     * 根据算法和题库获取题目
+     * @return
+     */
+    public Resp getProByAlgAndSource(String alg,String source){
+
+        List<Problem> problems = algorithmCql.getProByAlgAndSource(alg, source, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp(source+"暂时没有"+alg+"类型的题");
+        }
+
+        return new Resp(problems);
+    }
 
 }

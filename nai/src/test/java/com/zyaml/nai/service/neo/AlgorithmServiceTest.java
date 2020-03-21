@@ -23,6 +23,9 @@ class AlgorithmServiceTest {
     String ori = "COCI";
     String alg2 = "计算几何";
     String ori2 = "福建省历届夏令营";
+    String source1 = "洛谷题库";
+    String alg3 = "线段树";
+    String reg1 = "四川";
 
     @Test
     void getByAlgTest() {
@@ -40,5 +43,17 @@ class AlgorithmServiceTest {
     void getProByAlgAndOriTest(){
         Resp res = algorithmService.getProByAlgAndOri(alg2, ori2);
         Assert.assertNotNull(res.getData());
+    }
+
+    @Test
+    void getProByAlgAndSourceTest(){
+        Resp resp = algorithmService.getProByAlgAndSource(alg3, source1);
+        Assert.assertNotNull(resp.getData());
+    }
+
+    @Test
+    void getProByAlgAndRegTest(){
+        Resp resp = algorithmService.getProByAlgAndReg(alg3, reg1);
+        Assert.assertNotNull(resp.getData());
     }
 }

@@ -59,7 +59,7 @@ public class DiffService implements BaseNeo4jService{
     public Resp getDifAndSource(String dif,String source){
         log.debug("=====> [getDifAndSource] run");
 
-        List<Problem> problems = diffCql.getProByDifAndSource(dif, source);
+        List<Problem> problems = diffCql.getProByDifAndSource(dif, source,0,10);
 
         List<ProblemVO> problemVOS = DtoUtil.mapList(problems, ProblemVO.class);
 

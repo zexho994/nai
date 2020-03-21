@@ -53,7 +53,7 @@ public class MethodCall{
                     //遍历匹配 format[] 数组
                     for(String format : methodAnno.format()){
                         if(format.equals(words.getFormat())){
-                            log.info("=====> methodCall.format:"+methodAnno.format());
+                            log.info("=====> methodCall.format:"+words.getFormat());
                             Resp invoke = (Resp) declaredMethod.invoke(this,words);
                             return invoke;
                         }
@@ -112,51 +112,51 @@ public class MethodCall{
 
     @Mould(format = {
             "DIF+",
-            "DIF+dif+"})
+            "DIF+dif+" })
     private Resp dif(Words<String,String> words){
         return diffService.getProblemsByDiff(words.get("DIF"));
     }
 
     @Mould(format = {
             "DIF+num+",
-            "DIF+dif+num+"})
+            "DIF+dif+num+" })
     private Resp difCount(Words<String,String> words){
         return diffService.getCount(words.get("DIF"));
     }
 
     @Mould(format = {
-            "DIF+ORI+",
-            "DIF+dif+ORI+"})
+            "DIF+TK+",
+            "DIF+dif+TK+" })
     private Resp difSource(Words<String,String> words){
-        return diffService.getDifAndSource(words.get("DIF"),words.get("source"));
+        return diffService.getDifAndSource(words.get("DIF"),words.get("TK"));
     }
 
     @Mould(format = {
             "DIF+ALG+",
             "DIF+dif+ALG+",
             "ALG+DIF+",
-            "ALG+DIF+dif+"})
+            "ALG+DIF+dif+" })
     private Resp difAlg(Words<String,String> words){
         return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
     }
 
     @Mould(format = {
             "DIF+LOC+",
-            "DIF+dif+LOC+"})
+            "DIF+dif+LOC+" })
     private Resp difReg(Words<String,String> words){
         return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
     }
 
     @Mould(format = {
             "DIF+TIME+",
-            "DIF+dif+TIME+"})
+            "DIF+dif+TIME+" })
     private Resp difTime(Words<String,String> words){
         return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
     }
 
     @Mould(format = {
             "DIF+ORI+",
-            "DIF+dif+ORI+"})
+            "DIF+dif+ORI+" })
     private Resp difOri(Words<String,String> words){
         return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
     }
@@ -170,7 +170,7 @@ public class MethodCall{
 
     @Mould(format = {
             "ALG+TIME+",
-            "TIME+ALG+"})
+            "TIME+ALG+" })
     private Resp algTime(Words<String,String> words){
         return algorithmService.getProByAlgAndTime(words.get("ALG"), words.get("TIME"));
     }
@@ -182,7 +182,18 @@ public class MethodCall{
         return algorithmService.getProByAlgAndOri(words.get("ALG"),words.get("ORI"));
     }
 
+    @Mould(format = {
+            "ALG+LOC+",
+            "LOC+ALG+" })
+    private Resp algReg(Words<String,String> words){
+        return algorithmService.getProByAlgAndReg(words.get("ALG"),words.get("LOC"));
+    }
 
-
+    @Mould(format = {
+            "ALG+TK+",
+            "TK+ALG+" })
+    private Resp algSource(Words<String,String> words){
+        return algorithmService.getProByAlgAndSource(words.get("ALG"),words.get("TK"));
+    }
 
 }
