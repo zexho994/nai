@@ -8,6 +8,7 @@ import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.entry.node.Types;
 import com.zyaml.nai.repository.ProblemCql;
+import com.zyaml.nai.util.ToMsgFormat;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,14 +27,14 @@ public class ProblemService implements BaseNeo4jService{
     @Autowired
     private ProblemCql problemCql;
 
+    StringBuilder sb;
+
     /**
      * 根据pid获取<Problem>问题信息</Problem>
      * @param pid
      * @return
      */
     public Resp getProblemByPid(String pid){
-        log.debug("=====>[知识问答 getPrombleByPid]根据pid:"+pid+",获取题目信息");
-
         String npid = matchPid(pid);
 
         Problem problems = problemCql.getProblemByPid(npid);
@@ -41,8 +42,10 @@ public class ProblemService implements BaseNeo4jService{
         if(problems == null){
             return new Resp(ErrorCode.NOT_FOUND,null);
         }
+        sb = new StringBuilder();
+        sb.append(pid).append("的题目是").append(problems.getTitle());
 
-        return new Resp(problems);
+        return new Resp(sb.toString(),problems);
     }
 
     /**
@@ -65,6 +68,7 @@ public class ProblemService implements BaseNeo4jService{
      * @param diff
      * @return
      */
+    @Deprecated
     public Resp getProblemsByPidAndDiff(String diff){
         List<Problem> problems = problemCql.getProblemsByPidAndDiff(diff);
 
@@ -81,7 +85,9 @@ public class ProblemService implements BaseNeo4jService{
         log.debug("=====>[知识问答 getDiffName]根据pid:"+pid+",获取题目难度");
         String s = matchPid(pid);
         Difficulty dif = problemCql.getDifByPid(s);
-        return new Resp(dif.getDifficultyString());
+        sb = new StringBuilder();
+        sb.append(pid).append("的难度是").append(dif.getDifficultyString());
+        return new Resp(sb.toString(),dif);
     }
 
     /**
@@ -96,7 +102,10 @@ public class ProblemService implements BaseNeo4jService{
 
         Problem title = problemCql.getTitle(s);
 
-        return new Resp(title);
+        sb = new StringBuilder();
+        sb.append(pid).append("的题目是").append(title.getTitle());
+
+        return new Resp(sb.toString(),title);
     }
 
 
@@ -116,7 +125,11 @@ public class ProblemService implements BaseNeo4jService{
             return new Resp(ErrorCode.NOT_FOUND,null);
         }
 
-        return new Resp(type.getTagString());
+        sb = new StringBuilder();
+        sb.append(pid).append("的题库是").append(type.getTagString());
+
+        return new Resp(sb.toString(),type);
+
     }
 
     /**
@@ -139,7 +152,13 @@ public class ProblemService implements BaseNeo4jService{
             list.add(a.getName());
         }
 
-        return new Resp(list);
+        sb = new StringBuilder();
+        sb.append(pid).append("的算法标签有:\n");
+
+        ToMsgFormat.algListToMsg(alg,sb);
+
+        return new Resp(sb.toString(),alg);
+
     }
 
     /**
@@ -157,7 +176,11 @@ public class ProblemService implements BaseNeo4jService{
             return new Resp(200,pid+"没有地区标签");
         }
 
-        return new Resp(regin);
+        sb = new StringBuilder();
+        sb.append(pid).append("来自").append(regin.getName());
+
+        return new Resp(sb.toString(),regin);
+
     }
 
     /**
@@ -174,7 +197,11 @@ public class ProblemService implements BaseNeo4jService{
             return new Resp(200,pid+"没有时间标签");
         }
 
-        return new Resp(time.getName());
+        sb = new StringBuilder();
+        sb.append(pid).append("是").append(time.getName()).append("的题");
+
+        return new Resp(sb.toString(),time);
+
     }
 
     /**
@@ -190,7 +217,9 @@ public class ProblemService implements BaseNeo4jService{
             return new Resp("未找到数据",null);
         }
 
-        return new Resp(ori.getName());
+        sb = new StringBuilder();
+        sb.append(pid).append("的来源与").append(ori.getName());
 
+        return new Resp(sb.toString(),ori);
     }
 }
