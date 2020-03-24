@@ -35,6 +35,7 @@ public class AlgorithmService implements BaseNeo4jService{
 
     /**
      * 根据算法和时间获取题目
+     * TODO: 时间的判断条件为等于,应该再添加大于和小于的判断
      * @param alg 算法名称: "字符串"
      * @param time 时间年份: "2010"
      * @return
@@ -45,6 +46,24 @@ public class AlgorithmService implements BaseNeo4jService{
 
         if(problems == null || problems.size() < 1){
             return new Resp(time+"年暂时没有"+alg+"类型的题");
+        }
+        return new Resp(problems);
+    }
+
+    public Resp getProByAlgAndGT(String alg,String time){
+        List<Problem> problems = algorithmCql.getProByAlgAndGT(alg, time, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp("晚于"+time+"暂时没有"+alg+"类型的题");
+        }
+
+        return new Resp(problems);
+    }
+
+    public Resp getProByAlgAngLT(String alg,String time){
+        List<Problem> problems = algorithmCql.getProByAlgAndLT(alg,time,0,10);
+        if(problems == null || problems.size() < 1){
+            return new Resp("早于"+time+"暂时没有"+alg+"类型的题");
         }
         return new Resp(problems);
     }

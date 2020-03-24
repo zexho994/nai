@@ -29,12 +29,12 @@ public class QAController {
         if(qaFrom.getMsg()==null || "".equals(qaFrom.getMsg())){
             return new Resp(200,"请输入查询语句");
         }
-        log.info("=====> QA msg: " + qaFrom.getMsg());
+        log.info("=====> 提问内容 : " + qaFrom.getMsg());
 
         Resp res = qaService.qustion(qaFrom.getMsg());
 
 
-        log.debug("=====> QA Success");
+        log.debug("=====> 问答完成");
         //存在查询结果
         return res;
     }

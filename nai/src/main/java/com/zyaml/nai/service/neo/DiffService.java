@@ -47,7 +47,10 @@ public class DiffService implements BaseNeo4jService{
 
         int count = diffCql.getCount(diff);
 
-        return new Resp(count);
+        StringBuilder sb = new StringBuilder();
+        sb.append(diff).append("难度的题的数量有").append(count).append("个");
+
+        return new Resp(sb.toString(),count);
     }
 
     /**

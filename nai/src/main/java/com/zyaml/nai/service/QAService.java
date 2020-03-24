@@ -49,7 +49,7 @@ public class QAService {
 
         //没有查询结果
         if(call==null){
-            log.info("=====> QA 没有结果");
+            log.info("=====> QA 没有匹配的format");
             return new Resp("我不太理解 (ಥ_ಥ)",null);
         }
 

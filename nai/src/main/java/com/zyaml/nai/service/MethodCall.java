@@ -16,6 +16,10 @@ import java.lang.reflect.Method;
 @Log4j2
 @Component
 public class MethodCall{
+
+    @Autowired
+    private TitleService titleService;
+
     @Autowired
     private ProblemService problemService;
 
@@ -48,6 +52,7 @@ public class MethodCall{
             Class<?> printClass = this.getClass();
             //java反射机制获取所有方法名
             Method[] declaredMethods = printClass.getDeclaredMethods();
+            log.info("=====> 问句分析 format -> "+words.getFormat());
             //遍历循环方法并获取对应的注解名称
             for (Method declaredMethod : declaredMethods) {
                 // 判断是否方法上存在注解  Mould
@@ -57,7 +62,6 @@ public class MethodCall{
                     //遍历匹配 format[] 数组
                     for(String format : methodAnno.format()){
                         if(format.equals(words.getFormat())){
-                            log.info("=====> methodCall.format:"+words.getFormat());
                             Resp invoke = (Resp) declaredMethod.invoke(this,words);
                             return invoke;
                         }
@@ -110,6 +114,43 @@ public class MethodCall{
     @Mould(format = "PID+ori+")
     private Resp pidOri(Words<String,String> words){
         return problemService.getOri(words.get("PID"));
+    }
+
+//  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Title Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Mould(format = "TITLE+alg+")
+    private Resp titleAlg(Words<String,String> words){
+        return titleService.getALg(words.get("TITLE"));
+    }
+
+    @Mould(format = "TITLE+ori+")
+    private Resp titleOri(Words<String,String> words){
+        return titleService.getOri(words.get("TITLE"));
+    }
+
+    @Mould(format = "TITLE+region+")
+    private Resp titleReg(Words<String,String> words){
+        return titleService.getReg(words.get("TITLE"));
+    }
+
+//    @Mould(format = "TITLE+")
+//    private Resp titlePid(Words<String,String> words){
+//        return titleService.getPid(words.get("TITLE"));
+//    }
+
+    @Mould(format = "TITLE+dif+")
+    private Resp titleDiff(Words<String,String> words){
+        return titleService.getDiff(words.get("TITLE"));
+    }
+
+    @Mould(format = "TITLE+source+")
+    private Resp titleTK(Words<String,String> words){
+        return titleService.getTK(words.get("TITLE"));
+    }
+
+    @Mould(format = "TITLE+time+")
+    private Resp titleTime(Words<String,String> words){
+        return titleService.getTime(words.get("TITLE"));
     }
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -168,6 +209,7 @@ public class MethodCall{
         return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
     }
 
+
     @Mould(format = {
             "DIF+ORI+",
             "DIF+dif+ORI+"
@@ -189,6 +231,18 @@ public class MethodCall{
     private Resp algTime(Words<String,String> words){
         return algorithmService.getProByAlgAndTime(words.get("ALG"), words.get("TIME"));
     }
+
+    @Mould(format = {"ALG+great+TIME+","ALG+alg+great+TIME+","great+TIME+ALG+","great+TIME+ALG+alg+"})
+    private Resp difGT(Words<String,String> words){
+        return algorithmService.getProByAlgAndGT(words.get("ALG"),words.get("TIME"));
+    }
+
+    @Mould(format = {"ALG+less+TIME+","ALG+alg+less+TIME+","less+TIME+ALG+","less+TIME+ALG+alg+"})
+    private Resp difLT(Words<String,String> words){
+        return algorithmService.getProByAlgAngLT(words.get("ALG"),words.get("TIME"));
+    }
+
+
 
     @Mould(format = {
             "ALG+ORI+",
@@ -235,6 +289,8 @@ public class MethodCall{
     private Resp typeTime(Words<String,String> words){
         return typeService.getByTypeAndTime(words.get("TK"),words.get("TIME"));
     }
+
+
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Region Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 

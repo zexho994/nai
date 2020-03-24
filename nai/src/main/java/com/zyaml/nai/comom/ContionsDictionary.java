@@ -10,8 +10,12 @@ public final class ContionsDictionary {
     /**
      * 比较类型
      */
-    private static final String great = "大于";
-    private static final String less = "小于";
+    private static final String great1 = "大于";
+    private static final String great2 = "晚于";
+
+    private static final String less1 = "小于";
+    private static final String less2 = "早于";
+
     private static final String eq  = "等于";
 
     /**
@@ -73,8 +77,10 @@ public final class ContionsDictionary {
      */
     public static String match(String name){
         switch (name){
-            case great   :   return "great";
-            case less    :   return "less";
+            case great1   :   return "great";
+            case great2   :   return "great";
+            case less1    :   return "less";
+            case less2    :   return "less";
             case eq      :   return "eq";
             case same1   :   return "same";
             case same2   :   return "same";

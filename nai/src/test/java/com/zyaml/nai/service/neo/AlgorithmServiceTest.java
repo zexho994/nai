@@ -40,6 +40,18 @@ class AlgorithmServiceTest {
     }
 
     @Test
+    void getProByAlgAndGTTest(){
+        Resp resp = algorithmService.getProByAlgAndGT(alg1,time1);
+        Assert.assertNotNull(resp.getData());
+    }
+
+    @Test
+    void getProByAlgAndLTTest(){
+        Resp resp = algorithmService.getProByAlgAngLT(alg1,time1);
+        Assert.assertNotNull(resp.getData());
+    }
+
+    @Test
     void getProByAlgAndOriTest(){
         Resp res = algorithmService.getProByAlgAndOri(alg2, ori2);
         Assert.assertNotNull(res.getData());
