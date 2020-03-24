@@ -3,6 +3,7 @@ package com.zyaml.nai.service.neo;
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.repository.TypesCql;
+import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,8 @@ public class TypeService implements BaseNeo4jService{
     @Autowired
     TypesCql typesCql;
 
+    StringBuilder sb;
+
     public Resp getByType(String type){
         List<Problem> problems = typesCql.getByType(type, 0, 10);
 
@@ -25,7 +28,11 @@ public class TypeService implements BaseNeo4jService{
             return new Resp(type+"暂时没有收录题目");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(type).append("下的题:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
     public Resp getByTypeAndOri(String type,String ori){
@@ -35,8 +42,11 @@ public class TypeService implements BaseNeo4jService{
             return new Resp(type+"暂时没有收录"+ori+"的题目");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(type).append("题库里来源是").append(ori).append("的题有:\n");
+        ToMsgFormat.titleList(problems,sb);
 
+        return new Resp(sb.toString(),problems);
     }
 
     public Resp getByTypeAndLoc(String type,String loc){
@@ -46,7 +56,11 @@ public class TypeService implements BaseNeo4jService{
             return new Resp(type+"暂时没有收录"+loc+"的题目");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(loc).append("里").append(type).append("的题:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
 
     }
 
@@ -57,8 +71,11 @@ public class TypeService implements BaseNeo4jService{
             return new Resp(type+"暂时没有收录"+time+"的题目");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(time).append("年").append(type).append("的题有:\n");
+        ToMsgFormat.titleList(problems,sb);
 
+        return new Resp(sb.toString(),problems);
     }
 
 

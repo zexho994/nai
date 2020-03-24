@@ -298,8 +298,6 @@ public class MethodCall{
         return typeService.getByTypeAndTime(words.get("TK"),words.get("YEAR"));
     }
 
-
-
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Region Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     @Mould(format = "LOC+")
