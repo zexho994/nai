@@ -22,14 +22,14 @@ public final class ToMsgFormat {
     public static void algListToMsg(List<Tags> list, StringBuilder sb){
         int i = 0;
         for(Tags t : list){
-            sb.append(++i).append(t.getName()).append("\n");
+            sb.append(++i+".").append(t.getName()).append("\n");
         }
     }
 
     public static void titleList(List<Problem> list,StringBuilder sb){
         int i = 0;
         for(Problem p : list){
-            sb.append(++i+" ").append(p.getTitle()).append("\n");
+            sb.append(++i+".").append(p.getTitle()).append("\n");
         }
     }
 }

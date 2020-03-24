@@ -183,6 +183,8 @@ public class MethodCall{
         return diffService.getDifAndSource(words.get("DIF"),words.get("TK"));
     }
 
+
+
     @Mould(format = {
             "DIF+ALG+",
             "DIF+dif+ALG+",
@@ -202,23 +204,27 @@ public class MethodCall{
     }
 
     @Mould(format = {
-            "DIF+TIME+",
-            "DIF+dif+TIME+",
-            "TIME+DIF+",
-            "TIME+DIF+dif+"
+            "DIF+YEAR+",
+            "DIF+dif+YEAR+",
+            "YEAR+DIF+",
+            "YEAR+DIF+dif+"
     })
     private Resp difTime(Words<String,String> words){
-        return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
+        return diffService.getProByDifAndTime(words.get("DIF"),words.get("YEAR"));
     }
 
 
     @Mould(format = {
             "DIF+ORI+",
-            "DIF+dif+ORI+"
+            "DIF+dif+ORI+",
+            "ORI+DIF+",
+            "ORI+DIF+dif+"
     })
     private Resp difOri(Words<String,String> words){
         return diffService.getProByDifAndOri(words.get("DIF"),words.get("ORI"));
     }
+
+
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ALG Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -228,20 +234,20 @@ public class MethodCall{
     }
 
     @Mould(format = {
-            "ALG+TIME+",
-            "TIME+ALG+" })
+            "ALG+YEAR+",
+            "YEAR+ALG+" })
     private Resp algTime(Words<String,String> words){
-        return algorithmService.getProByAlgAndTime(words.get("ALG"), words.get("TIME"));
+        return algorithmService.getProByAlgAndTime(words.get("ALG"), words.get("YEAR"));
     }
 
-    @Mould(format = {"ALG+great+TIME+","ALG+alg+great+TIME+","great+TIME+ALG+","great+TIME+ALG+alg+"})
+    @Mould(format = {"ALG+great+YEAR+","ALG+alg+great+YEAR+","great+YEAR+ALG+","great+YEAR+ALG+alg+"})
     private Resp difGT(Words<String,String> words){
-        return algorithmService.getProByAlgAndGT(words.get("ALG"),words.get("TIME"));
+        return algorithmService.getProByAlgAndGT(words.get("ALG"),words.get("YEAR"));
     }
 
-    @Mould(format = {"ALG+less+TIME+","ALG+alg+less+TIME+","less+TIME+ALG+","less+TIME+ALG+alg+"})
+    @Mould(format = {"ALG+less+YEAR+","ALG+alg+less+YEAR+","less+YEAR+ALG+","less+YEAR+ALG+alg+"})
     private Resp difLT(Words<String,String> words){
-        return algorithmService.getProByAlgAngLT(words.get("ALG"),words.get("TIME"));
+        return algorithmService.getProByAlgAngLT(words.get("ALG"),words.get("YEAR"));
     }
 
 
@@ -287,9 +293,9 @@ public class MethodCall{
         return typeService.getByTypeAndLoc(words.get("TK"),words.get("LOC"));
     }
 
-    @Mould(format = {"TK+TIME+","TK+tk+TIME+","TIME+TK+","TIME+TK+tk+"})
+    @Mould(format = {"TK+YEAR+","TK+tk+YEAR+","YEAR+TK+","YEAR+TK+tk+"})
     private Resp typeTime(Words<String,String> words){
-        return typeService.getByTypeAndTime(words.get("TK"),words.get("TIME"));
+        return typeService.getByTypeAndTime(words.get("TK"),words.get("YEAR"));
     }
 
 
@@ -301,9 +307,9 @@ public class MethodCall{
         return regionService.getByOri(words.get("LOC"));
     }
 
-    @Mould(format = {"LOC+TIME+","TIME+LOC+"})
+    @Mould(format = {"LOC+YEAR+","YEAR+LOC+"})
     private Resp regTime(Words<String,String> words){
-        return regionService.getByOriAndTime(words.get("LOC"),words.get("TIME"));
+        return regionService.getByOriAndTime(words.get("LOC"),words.get("YEAR"));
     }
 
 }

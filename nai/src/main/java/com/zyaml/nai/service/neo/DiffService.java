@@ -6,6 +6,7 @@ import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.repository.DiffCql;
 import com.zyaml.nai.util.DtoUtil;
+import com.zyaml.nai.util.ToMsgFormat;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,6 +23,8 @@ public class DiffService implements BaseNeo4jService{
     @Autowired
     DiffCql diffCql;
 
+    StringBuilder sb;
+
     /**
      * 根据难度名称获取所有题目
      * @param diff 难度名
@@ -34,7 +37,10 @@ public class DiffService implements BaseNeo4jService{
             return new Resp(diff+"下暂时没有题目",null);
         }
 
-        return new Resp(problemsByDiff);
+        sb = new StringBuilder();
+        sb.append(diff).append("难度的题目有:\n");
+        ToMsgFormat.titleList(problemsByDiff,sb);
+        return new Resp(sb.toString(),problemsByDiff);
     }
 
     /**
@@ -48,6 +54,7 @@ public class DiffService implements BaseNeo4jService{
         int count = diffCql.getCount(diff);
 
         StringBuilder sb = new StringBuilder();
+
         sb.append(diff).append("难度的题的数量有").append(count).append("个");
 
         return new Resp(sb.toString(),count);
@@ -66,7 +73,11 @@ public class DiffService implements BaseNeo4jService{
 
         List<ProblemVO> problemVOS = DtoUtil.mapList(problems, ProblemVO.class);
 
-        return new Resp(problemVOS);
+        sb = new StringBuilder();
+        sb.append(source).append("题库里面").append(dif).append("难度的题目:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problemVOS);
     }
 
     /**
@@ -98,6 +109,8 @@ public class DiffService implements BaseNeo4jService{
             return new Resp("不存在同时满足"+from.getDif()+"和"+from.getAlg()+"的题目",null);
         }
 
+
+
         return new Resp(proByDifAndAlg);
     }
 
@@ -114,7 +127,11 @@ public class DiffService implements BaseNeo4jService{
             return new Resp("没有同时满足"+dif+"和"+alg+"的题目",null);
         }
 
-        return new Resp(proByDifAndAlg);
+        sb = new StringBuilder();
+        sb.append(dif).append("难度").append(alg).append("算法类型的题:\n");
+        ToMsgFormat.titleList(proByDifAndAlg,sb);
+
+        return new Resp(sb.toString(),proByDifAndAlg);
     }
 
     /**
@@ -134,7 +151,11 @@ public class DiffService implements BaseNeo4jService{
             return new Resp(reg+"目前没有"+dif+"的题",null);
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(reg).append("的").append(dif).append("难度的题目有:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
     /**
@@ -150,10 +171,20 @@ public class DiffService implements BaseNeo4jService{
             return new Resp(time+"目前没有"+dif+"的题",null);
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(time).append("年").append(dif).append("难度的题目:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
 
+    /**
+     * 根据算法和来源获取题目
+     * @param dif
+     * @param ori
+     * @return
+     */
     public Resp getProByDifAndOri(String dif,String ori){
         List<Problem> problems = diffCql.getProByDifAndOri(dif,ori,0,10);
 
@@ -161,7 +192,11 @@ public class DiffService implements BaseNeo4jService{
             return new Resp(ori+"目前没有"+dif+"的题",null);
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(ori).append("里").append(dif).append("难度的题目:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
 }

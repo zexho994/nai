@@ -49,10 +49,12 @@ public class Words<K,V> {
         }
         if(con.equals(k)){
             k = (K) ContionsDictionary.match((String) v);
-        }else if("TIME".equals(k)){
-            String s = (String) v;
-            v = (V) s.substring(0,4);
         }
+//        else if("TIME".equals(k)){
+//            String s = (String) v;
+//            v = (V) s.replace("年","");
+//        }
+
         list.add(new Word(k,v));
         format.append(k).append("+");
         size++;
