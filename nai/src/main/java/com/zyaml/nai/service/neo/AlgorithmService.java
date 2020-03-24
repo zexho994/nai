@@ -3,6 +3,7 @@ package com.zyaml.nai.service.neo;
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.repository.AlgorithmCql;
+import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,6 +19,8 @@ public class AlgorithmService implements BaseNeo4jService{
     @Autowired
     AlgorithmCql algorithmCql;
 
+    StringBuilder sb;
+
     /**
      * 根据算法获取题目列表
      * @param alg 算法名称
@@ -26,11 +29,19 @@ public class AlgorithmService implements BaseNeo4jService{
     public Resp getByAlg(String alg){
         List<Problem> byAlg = algorithmCql.getByAlg(alg);
 
+        sb = new StringBuilder();
+
         if(byAlg == null || byAlg.size() < 1){
             return new Resp(alg+"下暂时没有题目",null);
         }
 
-        return new Resp(byAlg);
+        sb.append(alg).append("下的题目有:\n");
+        int i = 0;
+        for(Problem p : byAlg){
+            sb.append(++i+" ").append(p.getTitle()).append("\n");
+        }
+
+        return new Resp(sb.toString(),byAlg);
     }
 
     /**
@@ -43,11 +54,17 @@ public class AlgorithmService implements BaseNeo4jService{
     public Resp getProByAlgAndTime(String alg,String time){
 
         List<Problem> problems = algorithmCql.getProByAlgAndTime(alg, time, 0, 10);
+        StringBuilder sb = new StringBuilder();
 
         if(problems == null || problems.size() < 1){
             return new Resp(time+"年暂时没有"+alg+"类型的题");
         }
-        return new Resp(problems);
+
+        sb.append(time).append("年的").append(alg).append("类型的题有").append("\n");
+
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
     public Resp getProByAlgAndGT(String alg,String time){
@@ -57,7 +74,11 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp("晚于"+time+"暂时没有"+alg+"类型的题");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append("大于").append(time).append("年的").append(alg).append("的题有:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
     public Resp getProByAlgAngLT(String alg,String time){
@@ -65,7 +86,11 @@ public class AlgorithmService implements BaseNeo4jService{
         if(problems == null || problems.size() < 1){
             return new Resp("早于"+time+"暂时没有"+alg+"类型的题");
         }
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append("小于").append(time).append("年的").append(alg).append("的题有:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
     /**
@@ -82,7 +107,11 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp(ori+"暂时没有"+alg+"类型的题");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(ori).append("里").append(alg).append("算法类型的题:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
     /**
@@ -99,7 +128,12 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp(reg+"暂时没有"+alg+"类型的题");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(reg).append("省的").append(alg).append("算法类型的题:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+
+        return new Resp(sb.toString(),problems);
     }
 
     /**
@@ -114,7 +148,11 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp(source+"暂时没有"+alg+"类型的题");
         }
 
-        return new Resp(problems);
+        sb = new StringBuilder();
+        sb.append(source).append("里").append(alg).append("算法类型的题:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
     }
 
 }

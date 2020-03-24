@@ -6,6 +6,7 @@ import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.entry.node.Types;
 import com.zyaml.nai.repository.TitleCql;
+import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +31,10 @@ public class TitleService {
         if(alg == null || alg.size() < 1){
             return new Resp(title+"没有算法标签",null);
         }
-        sb.append(title).append("的算法标签有");
-        sb = algListToMsg(alg,sb);
+        sb.append(title).append("的算法标签有:\n");
+
+        ToMsgFormat.algListToMsg(alg,sb);
+
         return new Resp(sb.toString(),alg);
 
     }
@@ -114,14 +117,4 @@ public class TitleService {
 
         return new Resp(sb.toString(),res);
     }
-
-
-    public StringBuilder algListToMsg(List<Tags> list,StringBuilder sb){
-        int i = 0;
-        for(Tags t : list){
-            sb.append(++i).append(t.getName());
-        }
-        return sb;
-    }
-
 }

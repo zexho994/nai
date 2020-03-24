@@ -203,7 +203,9 @@ public class MethodCall{
 
     @Mould(format = {
             "DIF+TIME+",
-            "DIF+dif+TIME+"
+            "DIF+dif+TIME+",
+            "TIME+DIF+",
+            "TIME+DIF+dif+"
     })
     private Resp difTime(Words<String,String> words){
         return diffService.getProByDifAndTime(words.get("DIF"),words.get("TIME"));
