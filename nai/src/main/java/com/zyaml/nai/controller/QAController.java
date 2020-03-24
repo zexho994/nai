@@ -9,10 +9,7 @@ import com.zyaml.nai.util.DtoUtil;
 import lombok.extern.log4j.Log4j2;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * 问答接口
@@ -27,14 +24,15 @@ public class QAController {
     @Autowired
     QAService qaService;
 
-    @PostMapping
-    public Resp question(@RequestBody QAFrom qaFrom){
+    @GetMapping
+    public Resp question(QAFrom qaFrom){
         if(qaFrom.getMsg()==null || "".equals(qaFrom.getMsg())){
             return new Resp(200,"请输入查询语句");
         }
         log.info("=====> QA msg: " + qaFrom.getMsg());
 
         Resp res = qaService.qustion(qaFrom.getMsg());
+
 
         log.debug("=====> QA Success");
         //存在查询结果
