@@ -72,6 +72,30 @@ class DiffServiceTest {
     }
 
     @Test
+    void getProByDifAndGTTest(){
+        String dif = "入门";
+        String time = "2006";
+        Resp problems = diffService.getProByDifAndGT(dif, time);
+
+        Assert.assertNotNull(problems.getData());
+
+    }
+
+    @Test
+    void getProByDifAndLTTest(){
+        String dif = "入门";
+        String time = "2006";
+        Resp problems = diffService.getProByDifAndLT(dif, time);
+
+        Assert.assertNotNull(problems.getData());
+
+    }
+
+
+
+
+
+    @Test
     void getProByDifAndOriTest(){
         String dif = "省选/NOI-";
         String ori = "IOI";
@@ -79,4 +103,8 @@ class DiffServiceTest {
 
         Assert.assertNotNull(problems.getData());
     }
+
+
+
+
 }

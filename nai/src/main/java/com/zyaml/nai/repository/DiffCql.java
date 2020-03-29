@@ -16,7 +16,7 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
 
     /**
      * 根据题目难度获取搜索Problem
-     * @param diff
+     * @param diff 题目难度
      * @return
      */
     @Query("match (d:Difficulty {difficultyString:$diff} )-[r:`难度`]->(p:Problem) return p limit 10")
@@ -32,8 +32,8 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
 
     /**
      * 根据难度和题库找到题目
-     * @param dif
-     * @param source
+     * @param dif 题目难度
+     * @param source 题库
      * @return
      */
     @Query("match (p:Problem)-[]-(d:Difficulty{difficultyString:$dif}) with p\n" +
@@ -93,5 +93,24 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
             "match (p:Problem) - [] -(d:Difficulty{difficultyString:$dif}) \n" +
             "return  p skip $page*$size limit $size")
     List<Problem> getProByDifAndOri(String dif,String ori,int page,int size);
+
+    /**
+     * 时间条件查询
+     * 时间范围：大于time的范围
+     */
+    @Query("match (p:Problem) -[]-(t:Tags{type:\"Time\"}) where t.name > $time with p \n" +
+            "match (p:Problem) -[]-(d:Difficulty{difficultyString:$dif})\n" +
+            "return p skip $page*$size limit $size")
+    List<Problem> getProByDifAndGT(String dif,String time,int page,int size);
+
+    /**
+     * 时间范围：下雨time的范围
+     */
+    @Query("match (p:Problem) -[]-(t:Tags{type:\"Time\"}) where t.name < $time with p \n" +
+            "match (p:Problem) -[]-(d:Difficulty{difficultyString:$dif})\n" +
+            "return p skip $page*$size limit $size")
+    List<Problem> getProByDifAndLT(String dif,String time,int page,int size);
+
+
 
 }

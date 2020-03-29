@@ -43,11 +43,30 @@ public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
             "return p skip $page*$size limit $size ")
     List<Problem> getProByAlgAndTime(String alg,String time,int page,int size);
 
+    /**
+     * 同 getProByAlgAndTime
+     * GT 为大于time的，假如time为2010，该函数的时间条件就是2010年之后的题目
+     *
+     * @param alg
+     * @param time
+     * @param page
+     * @param size
+     * @return
+     */
     @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:$alg}) with p \n" +
             "match (p:Problem) - [] - (t:Tags{type:\"Time\"}) where t.name > $time " +
             "return p skip $page*$size limit $size ")
     List<Problem> getProByAlgAndGT(String alg,String time,int page,int size);
 
+    /**
+     * 同getProByAlgAndGT
+     * LT 为 GT 的相反筛选条件
+     * @param alg
+     * @param time
+     * @param page
+     * @param size
+     * @return
+     */
     @Query("match (p:Problem) - [] - (t:Tags{type:\"Algorithm\",name:$alg}) with p \n" +
             "match (p:Problem) - [] - (t:Tags{type:\"Time\"}) where t.name < $time " +
             "return p skip $page*$size limit $size ")

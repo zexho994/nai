@@ -178,6 +178,34 @@ public class DiffService implements BaseNeo4jService{
         return new Resp(sb.toString(),problems);
     }
 
+    public Resp getProByDifAndGT(String dif,String time){
+        List<Problem> problems = diffCql.getProByDifAndGT(dif, time, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp("晚于"+time+"的时间目前没有"+dif+"的题",null);
+        }
+
+        sb = new StringBuilder();
+        sb.append("晚于").append(time).append("年").append(dif).append("难度的题目:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
+    }
+
+
+    public Resp getProByDifAndLT(String dif,String time){
+        List<Problem> problems = diffCql.getProByDifAndLT(dif, time, 0, 10);
+
+        if(problems == null || problems.size() < 1){
+            return new Resp("早于"+time+"的时间目前没有"+dif+"的题",null);
+        }
+
+        sb = new StringBuilder();
+        sb.append("早于").append(time).append("年").append(dif).append("难度的题目:\n");
+        ToMsgFormat.titleList(problems,sb);
+
+        return new Resp(sb.toString(),problems);
+    }
 
     /**
      * 根据算法和来源获取题目

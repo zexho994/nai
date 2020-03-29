@@ -26,13 +26,12 @@ public class QAController {
 
     @GetMapping
     public Resp question(QAFrom qaFrom){
-        if(qaFrom.getMsg()==null || "".equals(qaFrom.getMsg())){
+        if(qaFrom.getMsg() == null || "".equals(qaFrom.getMsg())){
             return new Resp(200,"请输入查询语句");
         }
         log.info("=====> 提问内容 : " + qaFrom.getMsg());
 
         Resp res = qaService.qustion(qaFrom.getMsg());
-
 
         log.debug("=====> 问答完成");
         //存在查询结果

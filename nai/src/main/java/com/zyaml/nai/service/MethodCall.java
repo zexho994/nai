@@ -35,6 +35,9 @@ public class MethodCall{
     @Autowired
     private RegionService regionService;
 
+    @Autowired
+    private TimeService timeService;
+
     /**
      * 找到模板对应的方法
      *
@@ -213,6 +216,25 @@ public class MethodCall{
         return diffService.getProByDifAndTime(words.get("DIF"),words.get("YEAR"));
     }
 
+    @Mould(format = {
+            "DIF+great+YEAR+",
+            "DIF+dif+great+YEAR+",
+            "great+YEAR+DIF+",
+            "great+YEAR+DIF+dif+"
+    })
+    private Resp difGT(Words<String,String> words){
+        return diffService.getProByDifAndGT(words.get("DIF"),words.get("YEAR"));
+    }
+
+    @Mould(format = {
+            "DIF+less+YEAR+",
+            "DIF+dif+less+YEAR+",
+            "less+YEAR+DIF+",
+            "less+YEAR+DIF+dif+"
+    })
+    private Resp difLT(Words<String,String> words){
+        return diffService.getProByDifAndLT(words.get("DIF"),words.get("YEAR"));
+    }
 
     @Mould(format = {
             "DIF+ORI+",
@@ -241,12 +263,12 @@ public class MethodCall{
     }
 
     @Mould(format = {"ALG+great+YEAR+","ALG+alg+great+YEAR+","great+YEAR+ALG+","great+YEAR+ALG+alg+"})
-    private Resp difGT(Words<String,String> words){
+    private Resp algGT(Words<String,String> words){
         return algorithmService.getProByAlgAndGT(words.get("ALG"),words.get("YEAR"));
     }
 
     @Mould(format = {"ALG+less+YEAR+","ALG+alg+less+YEAR+","less+YEAR+ALG+","less+YEAR+ALG+alg+"})
-    private Resp difLT(Words<String,String> words){
+    private Resp algLT(Words<String,String> words){
         return algorithmService.getProByAlgAngLT(words.get("ALG"),words.get("YEAR"));
     }
 
@@ -309,5 +331,15 @@ public class MethodCall{
     private Resp regTime(Words<String,String> words){
         return regionService.getByOriAndTime(words.get("LOC"),words.get("YEAR"));
     }
+
+    //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> YEAR Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Mould(format = "YEAR+")
+    private Resp time(Words<String,String> words){
+        return timeService.getByTime(words.get("YEAR"));
+    }
+
+
+
 
 }
