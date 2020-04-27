@@ -27,6 +27,9 @@ public class ProblemService implements BaseNeo4jService{
     @Autowired
     private ProblemCql problemCql;
 
+    @Autowired
+    private TitleService titleService;
+
     StringBuilder sb;
 
     /**
@@ -42,10 +45,10 @@ public class ProblemService implements BaseNeo4jService{
         if(problems == null){
             return new Resp(ErrorCode.NOT_FOUND,null);
         }
-        sb = new StringBuilder();
-        sb.append(pid).append("的题目是").append(problems.getTitle());
 
-        return new Resp(sb.toString(),problems);
+        Resp res = titleService.getProblemAndAllTags(problems.getTitle());
+
+        return res;
     }
 
     /**

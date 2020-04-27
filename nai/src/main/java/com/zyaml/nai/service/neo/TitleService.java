@@ -14,6 +14,7 @@ import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -50,7 +51,7 @@ public class TitleService {
         problemAndTags.setAlg(titleCql.findAlg(title));
 
         if(problemAndTags.getAlg()!=null){
-            sb.append("算法 : ");
+            sb.append("算法 : \n");
             ToMsgFormat.algListToMsg(problemAndTags.getAlg(),sb);
         }
 
@@ -80,19 +81,49 @@ public class TitleService {
 
         sb.append("\n同难度下相同算法的题 :\n");
         List<Problem> problemList = recommendCql.sameDifSameAlg(title);
-        ToMsgFormat.titleList(problemList,sb);
+        if(problemAndTags != null){
+            ToMsgFormat.titleList(problemList,sb);
+            problemAndTags.setSameDifSameAlg(problemList);
+        }else{
+            sb.append("无");
+        }
 
         sb.append("\n更高难度的相同算法的题 :\n");
         List<Problem> problemList1 = recommendCql.sameALgHighDif(title);
-        ToMsgFormat.titleList(problemList1,sb);
+        if(problemAndTags != null){
+            problemAndTags.setSameAlgHighDif(problemList1);
+            ToMsgFormat.titleList(problemList1,sb);
+        }else{
+            sb.append("无");
+        }
 
         sb.append("\n同难度下其他算法的题 :\n");
         List<Problem> problemList2 = recommendCql.samDifNotAlg(title);
-        ToMsgFormat.titleList(problemList2,sb);
+        if(problemAndTags != null){
+            problemAndTags.setSameDifNotAlg(problemList2);
+            ToMsgFormat.titleList(problemList2,sb);
+        }else{
+            sb.append("无");
+        }
 
         // 3.封装所有对象
         return new Resp(sb.toString(),problemAndTags);
     }
+
+    public Resp getProblemAndAllTags(List<Problem> titles){
+        StringBuilder sb = new StringBuilder();
+        int n = 1;
+        List<ProblemAndTags> list = new LinkedList<>();
+
+        for(Problem p : titles){
+            Resp res = getProblemAndAllTags(p.getTitle());
+            sb.append("题目"+n++ +". \n").append(res.getMessage()+"\n");
+            list.add((ProblemAndTags)res.getData());
+        }
+        return new Resp(sb.toString(),list);
+    }
+
+
 
     public Resp getALg(String title){
 

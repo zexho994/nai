@@ -17,7 +17,10 @@ import java.util.List;
 public class AlgorithmService implements BaseNeo4jService{
 
     @Autowired
-    AlgorithmCql algorithmCql;
+    private AlgorithmCql algorithmCql;
+
+    @Autowired
+    private TitleService titleService;
 
     StringBuilder sb;
 
@@ -60,11 +63,11 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp(time+"年暂时没有"+alg+"类型的题");
         }
 
-        sb.append(time).append("年的").append(alg).append("类型的题有").append("\n");
+        Resp res = titleService.getProblemAndAllTags(problems);
+//        ToMsgFormat.titleList(problems,sb);
 
-        ToMsgFormat.titleList(problems,sb);
-
-        return new Resp(sb.toString(),problems);
+        return res;
+//        return new Resp(sb.toString(),problems);
     }
 
     public Resp getProByAlgAndGT(String alg,String time){
