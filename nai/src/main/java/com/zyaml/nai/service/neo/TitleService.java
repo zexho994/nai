@@ -1,10 +1,14 @@
 package com.zyaml.nai.service.neo;
 
+import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.Resp;
+import com.zyaml.nai.comom.TagsCommom;
+import com.zyaml.nai.entry.dto.ProblemAndTags;
 import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.entry.node.Types;
+import com.zyaml.nai.repository.RecommendCql;
 import com.zyaml.nai.repository.TitleCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +25,74 @@ public class TitleService {
 
     @Autowired
     private TitleCql titleCql;
+
+    @Autowired
+    private RecommendCql recommendCql;
+
+    public Resp getProblemAndAllTags(String title){
+        ProblemAndTags problemAndTags = new ProblemAndTags();
+
+        // 1.遍历获取题目的所有标签
+        problemAndTags.setProblem(titleCql.findProblem(title));
+
+        if(problemAndTags.getProblem() == null){
+            return new Resp(ErrorCode.NULL,"题目不存在");
+        }
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("标题 : ").append(problemAndTags.getProblem().getTitle()).append("\n");
+
+        problemAndTags.setDifficulty(titleCql.findDiff(title));
+        if(problemAndTags.getDifficulty()!=null){
+            sb.append(TagsCommom.DIF+ " : ").append(problemAndTags.getDifficulty().getDifficultyString()).append("\n");
+        }
+
+        problemAndTags.setAlg(titleCql.findAlg(title));
+
+        if(problemAndTags.getAlg()!=null){
+            sb.append("算法 : ");
+            ToMsgFormat.algListToMsg(problemAndTags.getAlg(),sb);
+        }
+
+        problemAndTags.setTk(titleCql.findTK(title));
+        if(problemAndTags.getTk()!=null){
+            sb.append(TagsCommom.TK + " : ").append(problemAndTags.getTk().getTagString()).append("\n");
+        }
+
+        problemAndTags.setOri(titleCql.findOri(title));
+        if(problemAndTags.getOri()!=null){
+            sb.append(TagsCommom.ORI + " : ").append(problemAndTags.getOri().getName()).append("\n");
+        }
+
+
+        problemAndTags.setTime(titleCql.findTime(title));
+        if(problemAndTags.getTime()!=null){
+            sb.append(TagsCommom.TIME + " : ").append(problemAndTags.getTime().getName()).append("\n");
+        }
+
+        problemAndTags.setRegion(titleCql.findReg(title));
+        if(problemAndTags.getRegion()!=null){
+            sb.append(TagsCommom.REGION + " : ").append(problemAndTags.getRegion().getName()).append("\n");
+        }
+
+        //推荐功能
+        sb.append("\n相似例题 : ");
+
+        sb.append("\n同难度下相同算法的题 :\n");
+        List<Problem> problemList = recommendCql.sameDifSameAlg(title);
+        ToMsgFormat.titleList(problemList,sb);
+
+        sb.append("\n更高难度的相同算法的题 :\n");
+        List<Problem> problemList1 = recommendCql.sameALgHighDif(title);
+        ToMsgFormat.titleList(problemList1,sb);
+
+        sb.append("\n同难度下其他算法的题 :\n");
+        List<Problem> problemList2 = recommendCql.samDifNotAlg(title);
+        ToMsgFormat.titleList(problemList2,sb);
+
+        // 3.封装所有对象
+        return new Resp(sb.toString(),problemAndTags);
+    }
 
     public Resp getALg(String title){
 

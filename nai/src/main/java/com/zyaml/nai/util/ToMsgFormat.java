@@ -32,4 +32,5 @@ public final class ToMsgFormat {
             sb.append(++i+".").append(p.getTitle()).append("\n");
         }
     }
+
 }

@@ -71,7 +71,7 @@ public class MethodCall{
                     }
                 }
             }
-        } catch (Exception e) {
+        }catch(Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -120,6 +120,11 @@ public class MethodCall{
     }
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Title Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Mould(format = "TITLE+")
+    private Resp title(Words<String,String> words){
+        return titleService.getProblemAndAllTags(words.get("TITLE"));
+    }
 
     @Mould(format = "TITLE+alg+")
     private Resp titleAlg(Words<String,String> words){
@@ -338,8 +343,5 @@ public class MethodCall{
     private Resp time(Words<String,String> words){
         return timeService.getByTime(words.get("YEAR"));
     }
-
-
-
 
 }

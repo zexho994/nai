@@ -2,7 +2,6 @@ package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.repository.ProblemCql;
 import com.zyaml.nai.repository.TimeCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +20,7 @@ public class TimeService {
     TimeCql timeCql;
 
     public Resp getByTime(String time){
-        List<Problem> problems = timeCql.findByTime(time);
+        List<Problem> problems = timeCql.findByTime(time,0,10);
         StringBuilder sb = new StringBuilder();
 
         if(problems == null || problems.size() < 1){
@@ -33,5 +32,7 @@ public class TimeService {
 
         return new Resp(sb.toString(),problems);
     }
+
+
 
 }
