@@ -26,17 +26,16 @@ public interface RecommendCql extends Neo4jRepository<ProblemCql,Long> {
     List<Problem> sameDifSameAlg(String title);
 
     /**
-     * 相同算法,更高难度的题
+     * 相同算法,难度的题
      *
      * TODO: cql语句待优化
      * @param title
      * @return
      */
-    @Query("match (Problem{title:\"超级玛丽游戏\"})-[]-(d:Difficulty) with d " +
-            "match (n:Problem)-[]-(di:Difficulty) where di.difficulty = d.difficulty+1 with n " +
-            "match (Problem{title:\"超级玛丽游戏\"})-[]-(t:Tags{type:\"Algorithm\"})-[]-(n:Problem) " +
-            "return n limit 3")
-    List<Problem> sameALgHighDif(String title);
+    @Query("match (Problem{title:$title})-[]-(t:Tags{type:\"Algorithm\"})-[]- "+
+            "(p:Problem)-[]-(d:Difficulty{difficulty:$dif})"+
+            "return p limit 3")
+    List<Problem> sameALgHighDif(String title,int dif);
 
     /**
      * 相同难度的不同算法题

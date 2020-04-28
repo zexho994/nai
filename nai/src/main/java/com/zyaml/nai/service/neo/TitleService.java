@@ -88,23 +88,25 @@ public class TitleService {
             sb.append("无");
         }
 
-        sb.append("\n更高难度的相同算法的题 :\n");
-        List<Problem> problemList1 = recommendCql.sameALgHighDif(title);
-        if(problemAndTags != null){
-            problemAndTags.setSameAlgHighDif(problemList1);
-            ToMsgFormat.titleList(problemList1,sb);
-        }else{
-            sb.append("无");
+        if(problemAndTags.getDifficulty().getDifficulty() < 7){
+            sb.append("\n更高难度的相同算法的题 :\n");
+            List<Problem> problemList1 = recommendCql.sameALgHighDif(title,problemAndTags.getDifficulty().getDifficulty()+1);
+            if(problemAndTags != null){
+                problemAndTags.setSameAlgHighDif(problemList1);
+                ToMsgFormat.titleList(problemList1,sb);
+            }else{
+                sb.append("无");
+            }
         }
 
-        sb.append("\n同难度下其他算法的题 :\n");
-        List<Problem> problemList2 = recommendCql.samDifNotAlg(title);
-        if(problemAndTags != null){
-            problemAndTags.setSameDifNotAlg(problemList2);
-            ToMsgFormat.titleList(problemList2,sb);
-        }else{
-            sb.append("无");
-        }
+//        sb.append("\n同难度下其他算法的题 :\n");
+//        List<Problem> problemList2 = recommendCql.samDifNotAlg(title);
+//        if(problemAndTags != null){
+//            problemAndTags.setSameDifNotAlg(problemList2);
+//            ToMsgFormat.titleList(problemList2,sb);
+//        }else{
+//            sb.append("无");
+//        }
 
         // 3.封装所有对象
         return new Resp(sb.toString(),problemAndTags);
