@@ -62,12 +62,8 @@ public class AlgorithmService implements BaseNeo4jService{
         if(problems == null || problems.size() < 1){
             return new Resp(time+"年暂时没有"+alg+"类型的题");
         }
-
-        Resp res = titleService.getProblemAndAllTags(problems);
-//        ToMsgFormat.titleList(problems,sb);
-
-        return res;
-//        return new Resp(sb.toString(),problems);
+        ToMsgFormat.titleList(problems,sb);
+        return new Resp(sb.toString(),problems);
     }
 
     public Resp getProByAlgAndGT(String alg,String time){
