@@ -46,4 +46,5 @@ public class ProblemAndTags {
     private List<Problem> sameDifNotAlg;
 
     private List<Problem> sameAlgHighDif;
+
 }

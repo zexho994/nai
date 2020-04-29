@@ -57,13 +57,14 @@ public class AlgorithmService implements BaseNeo4jService{
     public Resp getProByAlgAndTime(String alg,String time){
 
         List<Problem> problems = algorithmCql.getProByAlgAndTime(alg, time, 0, 10);
-        StringBuilder sb = new StringBuilder();
 
-        if(problems == null || problems.size() < 1){
-            return new Resp(time+"年暂时没有"+alg+"类型的题");
+        Resp resp = titleService.getProblemAndTags(problems);
+
+        if(resp.getMessage() == null || resp.getMessage().equals("")){
+            resp.setMessage(time + "年没有" + alg +"的题");
         }
-        ToMsgFormat.titleList(problems,sb);
-        return new Resp(sb.toString(),problems);
+
+        return resp;
     }
 
     public Resp getProByAlgAndGT(String alg,String time){

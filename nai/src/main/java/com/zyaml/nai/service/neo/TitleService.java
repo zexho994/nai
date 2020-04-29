@@ -30,17 +30,33 @@ public class TitleService {
     @Autowired
     private RecommendCql recommendCql;
 
+    @Autowired
+    private RecommendService recommendService;
+
     public Resp getProblemAndAllTags(String title){
+        StringBuilder sb = new StringBuilder();
+        ProblemAndTags problemAndTags = this.getProblemAndTags(title,sb);
+        setRecommendMsg(problemAndTags,sb);
+        // 3.封装所有对象
+        return new Resp(sb.toString(),problemAndTags);
+    }
+
+    /**
+     * 获取拥有所有关联数据的problem对象
+     * @param title
+     * @param sb
+     * @return
+     */
+    private ProblemAndTags getProblemAndTags(String title,StringBuilder sb){
         ProblemAndTags problemAndTags = new ProblemAndTags();
 
         // 1.遍历获取题目的所有标签
         problemAndTags.setProblem(titleCql.findProblem(title));
 
         if(problemAndTags.getProblem() == null){
-            return new Resp(ErrorCode.NULL,"题目不存在");
+            return null;
         }
 
-        StringBuilder sb = new StringBuilder();
         sb.append("标题 : ").append(problemAndTags.getProblem().getTitle()).append("\n");
 
         problemAndTags.setDifficulty(titleCql.findDiff(title));
@@ -75,41 +91,22 @@ public class TitleService {
         if(problemAndTags.getRegion()!=null){
             sb.append(TagsCommom.REGION + " : ").append(problemAndTags.getRegion().getName()).append("\n");
         }
+        return problemAndTags;
+    }
 
+    /**
+     * 在字符串sb后面添加推荐功能的数据
+     * @param problemAndTags
+     * @param sb
+     */
+    private void setRecommendMsg(ProblemAndTags problemAndTags,StringBuilder sb){
         //推荐功能
-        sb.append("\n相似例题 : ");
+        String title = problemAndTags.getProblem().getTitle();
 
-        sb.append("\n同难度下相同算法的题 :\n");
-        List<Problem> problemList = recommendCql.sameDifSameAlg(title);
-        if(problemAndTags != null){
-            ToMsgFormat.titleList(problemList,sb);
-            problemAndTags.setSameDifSameAlg(problemList);
-        }else{
-            sb.append("无");
-        }
-
-        if(problemAndTags.getDifficulty().getDifficulty() < 7){
-            sb.append("\n更高难度的相同算法的题 :\n");
-            List<Problem> problemList1 = recommendCql.sameALgHighDif(title,problemAndTags.getDifficulty().getDifficulty()+1);
-            if(problemAndTags != null){
-                problemAndTags.setSameAlgHighDif(problemList1);
-                ToMsgFormat.titleList(problemList1,sb);
-            }else{
-                sb.append("无");
-            }
-        }
-
-//        sb.append("\n同难度下其他算法的题 :\n");
-//        List<Problem> problemList2 = recommendCql.samDifNotAlg(title);
-//        if(problemAndTags != null){
-//            problemAndTags.setSameDifNotAlg(problemList2);
-//            ToMsgFormat.titleList(problemList2,sb);
-//        }else{
-//            sb.append("无");
-//        }
-
-        // 3.封装所有对象
-        return new Resp(sb.toString(),problemAndTags);
+        sb.append("\n相似例题 :");
+        problemAndTags.setSameDifSameAlg(recommendService.sameDifSameAlg(title,sb));
+        problemAndTags.setSameAlgHighDif(recommendService.sameALgHighDif(title,problemAndTags.getDifficulty(),sb));
+        problemAndTags.setSameDifNotAlg(recommendService.samDifNotAlg(title,sb));
     }
 
     public Resp getProblemAndAllTags(List<Problem> titles){
@@ -122,6 +119,18 @@ public class TitleService {
             sb.append("题目"+n++ +". \n").append(res.getMessage()+"\n");
             list.add((ProblemAndTags)res.getData());
         }
+        return new Resp(sb.toString(),list);
+    }
+
+    public Resp getProblemAndTags(List<Problem> titles){
+        StringBuilder sb = new StringBuilder();
+        List<ProblemAndTags> list = new LinkedList<>();
+
+        for(Problem p : titles){
+            list.add(getProblemAndTags(p.getTitle(), sb));
+            sb.append("\n");
+        }
+
         return new Resp(sb.toString(),list);
     }
 
