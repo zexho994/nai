@@ -27,7 +27,9 @@ class TitleServiceTest {
 
     @Test
     void getOri() {
-        Resp ori = titleService.getOri(title1);
+        String title = "[USACO3.2]魔板 Magic Squares";
+//        Resp ori = titleService.getOri(title1);
+        Resp ori = titleService.getOri(title);
         Assert.assertNotNull(ori.getData());
     }
 

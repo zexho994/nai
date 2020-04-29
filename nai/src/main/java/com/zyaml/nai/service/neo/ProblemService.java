@@ -214,15 +214,15 @@ public class ProblemService implements BaseNeo4jService{
      */
     public Resp getOri(String pid){
         String p = matchPid(pid);
-        Tags ori = problemCql.getOri(p);
-
-        if (ori == null || ori.getName() == null){
+        List<Tags> oriList = problemCql.getOri(p);
+        if (oriList == null || oriList.size() < 1){
             return new Resp("未找到数据",null);
         }
-
         sb = new StringBuilder();
-        sb.append(pid).append("的来源与").append(ori.getName());
-
-        return new Resp(sb.toString(),ori);
+        sb.append(pid).append("的来源: ");
+        for(Tags ori : oriList){
+            sb.append(ori.getName()+" ");
+        }
+        return new Resp(sb.toString(),oriList);
     }
 }

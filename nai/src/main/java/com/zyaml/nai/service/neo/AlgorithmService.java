@@ -58,11 +58,11 @@ public class AlgorithmService implements BaseNeo4jService{
 
         List<Problem> problems = algorithmCql.getProByAlgAndTime(alg, time, 0, 10);
 
-        Resp resp = titleService.getProblemAndTags(problems);
-
-        if(resp.getMessage() == null || resp.getMessage().equals("")){
-            resp.setMessage(time + "年没有" + alg +"的题");
+        if(problems == null || problems.size() < 1){
+            return new Resp(time+"年暂时没有"+alg+"类型的题",null);
         }
+
+        Resp resp = titleService.getProblemAndTags(problems);
 
         return resp;
     }
@@ -71,26 +71,24 @@ public class AlgorithmService implements BaseNeo4jService{
         List<Problem> problems = algorithmCql.getProByAlgAndGT(alg, time, 0, 10);
 
         if(problems == null || problems.size() < 1){
-            return new Resp("晚于"+time+"暂时没有"+alg+"类型的题");
+            return new Resp(time+"年以后暂时没有"+alg+"类型的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append("大于").append(time).append("年的").append(alg).append("的题有:\n");
-        ToMsgFormat.titleList(problems,sb);
+        Resp resp = titleService.getProblemAndTags(problems);
 
-        return new Resp(sb.toString(),problems);
+        return resp;
     }
 
     public Resp getProByAlgAngLT(String alg,String time){
         List<Problem> problems = algorithmCql.getProByAlgAndLT(alg,time,0,10);
-        if(problems == null || problems.size() < 1){
-            return new Resp("早于"+time+"暂时没有"+alg+"类型的题");
-        }
-        sb = new StringBuilder();
-        sb.append("小于").append(time).append("年的").append(alg).append("的题有:\n");
-        ToMsgFormat.titleList(problems,sb);
 
-        return new Resp(sb.toString(),problems);
+        if(problems == null || problems.size() < 1){
+            return new Resp("早于"+time+"暂时没有"+alg+"类型的题",null);
+        }
+
+        Resp resp = titleService.getProblemAndTags(problems);
+
+        return resp;
     }
 
     /**
@@ -104,14 +102,12 @@ public class AlgorithmService implements BaseNeo4jService{
         List<Problem> problems = algorithmCql.getProByAlgAndOri(alg, ori, 0, 10);
 
         if(problems == null || problems.size() < 1){
-            return new Resp(ori+"暂时没有"+alg+"类型的题");
+            return new Resp(ori+"暂时没有"+alg+"类型的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(ori).append("里").append(alg).append("算法类型的题:\n");
-        ToMsgFormat.titleList(problems,sb);
+        Resp resp = titleService.getProblemAndTags(problems);
 
-        return new Resp(sb.toString(),problems);
+        return resp;
     }
 
     /**
@@ -125,7 +121,7 @@ public class AlgorithmService implements BaseNeo4jService{
         List<Problem> problems = algorithmCql.getProByAlgAndReg(alg, reg, 0, 10);
 
         if(problems == null || problems.size() < 1){
-            return new Resp(reg+"暂时没有"+alg+"类型的题");
+            return new Resp(reg+"暂时没有"+alg+"类型的题",null);
         }
 
         sb = new StringBuilder();
@@ -145,7 +141,7 @@ public class AlgorithmService implements BaseNeo4jService{
         List<Problem> problems = algorithmCql.getProByAlgAndSource(alg, source, 0, 10);
 
         if(problems == null || problems.size() < 1){
-            return new Resp(source+"暂时没有"+alg+"类型的题");
+            return new Resp(source+"暂时没有"+alg+"类型的题",null);
         }
 
         sb = new StringBuilder();

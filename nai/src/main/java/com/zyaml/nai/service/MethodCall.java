@@ -38,6 +38,9 @@ public class MethodCall{
     @Autowired
     private TimeService timeService;
 
+    @Autowired
+    private OriginService originService;
+
     /**
      * 找到模板对应的方法
      *
@@ -266,19 +269,29 @@ public class MethodCall{
 
     @Mould(format = "LOC+")
     private Resp reg(Words<String,String> words){
-        return regionService.getByOri(words.get("LOC"));
+        return regionService.getByReg(words.get("LOC"));
     }
 
     @Mould(format = {"LOC+YEAR+","YEAR+LOC+"})
     private Resp regTime(Words<String,String> words){
-        return regionService.getByOriAndTime(words.get("LOC"),words.get("YEAR"));
+        return regionService.getByRegAndTime(words.get("LOC"),words.get("YEAR"));
     }
+
+//    @Mould(format = {"LOC+ORI+","ORI+LOC+"})
+//    private Resp locOri(Words<String,String> words){
+//
+//    }
 
     //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> YEAR Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
     @Mould(format = "YEAR+")
     private Resp time(Words<String,String> words){
         return timeService.getByTime(words.get("YEAR"));
+    }
+
+    @Mould(format = "ORI+")
+    private Resp ori(Words<String,String> words){
+        return originService.getOriginByName(words.get("ORI"));
     }
 
 }

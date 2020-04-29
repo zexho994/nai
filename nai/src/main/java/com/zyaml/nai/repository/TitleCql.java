@@ -19,10 +19,10 @@ public interface TitleCql extends Neo4jRepository<Problem,Long> {
     @Query("MATCH (p:Problem{title:$title}) - [] - (t:Tags{type:\"Algorithm\"}) RETURN t")
     List<Tags> findAlg(String title);
 
-    @Query("MATCH (:Problem{title:$title}) - [] - (t:Tags{type:\"Origin\"}) RETURN t")
-    Tags findOri(String title);
+    @Query("MATCH (p:Problem{title:$title}) - [] - (t:Tags{type:\"Origin\"}) RETURN t")
+    List<Tags> findOri(String title);
 
-    @Query("MATCH (:Problem{title:$title}) - [] - (t:Tags{type:\"Time\"}) RETURN t")
+    @Query("MATCH (p:Problem{title:$title}) - [] - (t:Tags{type:\"Time\"}) RETURN t")
     Tags findTime(String title);
 
     @Query("MATCH (p:Problem{title:$title}) RETURN p")

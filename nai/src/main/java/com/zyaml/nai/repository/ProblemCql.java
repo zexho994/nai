@@ -88,6 +88,6 @@ public interface ProblemCql extends Neo4jRepository<Problem,Long> {
      * @return
      */
     @Query("MATCH (p:Problem{pid:$pid})-[]-(o:Tags{type:\"Origin\"}) RETURN o")
-    Tags getOri(String pid);
+    List<Tags> getOri(String pid);
 
 }

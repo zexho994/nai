@@ -28,9 +28,6 @@ public class TitleService {
     private TitleCql titleCql;
 
     @Autowired
-    private RecommendCql recommendCql;
-
-    @Autowired
     private RecommendService recommendService;
 
     public Resp getProblemAndAllTags(String title){
@@ -76,12 +73,6 @@ public class TitleService {
             sb.append(TagsCommom.TK + " : ").append(problemAndTags.getTk().getTagString()).append("\n");
         }
 
-        problemAndTags.setOri(titleCql.findOri(title));
-        if(problemAndTags.getOri()!=null){
-            sb.append(TagsCommom.ORI + " : ").append(problemAndTags.getOri().getName()).append("\n");
-        }
-
-
         problemAndTags.setTime(titleCql.findTime(title));
         if(problemAndTags.getTime()!=null){
             sb.append(TagsCommom.TIME + " : ").append(problemAndTags.getTime().getName()).append("\n");
@@ -91,6 +82,16 @@ public class TitleService {
         if(problemAndTags.getRegion()!=null){
             sb.append(TagsCommom.REGION + " : ").append(problemAndTags.getRegion().getName()).append("\n");
         }
+
+        List<Tags> oriList = titleCql.findOri(title);
+        if(oriList != null){
+            sb.append(TagsCommom.ORI + " : ");
+            for(Tags ori : oriList){
+                sb.append(ori.getName()+" ");
+            }
+            problemAndTags.setOri(oriList);
+        }
+
         return problemAndTags;
     }
 
@@ -128,7 +129,7 @@ public class TitleService {
 
         for(Problem p : titles){
             list.add(getProblemAndTags(p.getTitle(), sb));
-            sb.append("\n");
+            sb.append("\n\n");
         }
 
         return new Resp(sb.toString(),list);
@@ -154,16 +155,18 @@ public class TitleService {
     }
 
     public Resp getOri(String title){
-        Tags ori = titleCql.findOri(title);
+        List<Tags> oriList = titleCql.findOri(title);
         StringBuilder sb = new StringBuilder();
 
-        if(ori == null){
+        if(oriList == null || oriList.size() < 1){
             return new Resp(title+"没有来源标签",null);
         }
-
-        sb.append(title).append("的来源是").append(ori.getName());
-
-        return new Resp(sb.toString(),ori);
+        sb.append(title).append("的来源是: ");
+        int n = 1;
+        for(Tags ori : oriList){
+            sb.append(n++ +"." + ori.getName()+" ");
+        }
+        return new Resp(sb.toString(),oriList);
     }
 
     public Resp getTime(String title){

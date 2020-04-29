@@ -21,7 +21,7 @@ public class RegionService implements BaseNeo4jService {
 
     StringBuilder sb;
 
-    public Resp getByOri(String reg){
+    public Resp getByReg(String reg){
         List<Problem> problems = regionCql.getByReg(reg,0,10);
 
         if(problems == null || problems.size()<1){
@@ -34,7 +34,7 @@ public class RegionService implements BaseNeo4jService {
         return new Resp(sb.toString(),problems);
     }
 
-    public Resp getByOriAndTime(String reg,String time){
+    public Resp getByRegAndTime(String reg,String time){
         List<Problem> problems = regionCql.getByRegAndTime(reg, time, 0, 10);
 
         if(problems == null || problems.size()<1){

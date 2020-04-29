@@ -1,4 +1,4 @@
-package com.zyaml.nai.service.neo;
+package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.Resp;
 import org.junit.Assert;
@@ -10,22 +10,17 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Author: 994
- * @Date: 2020-03-21 21:17
+ * @Date: 2020-04-29 21:06
  */
 @SpringBootTest
-class OrigionServiceTest {
+class OriginServiceTest {
+
     @Autowired
-    RegionService regionService;
-
-    String region1 = "湖南";
-    String region2 = "四川";
-    String time1 = "2010";
+    private OriginService originService;
 
     @Test
-    void getByOriTest() {
-    }
-
-    @Test
-    void getByOriAndTime() {
+    void getOriginByName() {
+        Resp originByName = originService.getOriginByName("[USACO3.2]魔板 Magic Squares");
+        Assert.assertNotNull(originByName);
     }
 }

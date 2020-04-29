@@ -21,4 +21,6 @@ public interface RegionCql extends Neo4jRepository<Type,Long> {
             "return p skip $page*$size limit $size")
     List<Problem> getByRegAndTime(String reg, String time, int page, int size);
 
+
+
 }

@@ -36,7 +36,7 @@ public class ProblemAndTags {
     private Tags time;
 
     @Ptags(tagName = TagsCommom.ORI)
-    private Tags ori;
+    private List<Tags> ori;
 
     @Ptags(tagName = TagsCommom.TK)
     private Types tk;

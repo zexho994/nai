@@ -91,7 +91,8 @@ class ProblemServiceTest {
     @Test
     void getOriTest(){
         String pid = "P1023";
-        Resp ori = problemService.getOri(pid);
+        String pid1 = "P2730";
+        Resp ori = problemService.getOri(pid1);
         Assert.assertNotNull(ori);
     }
 
