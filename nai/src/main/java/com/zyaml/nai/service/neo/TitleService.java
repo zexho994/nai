@@ -1,6 +1,5 @@
 package com.zyaml.nai.service.neo;
 
-import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.comom.TagsCommom;
 import com.zyaml.nai.entry.dto.ProblemAndTags;
@@ -8,7 +7,6 @@ import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.entry.node.Types;
-import com.zyaml.nai.repository.RecommendCql;
 import com.zyaml.nai.repository.TitleCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +20,7 @@ import java.util.List;
  * @Date: 2020-03-24 13:17
  */
 @Service
-public class TitleService {
+public class TitleService implements IServiceCommon{
 
     @Autowired
     private TitleCql titleCql;
@@ -134,7 +132,6 @@ public class TitleService {
 
         return new Resp(sb.toString(),list);
     }
-
 
     public Resp getALg(String title){
 

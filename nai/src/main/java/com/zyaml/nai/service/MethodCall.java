@@ -181,7 +181,7 @@ public class MethodCall{
         return diffService.getProByDifAndAlg(words.get("DIF"),words.get("ALG"));
     }
 
-    @Mould(format = {"DIF+LOC+", "DIF+dif+LOC+"})
+    @Mould(format = {"DIF+LOC+", "DIF+dif+LOC+","LOC+DIF+","LOC+DIF+dif"})
     private Resp difReg(Words<String,String> words){
         return diffService.getProByDifAndReg(words.get("DIF"),words.get("LOC"));
     }

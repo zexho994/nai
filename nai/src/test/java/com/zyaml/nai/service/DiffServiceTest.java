@@ -28,9 +28,8 @@ class DiffServiceTest {
     @Test
     void getProblemsByDiffTest() {
         String dif1= "NOI/NOI+/CTSC";
+        String dif2 = "入门";
 
-        List<Problem> problemsByDiff = diffCql.getProByDiff(dif1);
-        Assert.assertNotNull(problemsByDiff);
     }
 
     @Test

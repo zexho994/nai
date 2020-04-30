@@ -22,19 +22,19 @@ public interface TitleCql extends Neo4jRepository<Problem,Long> {
     @Query("MATCH (p:Problem{title:$title}) - [] - (t:Tags{type:\"Origin\"}) RETURN t")
     List<Tags> findOri(String title);
 
-    @Query("MATCH (p:Problem{title:$title}) - [] - (t:Tags{type:\"Time\"}) RETURN t")
+    @Query("MATCH (p:Problem{title:$title}) - [] - (t:Tags{type:\"Time\"}) RETURN t limit 1")
     Tags findTime(String title);
 
-    @Query("MATCH (p:Problem{title:$title}) RETURN p")
+    @Query("MATCH (p:Problem{title:$title}) RETURN p limit 1")
     Problem findProblem(String title);
 
-    @Query("match (:Problem{title:$title}) - [] - (d:Difficulty) return d")
+    @Query("match (:Problem{title:$title}) - [] - (d:Difficulty) return d limit 1")
     Difficulty findDiff(String title);
 
-    @Query("MATCH (:Problem{title:$title}) - [] - (t:Tags{type:\"Region\"}) RETURN t")
+    @Query("MATCH (:Problem{title:$title}) - [] - (t:Tags{type:\"Region\"}) RETURN t limit 1")
     Tags findReg(String title);
 
-    @Query("MATCH (:Problem{title:$title}) - [] - (t:Types) RETURN t")
+    @Query("MATCH (:Problem{title:$title}) - [] - (t:Types) RETURN t limit 1")
     Types findTK(String title);
 
 }

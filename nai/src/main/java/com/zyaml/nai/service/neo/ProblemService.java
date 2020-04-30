@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
  */
 @Service
 @Log4j2
-public class ProblemService implements BaseNeo4jService{
+public class ProblemService implements IServiceCommon{
     @Autowired
     private ProblemCql problemCql;
 
@@ -74,8 +74,6 @@ public class ProblemService implements BaseNeo4jService{
     @Deprecated
     public Resp getProblemsByPidAndDiff(String diff){
         List<Problem> problems = problemCql.getProblemsByPidAndDiff(diff);
-
-
         return new Resp(problems);
     }
 

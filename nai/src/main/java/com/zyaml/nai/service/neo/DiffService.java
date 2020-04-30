@@ -19,11 +19,12 @@ import java.util.List;
  */
 @Service
 @Log4j2
-public class DiffService implements BaseNeo4jService{
+public class DiffService implements IServiceCommon{
     @Autowired
     DiffCql diffCql;
 
-    StringBuilder sb;
+    @Autowired
+    TitleService titleService;
 
     /**
      * 根据难度名称获取所有题目
@@ -31,16 +32,15 @@ public class DiffService implements BaseNeo4jService{
      * @return
      */
     public Resp getProblemsByDiff(String diff){
-        List<Problem> problemsByDiff = diffCql.getProByDiff(diff);
+        List<Problem> problemsByDiff = diffCql.getProByDiff(diff,DEFAULT_SIZE);
 
         if(problemsByDiff == null || problemsByDiff.size() < 1){
             return new Resp(diff+"下暂时没有题目",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(diff).append("难度的题目有:\n");
-        ToMsgFormat.titleList(problemsByDiff,sb);
-        return new Resp(sb.toString(),problemsByDiff);
+        Resp resp = titleService.getProblemAndTags(problemsByDiff);
+
+        return resp;
     }
 
     /**
@@ -69,15 +69,11 @@ public class DiffService implements BaseNeo4jService{
     public Resp getDifAndSource(String dif,String source){
         log.debug("=====> [getDifAndSource] run");
 
-        List<Problem> problems = diffCql.getProByDifAndSource(dif, source,0,10);
+        List<Problem> problems = diffCql.getProByDifAndSource(dif, source,DEFAULT_PAGE,DEFAULT_SIZE);
 
-        List<ProblemVO> problemVOS = DtoUtil.mapList(problems, ProblemVO.class);
 
-        sb = new StringBuilder();
-        sb.append(source).append("题库里面").append(dif).append("难度的题目:\n");
-        ToMsgFormat.titleList(problems,sb);
-
-        return new Resp(sb.toString(),problemVOS);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
     }
 
     /**
@@ -92,13 +88,13 @@ public class DiffService implements BaseNeo4jService{
         int page;
 
         if(from.getSize() == null){
-            limit = 10;
+            limit = DEFAULT_SIZE;
         }else{
             limit = from.getSize();
         }
 
         if(from.getPage() == null){
-            page = 0;
+            page = DEFAULT_PAGE;
         }else{
             page = from.getPage();
         }
@@ -109,9 +105,9 @@ public class DiffService implements BaseNeo4jService{
             return new Resp("不存在同时满足"+from.getDif()+"和"+from.getAlg()+"的题目",null);
         }
 
+        Resp resp = titleService.getProblemAndTags(proByDifAndAlg);
 
-
-        return new Resp(proByDifAndAlg);
+        return resp;
     }
 
     /**
@@ -121,17 +117,14 @@ public class DiffService implements BaseNeo4jService{
      * @return
      */
     public Resp getProByDifAndAlg(String dif,String alg){
-        List<Problem> proByDifAndAlg = diffCql.getProByDifAndAlg(dif, alg,0,15);
+        List<Problem> proByDifAndAlg = diffCql.getProByDifAndAlg(dif, alg,DEFAULT_PAGE,DEFAULT_SIZE);
 
         if(proByDifAndAlg == null || proByDifAndAlg.size() < 1){
             return new Resp("没有同时满足"+dif+"和"+alg+"的题目",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(dif).append("难度").append(alg).append("算法类型的题:\n");
-        ToMsgFormat.titleList(proByDifAndAlg,sb);
-
-        return new Resp(sb.toString(),proByDifAndAlg);
+        Resp resp = titleService.getProblemAndTags(proByDifAndAlg);
+        return resp;
     }
 
     /**
@@ -145,17 +138,15 @@ public class DiffService implements BaseNeo4jService{
      */
     public Resp getProByDifAndReg(String dif,String reg){
 
-        List<Problem> problems = diffCql.getProByDifAndReg(dif, reg, 0, 10);
+        List<Problem> problems = diffCql.getProByDifAndReg(dif, reg, DEFAULT_PAGE, DEFAULT_SIZE);
 
         if(problems == null || problems.size()<1 ){
             return new Resp(reg+"目前没有"+dif+"的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(reg).append("的").append(dif).append("难度的题目有:\n");
-        ToMsgFormat.titleList(problems,sb);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
 
-        return new Resp(sb.toString(),problems);
     }
 
     /**
@@ -165,46 +156,38 @@ public class DiffService implements BaseNeo4jService{
      * @return
      */
     public Resp getProByDifAndTime(String dif,String time){
-        List<Problem> problems = diffCql.getProByDifAndTime(dif, time, 0, 10);
+        List<Problem> problems = diffCql.getProByDifAndTime(dif, time, DEFAULT_PAGE, DEFAULT_SIZE);
 
         if(problems == null || problems.size() < 1){
             return new Resp(time+"目前没有"+dif+"的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(time).append("年").append(dif).append("难度的题目:\n");
-        ToMsgFormat.titleList(problems,sb);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
 
-        return new Resp(sb.toString(),problems);
     }
 
     public Resp getProByDifAndGT(String dif,String time){
-        List<Problem> problems = diffCql.getProByDifAndGT(dif, time, 0, 10);
+        List<Problem> problems = diffCql.getProByDifAndGT(dif, time, DEFAULT_PAGE, DEFAULT_SIZE);
 
         if(problems == null || problems.size() < 1){
             return new Resp("晚于"+time+"的时间目前没有"+dif+"的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append("晚于").append(time).append("年").append(dif).append("难度的题目:\n");
-        ToMsgFormat.titleList(problems,sb);
-
-        return new Resp(sb.toString(),problems);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
     }
 
 
     public Resp getProByDifAndLT(String dif,String time){
-        List<Problem> problems = diffCql.getProByDifAndLT(dif, time, 0, 10);
+        List<Problem> problems = diffCql.getProByDifAndLT(dif, time, DEFAULT_PAGE, DEFAULT_SIZE);
 
         if(problems == null || problems.size() < 1){
             return new Resp("早于"+time+"的时间目前没有"+dif+"的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append("早于").append(time).append("年").append(dif).append("难度的题目:\n");
-        ToMsgFormat.titleList(problems,sb);
-
-        return new Resp(sb.toString(),problems);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
     }
 
     /**
@@ -214,17 +197,14 @@ public class DiffService implements BaseNeo4jService{
      * @return
      */
     public Resp getProByDifAndOri(String dif,String ori){
-        List<Problem> problems = diffCql.getProByDifAndOri(dif,ori,0,10);
+        List<Problem> problems = diffCql.getProByDifAndOri(dif,ori,DEFAULT_PAGE,DEFAULT_SIZE);
 
         if(problems == null || problems.size() < 1){
             return new Resp(ori+"目前没有"+dif+"的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(ori).append("里").append(dif).append("难度的题目:\n");
-        ToMsgFormat.titleList(problems,sb);
-
-        return new Resp(sb.toString(),problems);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
     }
 
 }

@@ -14,15 +14,13 @@ import java.util.List;
  * @Date: 2020-03-10 11:09
  */
 @Service
-public class AlgorithmService implements BaseNeo4jService{
+public class AlgorithmService implements IServiceCommon{
 
     @Autowired
     private AlgorithmCql algorithmCql;
 
     @Autowired
     private TitleService titleService;
-
-    StringBuilder sb;
 
     /**
      * 根据算法获取题目列表
@@ -32,7 +30,7 @@ public class AlgorithmService implements BaseNeo4jService{
     public Resp getByAlg(String alg){
         List<Problem> byAlg = algorithmCql.getByAlg(alg);
 
-        sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder();
 
         if(byAlg == null || byAlg.size() < 1){
             return new Resp(alg+"下暂时没有题目",null);
@@ -113,7 +111,7 @@ public class AlgorithmService implements BaseNeo4jService{
     /**
      * 根据算法和地区获取题目
      * @param alg 算法名称: "字符串"
-     * @param reg 题库来源: "IOI"
+     * @param reg 地区来源: "湖南"
      * @return
      */
     public Resp getProByAlgAndReg(String alg,String reg){
@@ -124,16 +122,15 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp(reg+"暂时没有"+alg+"类型的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(reg).append("省的").append(alg).append("算法类型的题:\n");
-        ToMsgFormat.titleList(problems,sb);
+        Resp resp = titleService.getProblemAndTags(problems);
 
-
-        return new Resp(sb.toString(),problems);
+        return resp;
     }
 
     /**
      * 根据算法和题库获取题目
+     * @param alg 算法名称
+     * @param source 题库
      * @return
      */
     public Resp getProByAlgAndSource(String alg,String source){
@@ -144,11 +141,9 @@ public class AlgorithmService implements BaseNeo4jService{
             return new Resp(source+"暂时没有"+alg+"类型的题",null);
         }
 
-        sb = new StringBuilder();
-        sb.append(source).append("里").append(alg).append("算法类型的题:\n");
-        ToMsgFormat.titleList(problems,sb);
+        Resp resp = titleService.getProblemAndTags(problems);
 
-        return new Resp(sb.toString(),problems);
+        return resp;
     }
 
 }

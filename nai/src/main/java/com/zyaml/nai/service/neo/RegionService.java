@@ -14,37 +14,45 @@ import java.util.List;
  * @Date: 2020-03-21 21:15
  */
 @Service
-public class RegionService implements BaseNeo4jService {
+public class RegionService implements IServiceCommon {
 
     @Autowired
     RegionCql regionCql;
 
-    StringBuilder sb;
+    @Autowired
+    TitleService titleService;
 
+    /**
+     * 获取 reg 下的题目
+     * @param reg 省份
+     * @return
+     */
     public Resp getByReg(String reg){
-        List<Problem> problems = regionCql.getByReg(reg,0,10);
+        List<Problem> problems = regionCql.getByReg(reg,DEFAULT_PAGE,DEFAULT_SIZE);
 
         if(problems == null || problems.size()<1){
             return new Resp(reg+"暂时没有收录题目");
         }
-        sb = new StringBuilder();
-        sb.append(reg).append("的题有:\n");
-        ToMsgFormat.titleList(problems,sb);
 
-        return new Resp(sb.toString(),problems);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
+
     }
 
+    /**
+     * @param reg 省份
+     * @param time 时间
+     * @return
+     */
     public Resp getByRegAndTime(String reg,String time){
-        List<Problem> problems = regionCql.getByRegAndTime(reg, time, 0, 10);
+        List<Problem> problems = regionCql.getByRegAndTime(reg, time, DEFAULT_PAGE, DEFAULT_SIZE);
 
         if(problems == null || problems.size()<1){
             return new Resp(reg+"暂时没有收录"+time+"的题目");
         }
-        sb = new StringBuilder();
-        sb.append(time).append("年").append(reg).append("的题有:\n");
-        ToMsgFormat.titleList(problems,sb);
 
-        return new Resp(sb.toString(),problems);
+        Resp resp = titleService.getProblemAndTags(problems);
+        return resp;
     }
 
 }
