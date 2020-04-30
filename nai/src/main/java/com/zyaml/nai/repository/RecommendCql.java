@@ -1,6 +1,7 @@
 package com.zyaml.nai.repository;
 
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Tags;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
@@ -41,11 +42,10 @@ public interface RecommendCql extends Neo4jRepository<ProblemCql,Long> {
      * 相同难度的不同算法题
      *
      * TODO: 暂时还没去本体,待优化
-     * @param title
      * @return
      */
-    @Query("match (Problem{title:$title})-[]-(d:Difficulty) with d " +
-            "match (n:Problem)-[]-(d:Difficulty) " +
-            "return n limit 3")
-    List<Problem> samDifNotAlg(String title);
+    @Query("MATCH (Difficulty{difficulty:$dif})-[]-(p:Problem)-[]-(a:Tags{type:\"Algorithm\"})"+
+            "WHERE NOT a.name IN $alg " +
+            "return p LIMIT 3 ")
+    List<Problem> samDifNotAlg(List<String> alg,int dif);
 }

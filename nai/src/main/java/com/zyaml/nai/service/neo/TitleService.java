@@ -84,7 +84,7 @@ public class TitleService {
         }
 
         List<Tags> oriList = titleCql.findOri(title);
-        if(oriList != null){
+        if(oriList != null && oriList.size() > 0){
             sb.append(TagsCommom.ORI + " : ");
             for(Tags ori : oriList){
                 sb.append(ori.getName()+" ");
@@ -107,7 +107,7 @@ public class TitleService {
         sb.append("\n相似例题 :");
         problemAndTags.setSameDifSameAlg(recommendService.sameDifSameAlg(title,sb));
         problemAndTags.setSameAlgHighDif(recommendService.sameALgHighDif(title,problemAndTags.getDifficulty(),sb));
-        problemAndTags.setSameDifNotAlg(recommendService.samDifNotAlg(title,sb));
+        problemAndTags.setSameDifNotAlg(recommendService.samDifNotAlg(problemAndTags.getAlg(),problemAndTags.getDifficulty().getDifficulty(),sb));
     }
 
     public Resp getProblemAndAllTags(List<Problem> titles){
@@ -134,7 +134,6 @@ public class TitleService {
 
         return new Resp(sb.toString(),list);
     }
-
 
 
     public Resp getALg(String title){

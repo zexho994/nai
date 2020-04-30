@@ -9,6 +9,8 @@ import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,8 +47,12 @@ public class RecommendService {
         return problemList;
     }
 
-    public List<Problem> samDifNotAlg(String title,StringBuilder sb){
-        List<Problem> problemList = recommendCql.samDifNotAlg(title);
+    public List<Problem> samDifNotAlg(List<Tags> alg,int dif ,StringBuilder sb){
+        ArrayList<String> a = new ArrayList<>(alg.size());
+        for(Tags t : alg){
+            a.add(t.getName());
+        }
+        List<Problem> problemList = recommendCql.samDifNotAlg(a,dif);
         if(problemList == null){
             return null;
         }
