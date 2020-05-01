@@ -2,6 +2,7 @@ package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.repository.AlgorithmCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,20 @@ public class AlgorithmService implements IServiceCommon{
 
     @Autowired
     private TitleService titleService;
+
+    private final int ALG_SIZE = 10;
+
+    /**
+     * 获取算法标签数据
+     * @return
+     */
+    public Resp getAlgTag(){
+        List<Tags> algTagList = algorithmCql.getAlgTag(DEFAULT_PAGE, ALG_SIZE);
+        StringBuilder sb = new StringBuilder();
+        sb.append("算法标签 : \n");
+        ToMsgFormat.tagListToMsg(algTagList,sb);
+        return new Resp(sb.toString(),algTagList);
+    }
 
     /**
      * 根据算法获取题目列表

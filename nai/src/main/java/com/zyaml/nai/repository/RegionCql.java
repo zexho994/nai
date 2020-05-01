@@ -1,6 +1,7 @@
 package com.zyaml.nai.repository;
 
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Tags;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
@@ -12,6 +13,9 @@ import java.util.List;
  * @Date: 2020-03-21 21:09
  */
 public interface RegionCql extends Neo4jRepository<Type,Long> {
+
+    @Query("MATCH (t:Tags{type:\"Region\"}) RETURN t")
+    List<Tags> getRegTag();
 
     @Query("match (t:Tags{type:\"Region\",name:$reg}) - [] - (p:Problem) return p skip $page*$size limit $size")
     List<Problem> getByReg(String reg,int page, int size);

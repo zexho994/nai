@@ -15,6 +15,9 @@ import java.util.List;
 
 public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
 
+    @Query("MATCH (t:Tags{type:\"Algorithm\"}) RETURN t skip $page*$size limit $size")
+    List<Tags> getAlgTag(int page,int size);
+
     /**
      * 根据算法获取题目
      * @param alg 算法名

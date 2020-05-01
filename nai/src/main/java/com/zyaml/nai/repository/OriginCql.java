@@ -16,4 +16,9 @@ public interface OriginCql extends Neo4jRepository<Tags,Long> {
     @Query("MATCH (p:Problem)-[]-(t:Tags{type:\"Origin\",name:$name}) RETURN p LIMIT 10")
     List<Problem> getOrigin(String name);
 
+    @Query("MATCH (n:Tags{type:\"Origin\"}) RETURN n")
+    List<Tags> getOriTag();
+
+
+
 }

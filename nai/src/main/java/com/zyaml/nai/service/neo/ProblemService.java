@@ -156,7 +156,7 @@ public class ProblemService implements IServiceCommon{
         sb = new StringBuilder();
         sb.append(pid).append("的算法标签有:\n");
 
-        ToMsgFormat.algListToMsg(alg,sb);
+        ToMsgFormat.tagListToMsg(alg,sb);
 
         return new Resp(sb.toString(),alg);
 

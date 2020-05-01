@@ -2,6 +2,7 @@ package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.repository.RegionCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,13 @@ public class RegionService implements IServiceCommon {
 
     @Autowired
     TitleService titleService;
+
+    public Resp getRegTag(){
+        List<Tags> regTag = regionCql.getRegTag();
+        StringBuilder sb = new StringBuilder();
+        ToMsgFormat.tagListToMsg(regTag,sb);
+        return new Resp(sb.toString(),regTag);
+    }
 
     /**
      * 获取 reg 下的题目

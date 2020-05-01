@@ -1,7 +1,9 @@
 package com.zyaml.nai.util;
 
+import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.node.Tags;
+import com.zyaml.nai.entry.node.Types;
 
 import java.util.List;
 
@@ -19,7 +21,7 @@ public final class ToMsgFormat {
      * @param sb
      * @return
      */
-    public static void algListToMsg(List<Tags> list, StringBuilder sb){
+    public static void tagListToMsg(List<Tags> list, StringBuilder sb){
         int i = 0;
         for(Tags t : list){
             sb.append(++i+".").append(t.getName()).append("\n");
@@ -30,6 +32,20 @@ public final class ToMsgFormat {
         int i = 0;
         for(Problem p : list){
             sb.append(++i+".").append(p.getTitle()).append("\n");
+        }
+    }
+
+    public static void diffListToMsg(List<Difficulty> difficultyList,StringBuilder sb){
+        int i = 1;
+        for(Difficulty difficulty : difficultyList){
+            sb.append("\n").append(i++).append(".").append(difficulty.getDifficultyString());
+        }
+    }
+
+    public static void typesListToMsg(List<Types> typesList,StringBuilder sb){
+        int i = 1;
+        for(Types type : typesList){
+            sb.append("\n").append(i++).append(".").append(type.getTagString());
         }
     }
 

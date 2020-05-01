@@ -109,6 +109,8 @@ public interface DiffCql extends Neo4jRepository<Difficulty,Long> {
             "return p skip $page*$size limit $size")
     List<Problem> getProByDifAndLT(String dif,String time,int page,int size);
 
+    @Query("match (d:Difficulty) return d")
+    List<Difficulty> getAllDif();
 
 
 }

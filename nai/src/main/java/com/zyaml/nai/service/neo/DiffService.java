@@ -2,6 +2,7 @@ package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.from.DifFrom;
+import com.zyaml.nai.entry.node.Difficulty;
 import com.zyaml.nai.entry.node.Problem;
 import com.zyaml.nai.entry.vo.ProblemVO;
 import com.zyaml.nai.repository.DiffCql;
@@ -25,6 +26,18 @@ public class DiffService implements IServiceCommon{
 
     @Autowired
     TitleService titleService;
+
+    /**
+     * 获取所有的难度标签
+     * @return
+     */
+    public Resp getDifficulty(){
+        List<Difficulty> difficultyList = diffCql.getAllDif();
+        StringBuilder sb = new StringBuilder();
+        sb.append("难度:");
+        ToMsgFormat.diffListToMsg(difficultyList,sb);
+        return new Resp(sb.toString(),difficultyList);
+    }
 
     /**
      * 根据难度名称获取所有题目

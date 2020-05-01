@@ -161,6 +161,11 @@ public class MethodCall{
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    @Mould(format = "dif+")
+    private Resp diftag(Words<String,String> words){
+        return diffService.getDifficulty();
+    }
+
     @Mould(format = {"DIF+", "DIF+dif+"})
     private Resp dif(Words<String,String> words){
         return diffService.getProblemsByDiff(words.get("DIF"));
@@ -208,6 +213,11 @@ public class MethodCall{
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ALG Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    @Mould(format = "alg+")
+    private Resp algtag(Words<String,String> words){
+        return algorithmService.getAlgTag();
+    }
+
     @Mould(format = "ALG+")
     private Resp alg(Words<String,String> words){
         return algorithmService.getByAlg(words.get("ALG"));
@@ -245,6 +255,11 @@ public class MethodCall{
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Types Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    @Mould(format = "source+")
+    private Resp typeTag(Words<String,String> words){
+        return typeService.getTypes();
+    }
+
     @Mould(format = {"TK+","TK+tk+"})
     private Resp type(Words<String,String> words){
         return typeService.getByType(words.get("TK"));
@@ -267,6 +282,11 @@ public class MethodCall{
 
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> Region Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    @Mould(format = "region+")
+    private Resp regtag(Words<String,String> words){
+        return regionService.getRegTag();
+    }
+
     @Mould(format = "LOC+")
     private Resp reg(Words<String,String> words){
         return regionService.getByReg(words.get("LOC"));
@@ -284,6 +304,11 @@ public class MethodCall{
 
     //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> YEAR Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
+    @Mould(format = "time+")
+    private Resp timeTag(Words<String,String> words){
+        return timeService.getTimeTag();
+    }
+
     @Mould(format = "YEAR+")
     private Resp time(Words<String,String> words){
         return timeService.getByTime(words.get("YEAR"));
@@ -292,6 +317,14 @@ public class MethodCall{
     @Mould(format = "ORI+")
     private Resp ori(Words<String,String> words){
         return originService.getOriginByName(words.get("ORI"));
+    }
+
+
+    //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> ORI Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+    @Mould(format = "ori+")
+    private Resp oriTag(Words<String,String> words){
+        return originService.getOriTag();
     }
 
 }

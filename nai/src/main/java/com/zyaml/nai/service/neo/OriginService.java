@@ -1,4 +1,4 @@
-package com.zyaml.nai.service;
+package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.ErrorCode;
 import com.zyaml.nai.Exception.Resp;
@@ -19,10 +19,10 @@ import java.util.List;
 @Service
 public class OriginService {
     @Autowired
-    OriginCql originCql;
+    private OriginCql originCql;
 
     public Resp getOriginByName(String name){
-        if(name == null || name.equals("")){
+        if(name == null || "".equals(name)){
             throw new RestException(ErrorCode.PARAM_INVALID);
         }
         List<Problem> problemList = originCql.getOrigin(name);
@@ -33,5 +33,18 @@ public class OriginService {
         ToMsgFormat.titleList(problemList,sb);
         return new Resp(sb.toString(),problemList);
     }
+
+    /**
+     * 获取所有来源的标签数据
+     * @return
+     */
+    public Resp getOriTag(){
+        List<Tags> oriTag = originCql.getOriTag();
+        StringBuilder sb = new StringBuilder();
+        sb.append("来源 : \n");
+        ToMsgFormat.tagListToMsg(oriTag,sb);
+        return new Resp(sb.toString(),oriTag);
+    }
+
 
 }

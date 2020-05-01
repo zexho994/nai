@@ -13,6 +13,10 @@ import java.util.List;
  */
 public interface TimeCql extends Neo4jRepository<Tags,Long> {
 
+    @Query("MATCH (n:Tags{type:\"Time\"}) RETURN n")
+    List<Tags> getTimeTag();
+
+
     @Query("match (t:Tags{type:\"Time\"})-[]-(p:Problem) where t.name = $time return p skip $page*$size limit $size")
     List<Problem> findByTime(String time,int page,int size);
 

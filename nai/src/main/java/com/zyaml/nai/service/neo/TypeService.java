@@ -2,6 +2,7 @@ package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Types;
 import com.zyaml.nai.repository.TypesCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,14 @@ public class TypeService implements IServiceCommon{
     TypesCql typesCql;
     @Autowired
     TitleService titleService;
+
+    public Resp getTypes(){
+        List<Types> typesList = typesCql.getType();
+        StringBuilder sb = new StringBuilder();
+        sb.append("题库 :");
+        ToMsgFormat.typesListToMsg(typesList,sb);
+        return new Resp(sb.toString(),sb);
+    }
 
     public Resp getByType(String type){
         List<Problem> problems = typesCql.getByType(type, DEFAULT_PAGE, DEFAULT_SIZE);

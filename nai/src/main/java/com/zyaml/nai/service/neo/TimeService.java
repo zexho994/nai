@@ -2,6 +2,7 @@ package com.zyaml.nai.service.neo;
 
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.entry.node.Problem;
+import com.zyaml.nai.entry.node.Tags;
 import com.zyaml.nai.repository.TimeCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,6 +21,18 @@ public class TimeService implements IServiceCommon{
     TimeCql timeCql;
     @Autowired
     TitleService titleService;
+
+    /**
+     * 获取时间的标签数据
+     * @return
+     */
+    public Resp getTimeTag(){
+        List<Tags> timeTag = timeCql.getTimeTag();
+        StringBuilder sb = new StringBuilder();
+        sb.append("年份 :");
+        ToMsgFormat.tagListToMsg(timeTag,sb);
+        return new Resp(sb.toString(),timeTag);
+    }
 
     /**
      * 获取 time 年的题目

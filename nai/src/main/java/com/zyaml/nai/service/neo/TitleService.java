@@ -63,7 +63,7 @@ public class TitleService implements IServiceCommon{
 
         if(problemAndTags.getAlg()!=null){
             sb.append("算法 : \n");
-            ToMsgFormat.algListToMsg(problemAndTags.getAlg(),sb);
+            ToMsgFormat.tagListToMsg(problemAndTags.getAlg(),sb);
         }
 
         problemAndTags.setTk(titleCql.findTK(title));
@@ -144,7 +144,7 @@ public class TitleService implements IServiceCommon{
         }
         sb.append(title).append("的算法标签有:\n");
 
-        ToMsgFormat.algListToMsg(alg,sb);
+        ToMsgFormat.tagListToMsg(alg,sb);
 
         return new Resp(sb.toString(),alg);
 

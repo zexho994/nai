@@ -1,12 +1,11 @@
 package com.zyaml.nai.service;
 
 import com.zyaml.nai.Exception.Resp;
+import com.zyaml.nai.service.neo.OriginService;
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 /**
  * @Author: 994

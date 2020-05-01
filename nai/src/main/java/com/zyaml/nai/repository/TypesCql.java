@@ -16,6 +16,9 @@ import java.util.List;
  */
 public interface TypesCql extends Neo4jRepository<Types,Long> {
 
+    @Query("MATCH (t:Types) RETURN t")
+    List<Types> getType();
+
     /**
      * 根据题库获取相关题目节点
      * @param tk
