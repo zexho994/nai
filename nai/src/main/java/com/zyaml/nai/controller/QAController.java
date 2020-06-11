@@ -20,6 +20,7 @@ public class QAController {
     @Autowired
     QAService qaService;
 
+    @CrossOrigin(origins = "*")
     @GetMapping
     public Resp question(QAFrom qaFrom){
         if(qaFrom.getMsg() == null || "".equals(qaFrom.getMsg())){
