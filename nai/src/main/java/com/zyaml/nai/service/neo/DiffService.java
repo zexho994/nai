@@ -191,7 +191,6 @@ public class DiffService implements IServiceCommon{
         return resp;
     }
 
-
     public Resp getProByDifAndLT(String dif,String time){
         List<Problem> problems = diffCql.getProByDifAndLT(dif, time, DEFAULT_PAGE, DEFAULT_SIZE);
 

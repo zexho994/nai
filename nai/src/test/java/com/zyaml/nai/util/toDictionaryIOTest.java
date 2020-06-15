@@ -1,6 +1,7 @@
 package com.zyaml.nai.util;
 
 import com.zyaml.nai.entry.node.Tags;
+import com.zyaml.nai.io.ToDictionaryIO;
 import com.zyaml.nai.repository.AlgorithmCql;
 import com.zyaml.nai.repository.ProblemCql;
 import com.zyaml.nai.service.neo.AlgorithmService;
@@ -40,7 +41,7 @@ class toDictionaryIOTest {
 
         List<String> list = new ArrayList<>(250);
 
-        toDictionaryIO<String> dic = new toDictionaryIO<>();
+        ToDictionaryIO<String> dic = new ToDictionaryIO<>();
 
         List<Tags> all = algorithmCql.getAll();
         Assert.assertNotNull(all);
@@ -64,7 +65,7 @@ class toDictionaryIOTest {
     void outProblem(){
         List list = problemCql.getAll();
 
-        toDictionaryIO dic = new toDictionaryIO();
+        ToDictionaryIO dic = new ToDictionaryIO();
 
         try {
             dic.outFile(list,"problemName.txt");

@@ -12,7 +12,6 @@ import java.util.List;
  * @Author: 994
  * @Date: 2020-03-10 11:00
  */
-
 public interface AlgorithmCql extends Neo4jRepository<Types,Long> {
 
     @Query("MATCH (t:Tags{type:\"Algorithm\"}) RETURN t skip $page*$size limit $size")

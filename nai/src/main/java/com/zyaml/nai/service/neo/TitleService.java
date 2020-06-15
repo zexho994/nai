@@ -16,6 +16,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * 以 title 为查询条件
  * @Author: 994
  * @Date: 2020-03-24 13:17
  */
@@ -105,7 +106,7 @@ public class TitleService implements IServiceCommon{
         sb.append("\n相似例题 :");
         problemAndTags.setSameDifSameAlg(recommendService.sameDifSameAlg(title,sb));
         problemAndTags.setSameAlgHighDif(recommendService.sameALgHighDif(title,problemAndTags.getDifficulty(),sb));
-        problemAndTags.setSameDifNotAlg(recommendService.samDifNotAlg(problemAndTags.getAlg(),problemAndTags.getDifficulty().getDifficulty(),sb));
+        problemAndTags.setSameDifNotAlg(recommendService.sameDifNotAlg(problemAndTags.getAlg(),problemAndTags.getDifficulty().getDifficulty(),sb));
     }
 
     public Resp getProblemAndAllTags(List<Problem> titles){
@@ -133,6 +134,11 @@ public class TitleService implements IServiceCommon{
         return new Resp(sb.toString(),list);
     }
 
+    /**
+     * title 对应的题目的算法
+     * @param title
+     * @return
+     */
     public Resp getALg(String title){
 
         List<Tags> alg = titleCql.findAlg(title);
@@ -150,6 +156,11 @@ public class TitleService implements IServiceCommon{
 
     }
 
+    /**
+     * 题目的来源
+     * @param title
+     * @return
+     */
     public Resp getOri(String title){
         List<Tags> oriList = titleCql.findOri(title);
         StringBuilder sb = new StringBuilder();
@@ -165,6 +176,11 @@ public class TitleService implements IServiceCommon{
         return new Resp(sb.toString(),oriList);
     }
 
+    /**
+     * 题目的时间
+     * @param title 题目的名称
+     * @return
+     */
     public Resp getTime(String title){
         Tags res = titleCql.findTime(title);
         StringBuilder sb = new StringBuilder();
@@ -178,6 +194,11 @@ public class TitleService implements IServiceCommon{
         return new Resp(sb.toString(),res);
     }
 
+    /**
+     * 题目的pid
+     * @param title
+     * @return
+     */
     public Resp getPid(String title){
         Problem res = titleCql.findProblem(title);
         StringBuilder sb = new StringBuilder();
@@ -191,6 +212,11 @@ public class TitleService implements IServiceCommon{
         return new Resp(sb.toString(),res);
     }
 
+    /**
+     * 题目的难度
+     * @param title
+     * @return
+     */
     public Resp getDiff(String title){
         Difficulty res = titleCql.findDiff(title);
         StringBuilder sb = new StringBuilder();
@@ -204,6 +230,11 @@ public class TitleService implements IServiceCommon{
         return new Resp(sb.toString(),res);
     }
 
+    /**
+     * 题目的省份
+     * @param title
+     * @return
+     */
     public Resp getReg(String title){
         Tags res = titleCql.findReg(title);
         StringBuilder sb = new StringBuilder();
@@ -217,6 +248,11 @@ public class TitleService implements IServiceCommon{
         return new Resp(sb.toString(),res);
     }
 
+    /**
+     * 题目的题库
+     * @param title
+     * @return
+     */
     public Resp getTK(String title){
         Types res = titleCql.findTK(title);
         StringBuilder sb = new StringBuilder();

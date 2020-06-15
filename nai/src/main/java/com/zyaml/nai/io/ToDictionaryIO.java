@@ -1,4 +1,4 @@
-package com.zyaml.nai.util;
+package com.zyaml.nai.io;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ import java.util.List;
  * @Author: 994
  * @Date: 2020-03-10 19:43
  */
-public class toDictionaryIO<V> {
+public class ToDictionaryIO<V> {
     //1.题目名称    2.算法名字
 
     private List<V> list = new ArrayList<>();
@@ -22,20 +22,13 @@ public class toDictionaryIO<V> {
     /**
      * 算法名文件目录
      */
-    String algorithm_Path = "algorithm.txt";
+    private final String algorithm_Path = "algorithm.txt";
 
     /**
      * 题目名文件目录
      */
-    String problemName_Path = "problem.txt";
+    private final String problemName_Path = "problem.txt";
 
-
-    /**
-     * 读取文件数据
-     * @param path 文件的路径
-     */
-    public void in(String path){
-    }
 
     /**
      * 文件流

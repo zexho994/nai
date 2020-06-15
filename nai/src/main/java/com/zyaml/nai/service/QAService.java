@@ -30,7 +30,7 @@ public class QAService {
     private BaiDuAiService baiDuAiService;
 
     @Autowired
-    MethodCall methodCall;
+    private MethodCall methodCall;
 
     /**
      * 问答系统的方法集合处
