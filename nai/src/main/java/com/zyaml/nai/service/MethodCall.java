@@ -159,22 +159,31 @@ public class MethodCall{
         return titleService.getTime(words.get("TITLE"));
     }
 
+    @Mould(format = "TITLE+ans+")
+    private Resp titleAns(Words<String,String>words){
+        return titleService.getAns(words.get("TITLE"));
+    }
+
 //  >>>>>>>>>>>>>>>>>>>>>>>>>>>>> DIF Start <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
     @Mould(format = "dif+")
     private Resp diftag(Words<String,String> words){
         return diffService.getDifficulty();
     }
 
+
     @Mould(format = {"DIF+", "DIF+dif+"})
     private Resp dif(Words<String,String> words){
         return diffService.getProblemsByDiff(words.get("DIF"));
     }
 
+
     @Mould(format = {"DIF+num+", "DIF+dif+num+"})
     private Resp difCount(Words<String,String> words){
         return diffService.getCount(words.get("DIF"));
     }
+
 
     @Mould(format = {"DIF+TK+", "DIF+dif+TK+", "TK+DIF+", "TK+DIF+dif+", "TK+tk+DIF+", "TK+tk+DIF+dif+"})
     private Resp difSource(Words<String,String> words){

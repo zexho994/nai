@@ -1,9 +1,6 @@
 package com.zyaml.nai.repository;
 
-import com.zyaml.nai.entry.node.Difficulty;
-import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.entry.node.Tags;
-import com.zyaml.nai.entry.node.Types;
+import com.zyaml.nai.entry.node.*;
 import org.springframework.data.neo4j.annotation.Query;
 import org.springframework.data.neo4j.repository.Neo4jRepository;
 
@@ -36,5 +33,8 @@ public interface TitleCql extends Neo4jRepository<Problem,Long> {
 
     @Query("MATCH (:Problem{title:$title}) - [] - (t:Types) RETURN t limit 1")
     Types findTK(String title);
+
+    @Query("match (p:Problem{title:$title})-[]-(a:Answer) return a limit 1")
+    Answer findAnswer(String title);
 
 }

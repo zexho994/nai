@@ -3,10 +3,7 @@ package com.zyaml.nai.service.neo;
 import com.zyaml.nai.Exception.Resp;
 import com.zyaml.nai.comom.TagsCommom;
 import com.zyaml.nai.entry.dto.ProblemAndTags;
-import com.zyaml.nai.entry.node.Difficulty;
-import com.zyaml.nai.entry.node.Problem;
-import com.zyaml.nai.entry.node.Tags;
-import com.zyaml.nai.entry.node.Types;
+import com.zyaml.nai.entry.node.*;
 import com.zyaml.nai.repository.TitleCql;
 import com.zyaml.nai.util.ToMsgFormat;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -266,4 +263,20 @@ public class TitleService implements IServiceCommon{
 
         return new Resp(sb.toString(),res);
     }
+
+    /**
+     * 题目的题解
+     * @param title
+     * @return
+     */
+    public Resp getAns(String title){
+        Answer res = titleCql.findAnswer(title);
+        StringBuilder sb = new StringBuilder();
+        if(res == null){
+            sb.append("无法找到").append(title).append("的题解");
+        }
+        sb.append(res.getAnswerString());
+        return new Resp(sb.toString(),res);
+    }
+
 }

@@ -69,6 +69,11 @@ public final class ContionsDictionary {
     private static final String region2 = "地方";
     private static final String region3 = "哪里";
 
+    /**
+     * 题解
+     */
+    private static final String ans = "题解";
+
 
     /**
      * 更具字符串匹配对于的条件类型
@@ -97,6 +102,7 @@ public final class ContionsDictionary {
             case region1 :   return "region";
             case region2 :   return "region";
             case region3 :   return "region";
+            case ans     :   return "ans";
             default      :   return "false";
         }
     }
